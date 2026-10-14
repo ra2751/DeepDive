@@ -1,0 +1,32 @@
+.env
+venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+*.pyc
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# API keys and secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+*.pem
+*credentials*.json
+*service-account*.json
+
+# Temporary files
+.DS_Store
+*.log
+*.db
+*.sqlite*
+uploads/
+data/
+
+# IDE
+.vscode/
