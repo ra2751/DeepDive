@@ -2,9 +2,13 @@ import streamlit as st
 import time
 import os
 from pathlib import Path
-from langchain_core.messages import AIMessage, HumanMessage
-# Import your compiled LangGraph application
-from graph_builder.graph_builder import app as agent_graph
+from config.settings import ConfigError
+from domains.registry import load_domains
+from ui.legacy_view import render_legacy
+from ui.research_view import SOURCE_OPTIONS, render_research
+
+WORKFLOW_VERIFIED = "Verified research (default)"
+WORKFLOW_LEGACY = "Legacy answer-level (fallback)"
 
 # --- DIRECT IMPORT OF YOUR NATIVE PIPELINE ENTITIES ---
 try:
@@ -20,7 +24,7 @@ RAW_PDF_DIR.mkdir(parents=True, exist_ok=True)
 # 1. PAGE CONFIGURATION & THEME
 # ==========================================
 st.set_page_config(
-    page_title="Enterprise AI Research Assistant",
+    page_title="DeepDive AI",
     page_icon="🔬",  
     layout="wide",
     initial_sidebar_state="expanded"
@@ -45,8 +49,6 @@ st.markdown("""
 # ==========================================
 # 2. SESSION STATE INITIALIZATION
 # ==========================================
-if "chat_history" not in st.session_state:
-    st.session_state.chat_history = []
 if "system_logs" not in st.session_state:
     st.session_state.system_logs = ["System initialized. Ready for user query."]
 
@@ -56,6 +58,23 @@ if "system_logs" not in st.session_state:
 with st.sidebar:
     st.title("🛡️ Agent Observability")
     st.subheader("Multi-Agent Control Panel")
+    st.markdown("---")
+
+    # --- RESEARCH WORKFLOW CONTROLS ---
+    workflow = st.radio("Workflow", [WORKFLOW_VERIFIED, WORKFLOW_LEGACY], index=0,
+                        help="The legacy workflow is kept temporarily for testing and rollback.")
+    domains = load_domains()
+    domain_id, scope, claims_to_check = "general", SOURCE_OPTIONS["Web only"], []
+    if workflow == WORKFLOW_VERIFIED:
+        domain_id = st.selectbox("Research domain", list(domains), index=list(domains).index("general"),
+                                 format_func=lambda d: domains[d].name)
+        source_choice = st.radio("Sources", list(SOURCE_OPTIONS), index=list(SOURCE_OPTIONS).index("Web only"),
+                                 help="Documents = the indexed Milvus collection; Web = Tavily search. "
+                                      "Web is used only when you select it.")
+        scope = SOURCE_OPTIONS[source_choice]
+        claims_text = st.text_area("Optional: claims to fact-check (one per line)", value="",
+                                   help="If provided, these claims are verified instead of extracting new ones.")
+        claims_to_check = [c.strip() for c in claims_text.splitlines() if c.strip()]
     st.markdown("---")
     
     # --- AUTOMATED RAW_PDF INCREMENTAL INGESTION LAYER ---
@@ -103,6 +122,8 @@ with st.sidebar:
                         else:
                             st.error("❌ Vector store pipeline failed to yield usable text segments.")
                             
+                    except ConfigError as config_error:
+                        st.error(f"❌ Configuration error: {config_error}")
                     except Exception as pipeline_error:
                         st.error(f"❌ Internal Processing Loop Failure: {str(pipeline_error)}")
                         st.session_state.system_logs.append(f"Pipeline error: {str(pipeline_error)}")
@@ -125,94 +146,14 @@ with st.sidebar:
 # ==========================================
 # 5. MAIN INTERFACE LAYOUT
 # ==========================================
-st.title("🤖 AI Research Assistant")
-st.subheader("Your Intelligent Agent for Deep Research and Fact-Checked Insights")
-st.markdown("---")
-
-# Display historical chat conversations
-for message in st.session_state.chat_history:
-    if isinstance(message, HumanMessage):
-        with st.chat_message("User"):
-            st.markdown(message.content)
-    elif isinstance(message, AIMessage):
-        with st.chat_message("Assistant"):
-            st.markdown(message.content)
-            
-            # --- RENDER HISTORICAL SOURCES (NAME ONLY) ---
-            if hasattr(message, 'metadata') and message.metadata.get('citations'):
-                with st.expander("🔗 Sources"):
-                    seen_sources_history = set()
-                    for src in message.metadata['citations']:
-                        source_name = src.get('source')
-                        if source_name and source_name not in seen_sources_history:
-                            seen_sources_history.add(source_name)
-                            st.markdown(f"**Source:** `{source_name}`")
-
-# ==========================================
-# 6. STREAMING GRAPH RUNTIME LOGIC
-# ==========================================
-if user_query := st.chat_input("Ask research assistant..."):
-    
-    # Render User Turn Immediately
-    with st.chat_message("User"):
-        st.markdown(user_query)
-    st.session_state.chat_history.append(HumanMessage(content=user_query))
-
-    # Render Assistant Loading Turn
-    with st.chat_message("Assistant"):
-        response_placeholder = st.empty()
-        
-        # Telemetry updates for UI
-        st.session_state.system_logs.append(f"Received query: '{user_query}'")
-        st.session_state.system_logs.append("Invoking primary SupervisorAgent routing algorithm...")
-        
-        # Invoke your compiled LangGraph pipeline
-        with st.spinner("Agents coordinating strategy..."):
-            initial_state = {
-                "query": user_query, 
-                "messages": st.session_state.chat_history, 
-                "loop_count": 0,
-                "validation_metadata": {"is_valid": "yes", "reasoning": "turn 1 reset verification pass"}
-            }
-            final_output = agent_graph.invoke(initial_state)
-
-        # Extract values safely out of your standard State Dict schema
-        final_answer = final_output.get("final_response", "No response generated.")
-        retrieved_docs = final_output.get("retrieved_docs", [])
-        validation_meta = final_output.get("validation_metadata", {})
-        
-        # Map diagnostic outputs into the Observability Sidebar
-        st.session_state.system_logs.append(f"Validation verification verdict: {validation_meta.get('is_valid', 'N/A')}")
-        if validation_meta.get("reasoning"):
-            st.session_state.system_logs.append(f"Evaluator notes: {validation_meta.get('reasoning')}")
-
-        # Render final verified text answer to the chat interface
-        response_placeholder.markdown(final_answer)
-        
-        # --- PROCESS LIVE CITATIONS (NAME ONLY) ---
-        citations_to_store = []
-        if retrieved_docs:
-            with st.expander("🔗 Verified Grounding Sources"):
-                seen_sources_live = set()
-                display_idx = 1
-                
-                for doc in retrieved_docs:
-                    source_name = doc.get('source', '').strip()
-                    if not source_name:
-                        continue
-                        
-                    if source_name not in seen_sources_live:
-                        seen_sources_live.add(source_name)
-                        st.markdown(f"**[{display_idx}] Source Document:** `{source_name}`")
-                        citations_to_store.append({"source": source_name})
-                        display_idx += 1
-                    else:
-                        citations_to_store.append({"source": source_name})
-
-        # Save Assistant turn to Chat History (including its citation metadata)
-        ai_message_state = AIMessage(content=final_answer)
-        ai_message_state.metadata = {"citations": citations_to_store}
-        st.session_state.chat_history.append(ai_message_state)
-        
-        # Force refresh to update the sidebar telemetry layout smoothly
-        st.rerun()
+st.title("🤖 DeepDive AI — Self-Verifying Research Analyst")
+if workflow == WORKFLOW_VERIFIED:
+    st.subheader("Self-verifying research: every finding is checked claim by claim against cited evidence")
+    st.markdown("---")
+    render_research(domain_id, scope, claims_to_check)
+else:
+    st.subheader("Legacy answer-level workflow")
+    st.info("Fallback mode for testing and rollback: answers here are checked at answer level only, "
+            "not claim by claim, and are never labelled verified.")
+    st.markdown("---")
+    render_legacy()

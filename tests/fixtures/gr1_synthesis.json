@@ -1,0 +1,191 @@
+{
+  "source": "evals/results/20261017_GR1_web_only_results.json (GR1, recorded). Evidence text here is the recorded accepted quote only: the archive stores locators, not full Tavily snippets.",
+  "question": "What are the three biggest growth opportunities and three biggest commercialization risks for India's defence-tech startups through 2030, based on developments and policies available as of October 2026?",
+  "claims": {
+    "C1": {
+      "text": "India’s defence market is projected to grow 48% from $27 billion in 2025 to $40 billion by 2030, with $19 billion of that growth driven by technologies like AI, autonomous systems, and quantum computing.",
+      "type": "forecast"
+    },
+    "C2": {
+      "text": "India's defence budget crossed USD 86.1 billion annually, making it the fifth largest military spender in the world.",
+      "type": "quantity"
+    },
+    "C3": {
+      "text": "The Indian government allocated INR 25,000 crore (USD 2.92 billion) through 2030 to expand its satellite communications and secure data links in the defense market.",
+      "type": "quantity"
+    },
+    "C4": {
+      "text": "The National Critical Mineral Mission has earmarked INR 16,000 crore (USD 1.87 billion) to secure 50 overseas mines for critical minerals in the defense sector.",
+      "type": "quantity"
+    },
+    "C5": {
+      "text": "At least 71% of the funding raised by defence-tech startups in India in the first half of 2025 was driven by drone and anti-drone technologies.",
+      "type": "quantity"
+    },
+    "C6": {
+      "text": "The Indian government introduced the ₹10,372 crore India AI Mission in March 2024 to enhance the country’s AI ecosystem, focused on supporting startups and fostering innovation.",
+      "type": "quantity"
+    },
+    "C7": {
+      "text": "India imports 82% of lithium and 76% of silicon from China, which risks production delays for precision weapons and avionics in the defense sector.",
+      "type": "fact"
+    },
+    "C8": {
+      "text": "Geopolitical tensions in 2026 will challenge corporate strategy, driven by regional instability and technological overheating according to analysis by Angel Saz-Carranza.",
+      "type": "forecast"
+    }
+  },
+  "verifications": {
+    "C1": {
+      "status": "supported",
+      "supporting_evidence_ids": [
+        "E0d392c52"
+      ],
+      "contradicting_evidence_ids": [],
+      "accepted_quotes": {
+        "E0d392c52": "India’s defence market is projected to grow 48% — from $27 Bn in 2025 to $40 Bn by 2030, with $19 Bn of that growth driven by technologies like AI, autonomous systems, and quantum computing."
+      },
+      "rule": "1 independent supporting source(s) >= 1 required",
+      "independent_sources": 1
+    },
+    "C2": {
+      "status": "supported",
+      "supporting_evidence_ids": [
+        "E31b513ff"
+      ],
+      "contradicting_evidence_ids": [],
+      "accepted_quotes": {
+        "E31b513ff": "India is the fifth largest military spender in the world with defence budgets crossing USD 86.1 billion annually."
+      },
+      "rule": "1 independent supporting source(s) >= 1 required",
+      "independent_sources": 1
+    },
+    "C3": {
+      "status": "supported",
+      "supporting_evidence_ids": [
+        "E09216246"
+      ],
+      "contradicting_evidence_ids": [],
+      "accepted_quotes": {
+        "E09216246": "An INR 25,000 crore (USD 2.92 billion) allocation through 2030 underwrites satellite communications, early-warning payloads, and secure data links."
+      },
+      "rule": "1 independent supporting source(s) >= 1 required",
+      "independent_sources": 1
+    },
+    "C4": {
+      "status": "supported",
+      "supporting_evidence_ids": [
+        "Eb124ff71"
+      ],
+      "contradicting_evidence_ids": [],
+      "accepted_quotes": {
+        "Eb124ff71": "The National Critical Mineral Mission earmarks INR 16,000 crore (USD 1.87 billion) to secure 50 overseas mines, yet geopolitical frictions could restrict access."
+      },
+      "rule": "1 independent supporting source(s) >= 1 required",
+      "independent_sources": 1
+    },
+    "C5": {
+      "status": "unresolved",
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "accepted_quotes": {},
+      "rule": "no accepted supporting or contradicting evidence; still insufficient after the final retry round",
+      "independent_sources": 0
+    },
+    "C6": {
+      "status": "supported",
+      "supporting_evidence_ids": [
+        "E8937b448",
+        "E38c90b59"
+      ],
+      "contradicting_evidence_ids": [],
+      "accepted_quotes": {
+        "E8937b448": "The IndiaAI Mission—approved by the Cabinet of India on March 7, 2024—is a nationwide initiative designed to strengthen India’s artificial intelligence capabilities. With a massive budget allocation of ₹10,372 crore, the mission aims to create a complete AI ecosystem that promotes innovation, builds compute infrastructure, supports startups, and encourages responsible use of AI technologies.",
+        "E38c90b59": "In March 2024, Government of India launched IndiaAI mission with outlay of Rs 10,372 Cr for development of the overall AI ecosystem in the country."
+      },
+      "rule": "2 independent supporting source(s) >= 1 required",
+      "independent_sources": 2
+    },
+    "C7": {
+      "status": "supported",
+      "supporting_evidence_ids": [
+        "Eb124ff71"
+      ],
+      "contradicting_evidence_ids": [],
+      "accepted_quotes": {
+        "Eb124ff71": "India imports 82% of lithium and 76% of silicon from China, risking production delays for precision weapons and avionics."
+      },
+      "rule": "1 independent supporting source(s) >= 1 required",
+      "independent_sources": 1
+    },
+    "C8": {
+      "status": "unresolved",
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "accepted_quotes": {},
+      "rule": "no accepted supporting or contradicting evidence; still insufficient after the final retry round",
+      "independent_sources": 0
+    }
+  },
+  "evidence": {
+    "E0d392c52": {
+      "url": "https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd",
+      "quote": "India’s defence market is projected to grow 48% — from $27 Bn in 2025 to $40 Bn by 2030, with $19 Bn of that growth driven by technologies like AI, autonomous systems, and quantum computing."
+    },
+    "E31b513ff": {
+      "url": "https://ipocentral.in/top-defence-tech-startups-in-india",
+      "quote": "India is the fifth largest military spender in the world with defence budgets crossing USD 86.1 billion annually."
+    },
+    "E09216246": {
+      "url": "https://www.mordorintelligence.com/industry-reports/india-defense-market",
+      "quote": "An INR 25,000 crore (USD 2.92 billion) allocation through 2030 underwrites satellite communications, early-warning payloads, and secure data links."
+    },
+    "Eb124ff71": {
+      "url": "https://www.mordorintelligence.com/industry-reports/india-defense-market",
+      "quote": "India imports 82% of lithium and 76% of silicon from China, risking production delays for precision weapons and avionics."
+    },
+    "E8937b448": {
+      "url": "https://synclifecode.com/what-is-indiaai-mission",
+      "quote": "The IndiaAI Mission—approved by the Cabinet of India on March 7, 2024—is a nationwide initiative designed to strengthen India’s artificial intelligence capabilities. With a massive budget allocation of ₹10,372 crore, the mission aims to create a complete AI ecosystem that promotes innovation, builds compute infrastructure, supports startups, and encourages responsible use of AI technologies."
+    },
+    "E38c90b59": {
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2227612&reg=48&lang=2",
+      "quote": "In March 2024, Government of India launched IndiaAI mission with outlay of Rs 10,372 Cr for development of the overall AI ecosystem in the country."
+    }
+  },
+  "recorded_sentences": [
+    {
+      "text": "The three biggest growth opportunities for India's defence-tech startups include a projected growth in the defence market driven by technologies like AI and autonomous systems (C1), government investment in satellite communications (C3), and support for the AI ecosystem through the India AI Mission (C6).",
+      "claim_ids": [
+        "C1",
+        "C3",
+        "C6"
+      ],
+      "origin": "model"
+    },
+    {
+      "text": "The three biggest commercialization risks for these startups involve reliance on imports, as India imports significant quantities of lithium and silicon from China, which could lead to production delays (C7).",
+      "claim_ids": [
+        "C7"
+      ],
+      "origin": "model"
+    },
+    {
+      "text": "Additionally, the defence sector's focus on critical minerals, highlighted by investments for securing mines, may present risks if domestic supply chains are not adequately developed (C4).",
+      "claim_ids": [
+        "C4"
+      ],
+      "origin": "model"
+    }
+  ],
+  "c8_rejected": {
+    "claim_id": "C8",
+    "evidence_id": "E8531eaeb",
+    "stance": "supports",
+    "reason": "negation_mismatch",
+    "quote": "Whether it’s industrial rivalry with China, regulatory divergence with the US, electoral unpredictability, regional instability, or technological overheating, 2026 looks set to challenge corporate agility like never before. [...] In a recent analysis for Forbes, Angel Saz-Carranza, director of the Esade Center for Global Economy and Geopolitics (EsadeGeo), highlighted five geopolitical threats that will influence corporate strategy in the year ahead.",
+    "source": "https://dobetter.esade.edu/en/geopolitical-risks-business-2026",
+    "page": null,
+    "url": "https://dobetter.esade.edu/en/geopolitical-risks-business-2026"
+  }
+}

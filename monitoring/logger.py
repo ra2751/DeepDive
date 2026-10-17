@@ -1,14 +1,15 @@
 import logging
+import os
 from pathlib import Path
 
 """
-This module sets up a logger for the AI Research Assistant application.
+This module sets up the DeepDive AI application logger.
 It configures the logger to write logs to a file in the "logs" directory, 
 with a specific format for log messages.    
 """
 
 # Create a directory for logs if it doesn't exist
-LOG_DIR = Path("logs")
+LOG_DIR = Path(os.getenv("DEEPDIVE_LOG_DIR", "logs"))
 LOG_DIR.mkdir(exist_ok=True)
 
 # Function to set up the logger

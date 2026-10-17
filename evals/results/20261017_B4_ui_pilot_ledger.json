@@ -1,0 +1,84 @@
+{
+  "mesh": 20,
+  "web": 2,
+  "questions": {
+    "B4-Q1": {
+      "usage": {
+        "mesh_chat_calls": 6,
+        "mesh_vision_calls": 0,
+        "mesh_embedding_calls": 4,
+        "mesh_failed_attempts": 0,
+        "mesh_input_tokens": 12691,
+        "mesh_output_tokens": 20904,
+        "web_searches": 2,
+        "web_search_failures": 0,
+        "tool_calls": 18,
+        "retry_rounds": 2,
+        "elapsed_s": 106.099,
+        "mesh_cached_responses": 0,
+        "mesh_cached_input_tokens": 0,
+        "mesh_reasoning_tokens": 13241,
+        "mesh_cost_usd": 0.05360784,
+        "mesh_reported_cost_usd": 0.0,
+        "mesh_estimated_cost_usd": 0.05360784,
+        "cost_basis": "estimated",
+        "cost_estimate_incomplete": true,
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "cost_cap_enforced": true,
+        "web_search_credits_estimated": 2.0
+      },
+      "limits": {
+        "max_llm_calls": 9,
+        "max_embedding_calls": 4,
+        "max_web_searches": 2,
+        "max_tool_calls": 30,
+        "max_retry_rounds": 2,
+        "max_run_seconds": 300.0,
+        "max_mesh_cost_usd": 0.5,
+        "cost_safety_factor": 1.25
+      },
+      "exception": []
+    },
+    "B4-Q2": {
+      "usage": {
+        "mesh_chat_calls": 6,
+        "mesh_vision_calls": 0,
+        "mesh_embedding_calls": 4,
+        "mesh_failed_attempts": 0,
+        "mesh_input_tokens": 10446,
+        "mesh_output_tokens": 17972,
+        "web_searches": 0,
+        "web_search_failures": 0,
+        "tool_calls": 20,
+        "retry_rounds": 2,
+        "elapsed_s": 99.853,
+        "mesh_cached_responses": 0,
+        "mesh_cached_input_tokens": 0,
+        "mesh_reasoning_tokens": 11063,
+        "mesh_cost_usd": 0.0460041,
+        "mesh_reported_cost_usd": 0.0,
+        "mesh_estimated_cost_usd": 0.0460041,
+        "cost_basis": "estimated",
+        "cost_estimate_incomplete": true,
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "cost_cap_enforced": true,
+        "web_search_credits_estimated": null
+      },
+      "limits": {
+        "max_llm_calls": 9,
+        "max_embedding_calls": 4,
+        "max_web_searches": 0,
+        "max_tool_calls": 30,
+        "max_retry_rounds": 2,
+        "max_run_seconds": 300.0,
+        "max_mesh_cost_usd": 0.5,
+        "cost_safety_factor": 1.25
+      },
+      "exception": []
+    }
+  }
+}

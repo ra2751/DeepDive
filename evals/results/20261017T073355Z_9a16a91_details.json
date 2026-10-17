@@ -1,0 +1,2093 @@
+{
+  "L01": {
+    "claims": {
+      "C1": {
+        "text": "The Transformer's encoder is composed of a stack of 6 identical layers.",
+        "type": "fact",
+        "risk": "low",
+        "candidate_evidence": []
+      }
+    },
+    "verifications": {
+      "C1": {
+        "claim_id": "C1",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "E49f7ac79"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "E49f7ac79": "The encoder is composed of a stack of N = 6 identical layers."
+        },
+        "rejected": [],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      }
+    },
+    "evidence_locators": {
+      "E49f7ac79": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 3,
+        "chunk_id": "466305611391922640",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The Transformer's encoder is composed of a stack of 6 identical layers."
+      },
+      "Ef53c4e89": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 26,
+        "chunk_id": "465810100797922373",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The Transformer's encoder is composed of a stack of 6 identical layers."
+      },
+      "E80a51ee4": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 4,
+        "chunk_id": "465810100797922187",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The Transformer's encoder is composed of a stack of 6 identical layers."
+      }
+    },
+    "shown_evidence": {
+      "C1": [
+        "E49f7ac79",
+        "Ef53c4e89",
+        "E80a51ee4"
+      ]
+    },
+    "citations": [
+      {
+        "marker": "C1",
+        "claim_id": "C1",
+        "evidence_id": "E49f7ac79",
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 3,
+        "url": null,
+        "quote": "The encoder is composed of a stack of N = 6 identical layers."
+      }
+    ],
+    "verified_sentences": [
+      {
+        "text": "The Transformer's encoder is composed of a stack of 6 identical layers.",
+        "claim_ids": [
+          "C1"
+        ]
+      }
+    ],
+    "removed_sentences": [],
+    "citation_issues": [],
+    "trace": [
+      {
+        "node": "intake",
+        "agent": "Intake",
+        "result": "accepted",
+        "domain": "general",
+        "domain_version": 1,
+        "source_scope": [
+          "documents"
+        ],
+        "follow_up": false
+      },
+      {
+        "node": "plan",
+        "agent": "Planner",
+        "mode": "fact-check",
+        "sub_questions": 1,
+        "mesh_calls": 0
+      },
+      {
+        "node": "research",
+        "agent": "Researcher",
+        "sub_questions": 1,
+        "evidence": 3,
+        "reused_evidence": 0,
+        "new_evidence": 3,
+        "documents": 3,
+        "web": 0
+      },
+      {
+        "node": "extract",
+        "mode": "fact-check",
+        "claims": 1,
+        "mesh_calls": 0
+      },
+      {
+        "node": "verify",
+        "agent": "Verifier",
+        "round": 0,
+        "claims": 1,
+        "claim_ids": [
+          "C1"
+        ],
+        "verifier_calls": 1,
+        "statuses": {
+          "supported": 1
+        },
+        "rejected_judgments": 0
+      },
+      {
+        "node": "synthesize",
+        "agent": "Synthesizer",
+        "supported_claims": 1,
+        "mode": "model",
+        "sentences": 1
+      },
+      {
+        "node": "cite",
+        "agent": "Citation checker",
+        "kept": 1,
+        "removed": 0,
+        "citations": 1,
+        "integrity_issues": 0
+      },
+      {
+        "node": "report",
+        "agent": "Reporter",
+        "status": "completed",
+        "verified_sentences": 1,
+        "unverified": 0,
+        "human_review": 0,
+        "termination_reason": null,
+        "final_statuses": {
+          "C1": "supported"
+        }
+      }
+    ],
+    "notices": [],
+    "events": [
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 15,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 3e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.8835309579735622,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 2.172
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 2.172
+      },
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 15,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 3e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 1.657623125007376,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 4.734
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 4.734
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 680,
+        "output_tokens": 748,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 454,
+        "cost_usd": 0.002074,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 3.829481875000056,
+        "request_id": "chatcmpl-gemini-1792222328",
+        "error": null,
+        "budget": "eval",
+        "t_s": 8.789
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "openai/gpt-4o-mini",
+        "model_served": "gpt-4o-mini-2024-07-18",
+        "status": "ok",
+        "input_tokens": 251,
+        "output_tokens": 30,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "cost_usd": 5.565e-05,
+        "cost_basis": "estimated",
+        "priced_as": "openai/gpt-4o-mini",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.9858239999739453,
+        "request_id": "chatcmpl-EZtBh5D0HPMbYhvWwhSxcIOS69Zhu",
+        "error": null,
+        "budget": "eval",
+        "t_s": 9.779
+      }
+    ],
+    "plan": {
+      "in_scope": true,
+      "scope_reason": "fact-check mode: user-supplied claims",
+      "sub_questions": [
+        {
+          "id": "Q1",
+          "text": "The Transformer's encoder is composed of a stack of 6 identical layers.",
+          "sources": [
+            "documents"
+          ]
+        }
+      ],
+      "resolved_question": ""
+    },
+    "report_markdown": "# Research report\n**Question:** The Transformer's encoder is composed of a stack of 6 identical layers.\n**Domain:** General enterprise research \u00b7 **Status:** completed\n\n## Verified findings\n- The Transformer's encoder is composed of a stack of 6 identical layers. [C1]\n\n## Evidence\n| Claim | Status | Source | Source quality | Origin | Quote |\n|---|---|---|---|---|---|\n| C1 | supported | AttentionAllYouNeed.pdf, p. 3 | Unverified (0.35) | new | \"The encoder is composed of a stack of N = 6 identical layers.\" |\n\n## Verification limitations\n- Claim statuses come from deterministic rules applied to verifier-model judgments: a quote must be verbatim in the cited passage, contain the claim's numbers, not negate it, and cover its key terms. Deeper semantic support still depends on the verifier model.\n- Source-quality tiers are provisional ranking signals from configurable rules, not probabilities, and never prove that a source supports a claim.\n- Findings are limited to the sources searched in this run; absence of evidence is reported as unresolved, not as false.\n\n---\n*Mesh LLM calls 2/3 \u00b7 embeddings 2/4 \u00b7 web searches 0/0 \u00b7 tools 2/30 \u00b7 retry rounds 0/2 \u00b7 9.8 s/300.0 s \u00b7 \u2248 $0.0021 (estimated, INCOMPLETE: some token types have no configured rate)*\n*Findings are limited to the retrieved sources.*"
+  },
+  "L02": {
+    "claims": {
+      "C1": {
+        "text": "The Transformer relies on recurrent layers in its encoder.",
+        "type": "fact",
+        "risk": "low",
+        "candidate_evidence": []
+      }
+    },
+    "verifications": {
+      "C1": {
+        "claim_id": "C1",
+        "status": "contradicted",
+        "supporting_evidence_ids": [],
+        "contradicting_evidence_ids": [
+          "E49f7ac79"
+        ],
+        "accepted_quotes": {
+          "E49f7ac79": "The Transformer follows this overall architecture using stacked self-attention and point-wise, fully connected layers for both the encoder and decoder"
+        },
+        "rejected": [
+          {
+            "claim_id": "C1",
+            "evidence_id": "E47477232",
+            "stance": "contradicts",
+            "reason": "quote_not_about_claim(overlap=0.20)"
+          },
+          {
+            "claim_id": "C1",
+            "evidence_id": "E220bd42f",
+            "stance": "contradicts",
+            "reason": "quote_not_in_evidence"
+          }
+        ],
+        "independent_sources": 0,
+        "required_sources": 1,
+        "rule": "accepted contradicting evidence, no accepted support",
+        "needs_human_review": false,
+        "round": 0
+      }
+    },
+    "evidence_locators": {
+      "E49f7ac79": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 3,
+        "chunk_id": "466305611391922640",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The Transformer relies on recurrent layers in its encoder."
+      },
+      "E47477232": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 5,
+        "chunk_id": "465810100797922199",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The Transformer relies on recurrent layers in its encoder."
+      },
+      "E220bd42f": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 29,
+        "chunk_id": "465810100797922392",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The Transformer relies on recurrent layers in its encoder."
+      }
+    },
+    "shown_evidence": {
+      "C1": [
+        "E49f7ac79",
+        "E47477232",
+        "E220bd42f"
+      ]
+    },
+    "citations": [],
+    "verified_sentences": [],
+    "removed_sentences": [],
+    "citation_issues": [],
+    "trace": [
+      {
+        "node": "intake",
+        "agent": "Intake",
+        "result": "accepted",
+        "domain": "general",
+        "domain_version": 1,
+        "source_scope": [
+          "documents"
+        ],
+        "follow_up": false
+      },
+      {
+        "node": "plan",
+        "agent": "Planner",
+        "mode": "fact-check",
+        "sub_questions": 1,
+        "mesh_calls": 0
+      },
+      {
+        "node": "research",
+        "agent": "Researcher",
+        "sub_questions": 1,
+        "evidence": 3,
+        "reused_evidence": 0,
+        "new_evidence": 3,
+        "documents": 3,
+        "web": 0
+      },
+      {
+        "node": "extract",
+        "mode": "fact-check",
+        "claims": 1,
+        "mesh_calls": 0
+      },
+      {
+        "node": "verify",
+        "agent": "Verifier",
+        "round": 0,
+        "claims": 1,
+        "claim_ids": [
+          "C1"
+        ],
+        "verifier_calls": 1,
+        "statuses": {
+          "contradicted": 1
+        },
+        "rejected_judgments": 2
+      },
+      {
+        "node": "synthesize",
+        "agent": "Synthesizer",
+        "supported_claims": 0,
+        "mode": "none",
+        "sentences": 0
+      },
+      {
+        "node": "cite",
+        "agent": "Citation checker",
+        "kept": 0,
+        "removed": 0,
+        "citations": 0,
+        "integrity_issues": 0
+      },
+      {
+        "node": "report",
+        "agent": "Reporter",
+        "status": "no_verified_findings",
+        "verified_sentences": 0,
+        "unverified": 1,
+        "human_review": 0,
+        "termination_reason": null,
+        "final_statuses": {
+          "C1": "contradicted"
+        }
+      }
+    ],
+    "notices": [],
+    "events": [
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 10,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 2.0000000000000002e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.5150004170136526,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 0.878
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 0.879
+      },
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 10,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 2.0000000000000002e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.407631375011988,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 1.824
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 1.824
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 660,
+        "output_tokens": 1619,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 1265,
+        "cost_usd": 0.0042455,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 8.082699749968015,
+        "request_id": "chatcmpl-gemini-1792222340",
+        "error": null,
+        "budget": "eval",
+        "t_s": 10.096
+      }
+    ],
+    "plan": {
+      "in_scope": true,
+      "scope_reason": "fact-check mode: user-supplied claims",
+      "sub_questions": [
+        {
+          "id": "Q1",
+          "text": "The Transformer relies on recurrent layers in its encoder.",
+          "sources": [
+            "documents"
+          ]
+        }
+      ],
+      "resolved_question": ""
+    },
+    "report_markdown": "# Research report\n**Question:** The Transformer relies on recurrent layers in its encoder.\n**Domain:** General enterprise research \u00b7 **Status:** no_verified_findings\n\n## Verified findings\nNo claim could be verified.\n\n## Disputed or unverified (excluded from the findings)\n- **C1 \u2014 contradicted:** The Transformer relies on recurrent layers in its encoder.\n  - Contradicted: accepted contradicting evidence and no accepted supporting evidence.\n  - contradicting: AttentionAllYouNeed.pdf, p. 3 \u00b7 Unverified (0.35) \u00b7 \"The Transformer follows this overall architecture using stacked self-attention and point-wise, fully connected layers for both the encoder and decoder\" (E49f7ac79)\n\n## Verification limitations\n- Claim statuses come from deterministic rules applied to verifier-model judgments: a quote must be verbatim in the cited passage, contain the claim's numbers, not negate it, and cover its key terms. Deeper semantic support still depends on the verifier model.\n- Source-quality tiers are provisional ranking signals from configurable rules, not probabilities, and never prove that a source supports a claim.\n- Findings are limited to the sources searched in this run; absence of evidence is reported as unresolved, not as false.\n\n---\n*Mesh LLM calls 1/3 \u00b7 embeddings 2/4 \u00b7 web searches 0/0 \u00b7 tools 2/30 \u00b7 retry rounds 0/2 \u00b7 10.1 s/300.0 s \u00b7 \u2248 $0.0042 (estimated, INCOMPLETE: some token types have no configured rate)*\n*Findings are limited to the retrieved sources.*"
+  },
+  "L08": {
+    "claims": {
+      "C1": {
+        "text": "The Transformer architecture comprises stacked self-attention and point-wise, fully connected layers for both the encoder and decoder.",
+        "type": "definition",
+        "risk": "low",
+        "candidate_evidence": [
+          "E49f7ac79"
+        ]
+      },
+      "C2": {
+        "text": "Each layer of the encoder in the Transformer includes a multi-head self-attention mechanism and a simple position-wise feed-forward network.",
+        "type": "definition",
+        "risk": "low",
+        "candidate_evidence": [
+          "E49f7ac79"
+        ]
+      },
+      "C3": {
+        "text": "The encoder of the Transformer is composed of 6 identical layers.",
+        "type": "quantity",
+        "risk": "low",
+        "candidate_evidence": [
+          "E49f7ac79"
+        ]
+      },
+      "C4": {
+        "text": "The attention mechanism in Transformer models is crucial for concentrating on important pieces of information.",
+        "type": "definition",
+        "risk": "low",
+        "candidate_evidence": [
+          "Ef571a17f"
+        ]
+      },
+      "C5": {
+        "text": "The Transformer uses multi-head attention in three different ways, including encoder-decoder attention layers where queries come from the previous decoder layer.",
+        "type": "definition",
+        "risk": "low",
+        "candidate_evidence": [
+          "Ed7d32295"
+        ]
+      },
+      "C6": {
+        "text": "Positional encodings in the Transformer are typically represented using absolute sinusoidal position encodings.",
+        "type": "definition",
+        "risk": "low",
+        "candidate_evidence": [
+          "E61dd7c5e"
+        ]
+      },
+      "C7": {
+        "text": "The attention mechanism allows every position in the decoder to attend over all positions in the input sequence.",
+        "type": "definition",
+        "risk": "low",
+        "candidate_evidence": [
+          "Ed7d32295"
+        ]
+      },
+      "C8": {
+        "text": "Additional positional information is required in Transformers since the model does not inherently account for order due to the absence of recurrence or convolution.",
+        "type": "definition",
+        "risk": "low",
+        "candidate_evidence": [
+          "E80a51ee4"
+        ]
+      },
+      "C9": {
+        "text": "The decoder in the Transformer includes additional layers such as Masked Multi-Head Attention compared to the encoder, which lacks these layers.",
+        "type": "comparison",
+        "risk": "low",
+        "candidate_evidence": [
+          "Ea08bb613"
+        ]
+      },
+      "C10": {
+        "text": "The outputs of the encoder are utilized as a representation for input sequences in tasks like classification or sequence labeling, which is known as the encoder-only model.",
+        "type": "definition",
+        "risk": "low",
+        "candidate_evidence": [
+          "E0e73ff80"
+        ]
+      },
+      "C11": {
+        "text": "The decoder-only model is primarily used for sequence generation tasks like language modeling.",
+        "type": "definition",
+        "risk": "low",
+        "candidate_evidence": [
+          "E0e73ff80"
+        ]
+      },
+      "C12": {
+        "text": "The layer normalization operation is applied in every encoder block in the Transformer architecture.",
+        "type": "definition",
+        "risk": "low",
+        "candidate_evidence": [
+          "E80a51ee4"
+        ]
+      },
+      "C13": {
+        "text": "The Decoder outputs are also caught by Linear and SoftMax layers to compute the final output of the Transformer architecture.",
+        "type": "definition",
+        "risk": "low",
+        "candidate_evidence": [
+          "Ec0b92691"
+        ]
+      },
+      "C14": {
+        "text": "Each encoder layer in the Transformer has a residual connection applied to its outputs to help with gradient computation.",
+        "type": "definition",
+        "risk": "low",
+        "candidate_evidence": [
+          "Ea08bb613"
+        ]
+      },
+      "C15": {
+        "text": "The encoder utilizes the outputs for various tasks, including sequence labeling and classification.",
+        "type": "definition",
+        "risk": "low",
+        "candidate_evidence": [
+          "E0e73ff80"
+        ]
+      }
+    },
+    "verifications": {
+      "C1": {
+        "claim_id": "C1",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "E49f7ac79"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "E49f7ac79": "The Transformer follows this overall architecture using stacked self-attention and point-wise, fully connected layers for both the encoder and decoder, shown in the left and right halves of Figure 1, respectively."
+        },
+        "rejected": [],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      },
+      "C2": {
+        "claim_id": "C2",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "E49f7ac79"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "E49f7ac79": "Each layer has two sub-layers. The first is a multi-head self-attention mechanism, and the second is a simple, position-"
+        },
+        "rejected": [],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      },
+      "C3": {
+        "claim_id": "C3",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "E49f7ac79"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "E49f7ac79": "The encoder is composed of a stack of N = 6 identical layers."
+        },
+        "rejected": [],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      },
+      "C4": {
+        "claim_id": "C4",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "Ef571a17f"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "Ef571a17f": "The attention mechanism has garnered significant recognition since its introduction in the 1990s, owing to its ability to concentrate on critical pieces of information."
+        },
+        "rejected": [],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      },
+      "C5": {
+        "claim_id": "C5",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "Ed7d32295"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "Ed7d32295": "The Transformer uses multi-head attention in three different ways: \u2022 In \"encoder-decoder attention\" layers, the queries come from the previous decoder layer, and the memory keys and values come from the output of the encoder."
+        },
+        "rejected": [],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      },
+      "C6": {
+        "claim_id": "C6",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "E61dd7c5e",
+          "Ea8211581"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "E61dd7c5e": "In vanilla Transformer [137], positional information is encoded as absolute sinusoidal position encodings.",
+          "Ea8211581": "encoded as absolute sinusoidal position encodings."
+        },
+        "rejected": [],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      },
+      "C7": {
+        "claim_id": "C7",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "Ed7d32295"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "Ed7d32295": "This allows every position in the decoder to attend over all positions in the input sequence."
+        },
+        "rejected": [],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      },
+      "C8": {
+        "claim_id": "C8",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "E80a51ee4"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "E80a51ee4": "Since Transformer doesn\u2019t introduce recurrence or convolution, it is ignorant of positional information (especially for the encoder). Thus additional positional representation"
+        },
+        "rejected": [
+          {
+            "claim_id": "C8",
+            "evidence_id": "E61dd7c5e",
+            "stance": "supports",
+            "reason": "negation_mismatch"
+          },
+          {
+            "claim_id": "C8",
+            "evidence_id": "E82737535",
+            "stance": "supports",
+            "reason": "negation_mismatch"
+          }
+        ],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      },
+      "C9": {
+        "claim_id": "C9",
+        "status": "unresolved",
+        "supporting_evidence_ids": [],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {},
+        "rejected": [
+          {
+            "claim_id": "C9",
+            "evidence_id": "Ed0e59586",
+            "stance": "supports",
+            "reason": "negation_mismatch"
+          },
+          {
+            "claim_id": "C9",
+            "evidence_id": "Ea08bb613",
+            "stance": "supports",
+            "reason": "negation_mismatch"
+          }
+        ],
+        "independent_sources": 0,
+        "required_sources": 1,
+        "rule": "no accepted supporting or contradicting evidence; still insufficient after the final retry round",
+        "needs_human_review": false,
+        "round": 1
+      },
+      "C10": {
+        "claim_id": "C10",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "E0e73ff80"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "E0e73ff80": "Only the encoder is used and the outputs of the encoder are utilized as a representation for the input sequence. This is usually used for classification or sequence labeling problems."
+        },
+        "rejected": [],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      },
+      "C11": {
+        "claim_id": "C11",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "E0e73ff80"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "E0e73ff80": "This is typically used for sequence generation, such as language modeling."
+        },
+        "rejected": [],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      },
+      "C12": {
+        "claim_id": "C12",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "E80a51ee4"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "E80a51ee4": "each Transformer encoder block may be written as H\u2032 = LayerNorm(SelfAttention(X) + X) (5) H = LayerNorm(FFN(H\u2032) + H\u2032),"
+        },
+        "rejected": [
+          {
+            "claim_id": "C12",
+            "evidence_id": "Ee0d98838",
+            "stance": "supports",
+            "reason": "quote_not_about_claim(overlap=0.33)"
+          },
+          {
+            "claim_id": "C12",
+            "evidence_id": "Eb37a2065",
+            "stance": "supports",
+            "reason": "quote_not_about_claim(overlap=0.11)"
+          }
+        ],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      },
+      "C13": {
+        "claim_id": "C13",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "Ec0b92691"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "Ec0b92691": "The generated decoding result is then caught by Linear and SoftMax layers at the top of the Decoder to compute the final output of the transformer architecture."
+        },
+        "rejected": [],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      },
+      "C14": {
+        "claim_id": "C14",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "Ea08bb613",
+          "E276321ca"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "Ea08bb613": "To address the issue of vanishing gradients, the Residual Connection is applied to every output of both the attention and feed-forward layers, as illustrated in Figure 2.",
+          "E276321ca": "In order to build a deep model, Transformer employs a residual connection [49] around each module, followed by Layer Normalization [4]. For instance, each Transformer encoder block may be written as H\u2032 = LayerNorm(SelfAttention(X) + X)"
+        },
+        "rejected": [],
+        "independent_sources": 2,
+        "required_sources": 1,
+        "rule": "2 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      },
+      "C15": {
+        "claim_id": "C15",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "E0e73ff80"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "E0e73ff80": "Encoder only. Only the encoder is used and the outputs of the encoder are utilized as a representation for the input sequence. This is usually used for classification or sequence labeling problems."
+        },
+        "rejected": [
+          {
+            "claim_id": "C15",
+            "evidence_id": "Ee6c3353c",
+            "stance": "supports",
+            "reason": "quote_not_about_claim(overlap=0.11)"
+          }
+        ],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      }
+    },
+    "evidence_locators": {
+      "E49f7ac79": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 3,
+        "chunk_id": "466305611391922640",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "What are the key layers in the Transformer architecture?"
+      },
+      "E0892a875": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 30,
+        "chunk_id": "465810100797922411",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "What are the key layers in the Transformer architecture?"
+      },
+      "Ec0b92691": {
+        "source": "Trasformer_Application.pdf",
+        "page": 5,
+        "chunk_id": "465810100797922574",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "What are the key layers in the Transformer architecture?"
+      },
+      "Ef571a17f": {
+        "source": "Trasformer_Application.pdf",
+        "page": 3,
+        "chunk_id": "465810100797922559",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "How does the attention mechanism function within the Transformer model?"
+      },
+      "Ed7d32295": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 5,
+        "chunk_id": "466305611391922654",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "How does the attention mechanism function within the Transformer model?"
+      },
+      "E38fb183b": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 38,
+        "chunk_id": "465810100797922507",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "How does the attention mechanism function within the Transformer model?"
+      },
+      "E61dd7c5e": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 20,
+        "chunk_id": "465810100797922320",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "What role do positional encodings play in the Transformer architecture?"
+      },
+      "Ec2a1780d": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 22,
+        "chunk_id": "465810100797922340",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "What role do positional encodings play in the Transformer architecture?"
+      },
+      "E80a51ee4": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 4,
+        "chunk_id": "465810100797922187",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "What role do positional encodings play in the Transformer architecture?"
+      },
+      "E0e73ff80": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 4,
+        "chunk_id": "465810100797922189",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "What are the differences between the encoder and decoder components of the Transformer?"
+      },
+      "Ea08bb613": {
+        "source": "Trasformer_Application.pdf",
+        "page": 5,
+        "chunk_id": "465810100797922572",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "What are the differences between the encoder and decoder components of the Transformer?"
+      },
+      "Ec5c08138": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 2,
+        "chunk_id": "465810100797922177",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C2"
+      },
+      "E82737535": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 20,
+        "chunk_id": "465810100797922319",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C2"
+      },
+      "Ef194053a": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 3,
+        "chunk_id": "466305611391922642",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C3"
+      },
+      "E195dc3a6": {
+        "source": "Trasformer_Application.pdf",
+        "page": 4,
+        "chunk_id": "465810100797922569",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C5"
+      },
+      "E941a198d": {
+        "source": "Trasformer_Application.pdf",
+        "page": 3,
+        "chunk_id": "465810100797922557",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C5"
+      },
+      "Ea8211581": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 20,
+        "chunk_id": "465810100797922321",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C6"
+      },
+      "Ed44bfbfb": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 21,
+        "chunk_id": "465810100797922330",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C6"
+      },
+      "E40c17afe": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 5,
+        "chunk_id": "466305611391922655",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C7"
+      },
+      "E5404cf50": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 21,
+        "chunk_id": "465810100797922329",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C8"
+      },
+      "Ed0e59586": {
+        "source": "Trasformer_Application.pdf",
+        "page": 5,
+        "chunk_id": "465810100797922573",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C9"
+      },
+      "E13065d05": {
+        "source": "Trasformer_Application.pdf",
+        "page": 40,
+        "chunk_id": "465810100797922903",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C10"
+      },
+      "E2d64b3cb": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 2,
+        "chunk_id": "466305611391922639",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C10"
+      },
+      "E5b40c62f": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 2,
+        "chunk_id": "466305611391922629",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C11"
+      },
+      "E78aec259": {
+        "source": "MultiModel_Transformaers.pdf",
+        "page": 14,
+        "chunk_id": "465810100797923323",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C11"
+      },
+      "Ee0d98838": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 23,
+        "chunk_id": "465810100797922342",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C12"
+      },
+      "Eb37a2065": {
+        "source": "MultiModel_Transformaers.pdf",
+        "page": 4,
+        "chunk_id": "465810100797923180",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C12"
+      },
+      "Efb73f2a7": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 27,
+        "chunk_id": "465810100797922379",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C14"
+      },
+      "E276321ca": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 4,
+        "chunk_id": "465810100797922186",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C14"
+      },
+      "Ee6c3353c": {
+        "source": "Trasformer_Application.pdf",
+        "page": 34,
+        "chunk_id": "465810100797922841",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C15"
+      },
+      "E88b4dff5": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 27,
+        "chunk_id": "465810100797922378",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "retry1:C9"
+      }
+    },
+    "shown_evidence": {
+      "C1": [
+        "E49f7ac79",
+        "Ed7d32295",
+        "Ea08bb613"
+      ],
+      "C2": [
+        "E49f7ac79",
+        "Ec5c08138",
+        "Ed7d32295",
+        "E82737535"
+      ],
+      "C3": [
+        "E49f7ac79",
+        "E80a51ee4",
+        "Ef194053a"
+      ],
+      "C4": [
+        "Ef571a17f",
+        "Ed7d32295",
+        "E38fb183b"
+      ],
+      "C5": [
+        "Ed7d32295",
+        "E195dc3a6",
+        "E941a198d"
+      ],
+      "C6": [
+        "E61dd7c5e",
+        "Ea8211581",
+        "Ed44bfbfb"
+      ],
+      "C7": [
+        "Ed7d32295",
+        "E40c17afe",
+        "Ef571a17f",
+        "Ec2a1780d"
+      ],
+      "C8": [
+        "E80a51ee4",
+        "E61dd7c5e",
+        "E82737535",
+        "E5404cf50"
+      ],
+      "C9": [
+        "Ea08bb613",
+        "Ed7d32295",
+        "Ed0e59586",
+        "Ec2a1780d",
+        "E88b4dff5"
+      ],
+      "C10": [
+        "E0e73ff80",
+        "E13065d05",
+        "E2d64b3cb"
+      ],
+      "C11": [
+        "E0e73ff80",
+        "E5b40c62f",
+        "E78aec259"
+      ],
+      "C12": [
+        "E80a51ee4",
+        "Ee0d98838",
+        "Ea08bb613",
+        "Eb37a2065"
+      ],
+      "C13": [
+        "Ec0b92691",
+        "Ed0e59586",
+        "Ea08bb613"
+      ],
+      "C14": [
+        "Ea08bb613",
+        "Efb73f2a7",
+        "E276321ca"
+      ],
+      "C15": [
+        "E0e73ff80",
+        "Ee6c3353c",
+        "E40c17afe"
+      ]
+    },
+    "citations": [
+      {
+        "marker": "C1",
+        "claim_id": "C1",
+        "evidence_id": "E49f7ac79",
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 3,
+        "url": null,
+        "quote": "The Transformer follows this overall architecture using stacked self-attention and point-wise, fully connected layers for both the encoder and decoder, shown in the left and right halves of Figure 1, respectively."
+      },
+      {
+        "marker": "C2",
+        "claim_id": "C2",
+        "evidence_id": "E49f7ac79",
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 3,
+        "url": null,
+        "quote": "Each layer has two sub-layers. The first is a multi-head self-attention mechanism, and the second is a simple, position-"
+      },
+      {
+        "marker": "C3",
+        "claim_id": "C3",
+        "evidence_id": "E49f7ac79",
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 3,
+        "url": null,
+        "quote": "The encoder is composed of a stack of N = 6 identical layers."
+      },
+      {
+        "marker": "C4",
+        "claim_id": "C4",
+        "evidence_id": "Ef571a17f",
+        "source": "Trasformer_Application.pdf",
+        "page": 3,
+        "url": null,
+        "quote": "The attention mechanism has garnered significant recognition since its introduction in the 1990s, owing to its ability to concentrate on critical pieces of information."
+      },
+      {
+        "marker": "C5",
+        "claim_id": "C5",
+        "evidence_id": "Ed7d32295",
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 5,
+        "url": null,
+        "quote": "The Transformer uses multi-head attention in three different ways: \u2022 In \"encoder-decoder attention\" layers, the queries come from the previous decoder layer, and the memory keys and values come from the output of the encoder."
+      },
+      {
+        "marker": "C6",
+        "claim_id": "C6",
+        "evidence_id": "E61dd7c5e",
+        "source": "Trasformer_Survey.pdf",
+        "page": 20,
+        "url": null,
+        "quote": "In vanilla Transformer [137], positional information is encoded as absolute sinusoidal position encodings."
+      },
+      {
+        "marker": "C6",
+        "claim_id": "C6",
+        "evidence_id": "Ea8211581",
+        "source": "Trasformer_Survey.pdf",
+        "page": 20,
+        "url": null,
+        "quote": "encoded as absolute sinusoidal position encodings."
+      },
+      {
+        "marker": "C7",
+        "claim_id": "C7",
+        "evidence_id": "Ed7d32295",
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 5,
+        "url": null,
+        "quote": "This allows every position in the decoder to attend over all positions in the input sequence."
+      },
+      {
+        "marker": "C8",
+        "claim_id": "C8",
+        "evidence_id": "E80a51ee4",
+        "source": "Trasformer_Survey.pdf",
+        "page": 4,
+        "url": null,
+        "quote": "Since Transformer doesn\u2019t introduce recurrence or convolution, it is ignorant of positional information (especially for the encoder). Thus additional positional representation"
+      },
+      {
+        "marker": "C10",
+        "claim_id": "C10",
+        "evidence_id": "E0e73ff80",
+        "source": "Trasformer_Survey.pdf",
+        "page": 4,
+        "url": null,
+        "quote": "Only the encoder is used and the outputs of the encoder are utilized as a representation for the input sequence. This is usually used for classification or sequence labeling problems."
+      },
+      {
+        "marker": "C11",
+        "claim_id": "C11",
+        "evidence_id": "E0e73ff80",
+        "source": "Trasformer_Survey.pdf",
+        "page": 4,
+        "url": null,
+        "quote": "This is typically used for sequence generation, such as language modeling."
+      },
+      {
+        "marker": "C12",
+        "claim_id": "C12",
+        "evidence_id": "E80a51ee4",
+        "source": "Trasformer_Survey.pdf",
+        "page": 4,
+        "url": null,
+        "quote": "each Transformer encoder block may be written as H\u2032 = LayerNorm(SelfAttention(X) + X) (5) H = LayerNorm(FFN(H\u2032) + H\u2032),"
+      },
+      {
+        "marker": "C13",
+        "claim_id": "C13",
+        "evidence_id": "Ec0b92691",
+        "source": "Trasformer_Application.pdf",
+        "page": 5,
+        "url": null,
+        "quote": "The generated decoding result is then caught by Linear and SoftMax layers at the top of the Decoder to compute the final output of the transformer architecture."
+      },
+      {
+        "marker": "C14",
+        "claim_id": "C14",
+        "evidence_id": "Ea08bb613",
+        "source": "Trasformer_Application.pdf",
+        "page": 5,
+        "url": null,
+        "quote": "To address the issue of vanishing gradients, the Residual Connection is applied to every output of both the attention and feed-forward layers, as illustrated in Figure 2."
+      },
+      {
+        "marker": "C14",
+        "claim_id": "C14",
+        "evidence_id": "E276321ca",
+        "source": "Trasformer_Survey.pdf",
+        "page": 4,
+        "url": null,
+        "quote": "In order to build a deep model, Transformer employs a residual connection [49] around each module, followed by Layer Normalization [4]. For instance, each Transformer encoder block may be written as H\u2032 = LayerNorm(SelfAttention(X) + X)"
+      },
+      {
+        "marker": "C15",
+        "claim_id": "C15",
+        "evidence_id": "E0e73ff80",
+        "source": "Trasformer_Survey.pdf",
+        "page": 4,
+        "url": null,
+        "quote": "Encoder only. Only the encoder is used and the outputs of the encoder are utilized as a representation for the input sequence. This is usually used for classification or sequence labeling problems."
+      }
+    ],
+    "verified_sentences": [],
+    "removed_sentences": [
+      {
+        "text": "The Transformer architecture comprises stacked self-attention and point-wise, fully connected layers for both the encoder and decoder (C1).",
+        "claim_ids": [
+          "C1"
+        ],
+        "reason": "sentence_numbers_not_in_cited_claims:1"
+      },
+      {
+        "text": "Each layer of the encoder in the Transformer includes a multi-head self-attention mechanism and a simple position-wise feed-forward network (C2).",
+        "claim_ids": [
+          "C2"
+        ],
+        "reason": "sentence_numbers_not_in_cited_claims:2"
+      },
+      {
+        "text": "The encoder of the Transformer is composed of 6 identical layers (C3).",
+        "claim_ids": [
+          "C3"
+        ],
+        "reason": "sentence_numbers_not_in_cited_claims:3"
+      },
+      {
+        "text": "The attention mechanism in Transformer models is crucial for concentrating on important pieces of information (C4).",
+        "claim_ids": [
+          "C4"
+        ],
+        "reason": "sentence_numbers_not_in_cited_claims:4"
+      },
+      {
+        "text": "The Transformer uses multi-head attention in three different ways, including encoder-decoder attention layers where queries come from the previous decoder layer (C5).",
+        "claim_ids": [
+          "C5"
+        ],
+        "reason": "sentence_numbers_not_in_cited_claims:5"
+      },
+      {
+        "text": "Positional encodings in the Transformer are typically represented using absolute sinusoidal position encodings (C6).",
+        "claim_ids": [
+          "C6"
+        ],
+        "reason": "sentence_numbers_not_in_cited_claims:6"
+      },
+      {
+        "text": "The attention mechanism allows every position in the decoder to attend over all positions in the input sequence (C7).",
+        "claim_ids": [
+          "C7"
+        ],
+        "reason": "sentence_numbers_not_in_cited_claims:7"
+      },
+      {
+        "text": "Additional positional information is required in Transformers since the model does not inherently account for order due to the absence of recurrence or convolution (C8).",
+        "claim_ids": [
+          "C8"
+        ],
+        "reason": "sentence_numbers_not_in_cited_claims:8"
+      },
+      {
+        "text": "The outputs of the encoder are utilized as a representation for input sequences in tasks like classification or sequence labeling (C10).",
+        "claim_ids": [
+          "C10"
+        ],
+        "reason": "sentence_numbers_not_in_cited_claims:10"
+      },
+      {
+        "text": "The decoder outputs are also caught by Linear and SoftMax layers to compute the final output of the Transformer architecture (C13).",
+        "claim_ids": [
+          "C13"
+        ],
+        "reason": "sentence_numbers_not_in_cited_claims:13"
+      },
+      {
+        "text": "Each encoder layer in the Transformer has a residual connection applied to its outputs to help with gradient computation (C14).",
+        "claim_ids": [
+          "C14"
+        ],
+        "reason": "sentence_numbers_not_in_cited_claims:14"
+      }
+    ],
+    "citation_issues": [],
+    "trace": [
+      {
+        "node": "intake",
+        "agent": "Intake",
+        "result": "accepted",
+        "domain": "general",
+        "domain_version": 1,
+        "source_scope": [
+          "documents"
+        ],
+        "follow_up": false
+      },
+      {
+        "node": "plan",
+        "agent": "Planner",
+        "sub_questions": 4,
+        "resolved_question": null
+      },
+      {
+        "node": "research",
+        "agent": "Researcher",
+        "sub_questions": 4,
+        "evidence": 11,
+        "reused_evidence": 0,
+        "new_evidence": 11,
+        "documents": 11,
+        "web": 0
+      },
+      {
+        "node": "extract",
+        "agent": "Claim extractor",
+        "claims": 15,
+        "dropped": 0
+      },
+      {
+        "node": "verify",
+        "agent": "Verifier",
+        "round": 0,
+        "claims": 15,
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C9",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15"
+        ],
+        "verifier_calls": 3,
+        "statuses": {
+          "supported": 14,
+          "insufficient_evidence": 1
+        },
+        "rejected_judgments": 7
+      },
+      {
+        "node": "retry",
+        "agent": "Targeted retry (researcher)",
+        "round": 1,
+        "targeted_claims": [
+          "C9"
+        ],
+        "new_evidence": 2,
+        "claims_with_new_evidence": [
+          "C9"
+        ],
+        "new_evidence_ids": {
+          "C9": [
+            "Ec2a1780d",
+            "E88b4dff5"
+          ]
+        }
+      },
+      {
+        "node": "verify",
+        "agent": "Verifier",
+        "round": 1,
+        "claims": 1,
+        "claim_ids": [
+          "C9"
+        ],
+        "verifier_calls": 1,
+        "statuses": {
+          "insufficient_evidence": 1
+        },
+        "rejected_judgments": 2
+      },
+      {
+        "node": "retry",
+        "agent": "Targeted retry (researcher)",
+        "round": 2,
+        "targeted_claims": [
+          "C9"
+        ],
+        "new_evidence": 0,
+        "claims_with_new_evidence": [],
+        "new_evidence_ids": {}
+      },
+      {
+        "node": "synthesize",
+        "agent": "Synthesizer",
+        "supported_claims": 14,
+        "mode": "model",
+        "sentences": 11
+      },
+      {
+        "node": "cite",
+        "agent": "Citation checker",
+        "kept": 0,
+        "removed": 11,
+        "citations": 16,
+        "integrity_issues": 0
+      },
+      {
+        "node": "report",
+        "agent": "Reporter",
+        "status": "no_verified_findings",
+        "verified_sentences": 0,
+        "unverified": 1,
+        "human_review": 0,
+        "termination_reason": null,
+        "final_statuses": {
+          "C1": "supported",
+          "C2": "supported",
+          "C3": "supported",
+          "C4": "supported",
+          "C5": "supported",
+          "C6": "supported",
+          "C7": "supported",
+          "C8": "supported",
+          "C9": "unresolved",
+          "C10": "supported",
+          "C11": "supported",
+          "C12": "supported",
+          "C13": "supported",
+          "C14": "supported",
+          "C15": "supported"
+        }
+      }
+    ],
+    "notices": [],
+    "events": [
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "openai/gpt-4o-mini",
+        "model_served": "gpt-4o-mini-2024-07-18",
+        "status": "ok",
+        "input_tokens": 314,
+        "output_tokens": 101,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.00010769999999999999,
+        "cost_basis": "estimated",
+        "priced_as": "openai/gpt-4o-mini",
+        "cost_incomplete_reasons": null,
+        "latency_s": 1.6460625829640776,
+        "request_id": "chatcmpl-EZtBs1YH0EvGBdz9EWrUNw642694g",
+        "error": null,
+        "budget": "eval",
+        "t_s": 1.65
+      },
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 47,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 9.400000000000001e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.9486563330283388,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 2.954
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 2.955
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 3.16
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 3.343
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 3.526
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "openai/gpt-4o-mini",
+        "model_served": "gpt-4o-mini-2024-07-18",
+        "status": "ok",
+        "input_tokens": 1655,
+        "output_tokens": 680,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.00065625,
+        "cost_basis": "estimated",
+        "priced_as": "openai/gpt-4o-mini",
+        "cost_incomplete_reasons": null,
+        "latency_s": 6.110282832989469,
+        "request_id": "chatcmpl-EZtBwfRgtpckqVtwtQhtO1jpZpA9H",
+        "error": null,
+        "budget": "eval",
+        "t_s": 9.823
+      },
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 307,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 6.1400000000000005e-06,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 1.1983167909784243,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 11.377
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 11.377
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 11.564
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 11.76
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 11.941
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 12.127
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 12.31
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 12.489
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 12.667
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 12.848
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 13.029
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 13.212
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 13.394
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 13.574
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 13.757
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 13.938
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 1934,
+        "output_tokens": 5657,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 3600,
+        "cost_usd": 0.0147227,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 20.876714750018436,
+        "request_id": "chatcmpl-gemini-1792222375",
+        "error": null,
+        "budget": "eval",
+        "t_s": 35.032
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 2601,
+        "output_tokens": 3854,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 1883,
+        "cost_usd": 0.010415299999999999,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 15.439653957961127,
+        "request_id": "chatcmpl-gemini-1792222390",
+        "error": null,
+        "budget": "eval",
+        "t_s": 50.487
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 2538,
+        "output_tokens": 3525,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 1260,
+        "cost_usd": 0.0095739,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 14.591926541004796,
+        "request_id": "chatcmpl-gemini-1792222405",
+        "error": null,
+        "budget": "eval",
+        "t_s": 65.093
+      },
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 26,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 5.2e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.6515796660096385,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 66.807
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 66.807
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 975,
+        "output_tokens": 2549,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 1987,
+        "cost_usd": 0.006665,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 11.912678332999349,
+        "request_id": "chatcmpl-gemini-1792222419",
+        "error": null,
+        "budget": "eval",
+        "t_s": 78.913
+      },
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 26,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 5.2e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.4123018339741975,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 79.712
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 79.712
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "openai/gpt-4o-mini",
+        "model_served": "gpt-4o-mini-2024-07-18",
+        "status": "ok",
+        "input_tokens": 558,
+        "output_tokens": 376,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.00030930000000000004,
+        "cost_basis": "estimated",
+        "priced_as": "openai/gpt-4o-mini",
+        "cost_incomplete_reasons": null,
+        "latency_s": 3.8803345000487752,
+        "request_id": "chatcmpl-EZtDAuH4MlCvMUas9NpVhYkAFZYjY",
+        "error": null,
+        "budget": "eval",
+        "t_s": 83.789
+      }
+    ],
+    "plan": {
+      "in_scope": true,
+      "scope_reason": "The question seeks information about the Transformer architecture, which is a well-documented topic in research literature and public sources.",
+      "sub_questions": [
+        {
+          "id": "Q1",
+          "text": "What are the key layers in the Transformer architecture?",
+          "sources": [
+            "documents"
+          ]
+        },
+        {
+          "id": "Q2",
+          "text": "How does the attention mechanism function within the Transformer model?",
+          "sources": [
+            "documents"
+          ]
+        },
+        {
+          "id": "Q3",
+          "text": "What role do positional encodings play in the Transformer architecture?",
+          "sources": [
+            "documents"
+          ]
+        },
+        {
+          "id": "Q4",
+          "text": "What are the differences between the encoder and decoder components of the Transformer?",
+          "sources": [
+            "documents"
+          ]
+        }
+      ],
+      "resolved_question": ""
+    },
+    "report_markdown": "# Research report\n**Question:** According to the attached paper, what are the main components of the Transformer architecture?\n**Domain:** General enterprise research \u00b7 **Status:** no_verified_findings\n\n## Verified findings\nNo claim could be verified.\n\n## Evidence\n| Claim | Status | Source | Source quality | Origin | Quote |\n|---|---|---|---|---|---|\n| C1 | supported | AttentionAllYouNeed.pdf, p. 3 | Unverified (0.35) | new | \"The Transformer follows this overall architecture using stacked self-attention and point-wise, fully connected layers for both the encoder and decoder, shown in the left and right halves of Figure 1, respectively.\" |\n| C2 | supported | AttentionAllYouNeed.pdf, p. 3 | Unverified (0.35) | new | \"Each layer has two sub-layers. The first is a multi-head self-attention mechanism, and the second is a simple, position-\" |\n| C3 | supported | AttentionAllYouNeed.pdf, p. 3 | Unverified (0.35) | new | \"The encoder is composed of a stack of N = 6 identical layers.\" |\n| C4 | supported | Trasformer_Application.pdf, p. 3 | Unverified (0.35) | new | \"The attention mechanism has garnered significant recognition since its introduction in the 1990s, owing to its ability to concentrate on critical pieces of information.\" |\n| C5 | supported | AttentionAllYouNeed.pdf, p. 5 | Unverified (0.35) | new | \"The Transformer uses multi-head attention in three different ways: \u2022 In \"encoder-decoder attention\" layers, the queries come from the previous decoder layer, and the memory keys and values come from the output of the encoder.\" |\n| C6 | supported | Trasformer_Survey.pdf, p. 20 | Unverified (0.35) | new | \"In vanilla Transformer [137], positional information is encoded as absolute sinusoidal position encodings.\" |\n| C6 | supported | Trasformer_Survey.pdf, p. 20 | Unverified (0.35) | new | \"encoded as absolute sinusoidal position encodings.\" |\n| C7 | supported | AttentionAllYouNeed.pdf, p. 5 | Unverified (0.35) | new | \"This allows every position in the decoder to attend over all positions in the input sequence.\" |\n| C8 | supported | Trasformer_Survey.pdf, p. 4 | Unverified (0.35) | new | \"Since Transformer doesn\u2019t introduce recurrence or convolution, it is ignorant of positional information (especially for the encoder). Thus additional positional representation\" |\n| C10 | supported | Trasformer_Survey.pdf, p. 4 | Unverified (0.35) | new | \"Only the encoder is used and the outputs of the encoder are utilized as a representation for the input sequence. This is usually used for classification or sequence labeling problems.\" |\n| C11 | supported | Trasformer_Survey.pdf, p. 4 | Unverified (0.35) | new | \"This is typically used for sequence generation, such as language modeling.\" |\n| C12 | supported | Trasformer_Survey.pdf, p. 4 | Unverified (0.35) | new | \"each Transformer encoder block may be written as H\u2032 = LayerNorm(SelfAttention(X) + X) (5) H = LayerNorm(FFN(H\u2032) + H\u2032),\" |\n| C13 | supported | Trasformer_Application.pdf, p. 5 | Unverified (0.35) | new | \"The generated decoding result is then caught by Linear and SoftMax layers at the top of the Decoder to compute the final output of the transformer architecture.\" |\n| C14 | supported | Trasformer_Application.pdf, p. 5 | Unverified (0.35) | new | \"To address the issue of vanishing gradients, the Residual Connection is applied to every output of both the attention and feed-forward layers, as illustrated in Figure 2.\" |\n| C14 | supported | Trasformer_Survey.pdf, p. 4 | Unverified (0.35) | new | \"In order to build a deep model, Transformer employs a residual connection [49] around each module, followed by Layer Normalization [4]. For instance, each Transformer encoder block may be written as H\u2032 = LayerNorm(SelfAttention(X) + X)\" |\n| C15 | supported | Trasformer_Survey.pdf, p. 4 | Unverified (0.35) | new | \"Encoder only. Only the encoder is used and the outputs of the encoder are utilized as a representation for the input sequence. This is usually used for classification or sequence labeling problems.\" |\n\n## Disputed or unverified (excluded from the findings)\n- **C9 \u2014 unresolved:** The decoder in the Transformer includes additional layers such as Masked Multi-Head Attention compared to the encoder, which lacks these layers.\n  - Unresolved: not enough accepted evidence (no accepted supporting or contradicting evidence; still insufficient after the final retry round).\n\n## Removed by citation check\n- \"The Transformer architecture comprises stacked self-attention and point-wise, fully connected layers for both the encoder and decoder (C1).\" (sentence_numbers_not_in_cited_claims:1)\n- \"Each layer of the encoder in the Transformer includes a multi-head self-attention mechanism and a simple position-wise feed-forward network (C2).\" (sentence_numbers_not_in_cited_claims:2)\n- \"The encoder of the Transformer is composed of 6 identical layers (C3).\" (sentence_numbers_not_in_cited_claims:3)\n- \"The attention mechanism in Transformer models is crucial for concentrating on important pieces of information (C4).\" (sentence_numbers_not_in_cited_claims:4)\n- \"The Transformer uses multi-head attention in three different ways, including encoder-decoder attention layers where queries come from the previous decoder layer (C5).\" (sentence_numbers_not_in_cited_claims:5)\n- \"Positional encodings in the Transformer are typically represented using absolute sinusoidal position encodings (C6).\" (sentence_numbers_not_in_cited_claims:6)\n- \"The attention mechanism allows every position in the decoder to attend over all positions in the input sequence (C7).\" (sentence_numbers_not_in_cited_claims:7)\n- \"Additional positional information is required in Transformers since the model does not inherently account for order due to the absence of recurrence or convolution (C8).\" (sentence_numbers_not_in_cited_claims:8)\n- \"The outputs of the encoder are utilized as a representation for input sequences in tasks like classification or sequence labeling (C10).\" (sentence_numbers_not_in_cited_claims:10)\n- \"The decoder outputs are also caught by Linear and SoftMax layers to compute the final output of the Transformer architecture (C13).\" (sentence_numbers_not_in_cited_claims:13)\n- \"Each encoder layer in the Transformer has a residual connection applied to its outputs to help with gradient computation (C14).\" (sentence_numbers_not_in_cited_claims:14)\n\n## Verification limitations\n- Claim statuses come from deterministic rules applied to verifier-model judgments: a quote must be verbatim in the cited passage, contain the claim's numbers, not negate it, and cover its key terms. Deeper semantic support still depends on the verifier model.\n- Source-quality tiers are provisional ranking signals from configurable rules, not probabilities, and never prove that a source supports a claim.\n- Findings are limited to the sources searched in this run; absence of evidence is reported as unresolved, not as false.\n\n---\n*Mesh LLM calls 7/12 \u00b7 embeddings 4/4 \u00b7 web searches 0/0 \u00b7 tools 21/30 \u00b7 retry rounds 2/2 \u00b7 83.8 s/300.0 s \u00b7 \u2248 $0.0425 (estimated, INCOMPLETE: some token types have no configured rate)*\n*Findings are limited to the retrieved sources.*"
+  }
+}

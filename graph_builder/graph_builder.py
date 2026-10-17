@@ -17,51 +17,58 @@ from langgraph.graph import StateGraph, START, END
 
 logger = setup_logger()
 
-# initializing the state graph with defined State Schema
-workflow = StateGraph(AgentRagState)
 
-# registering all the nodes
-workflow.add_node("supervisor",SupervisorAgent)
-workflow.add_node("rag_agent",RagAgent)
-workflow.add_node("general_llm_agent",GeneralLLMAgent)
-workflow.add_node("web_search_agent",WebSearchAgent)
-workflow.add_node("validator",ValidationAgent)
-workflow.add_node("finalize",finalResponseAgent)
+def build_graph(checkpointer=None):
+    """Build and compile the research graph (no work is done at import time).
 
-# set the inital entry point of the graph
-workflow.add_edge(START,"supervisor")
+    Invoke with config={"configurable": {"budget": BudgetManager(...)}, "recursion_limit": N}.
+    """
+    # initializing the state graph with defined State Schema
+    workflow = StateGraph(AgentRagState)
 
-# setting up the supervisor router
-workflow.add_conditional_edges(
-    "supervisor",
-    RouterAgent,
-    {
-        "rag_agent": "rag_agent",
-        "general_llm_agent": "general_llm_agent",
-        "web_search_agent": "web_search_agent",
-        "end_node": "finalize"
-    }
-)
+    # registering all the nodes
+    workflow.add_node("supervisor",SupervisorAgent)
+    workflow.add_node("rag_agent",RagAgent)
+    workflow.add_node("general_llm_agent",GeneralLLMAgent)
+    workflow.add_node("web_search_agent",WebSearchAgent)
+    workflow.add_node("validator",ValidationAgent)
+    workflow.add_node("finalize",finalResponseAgent)
 
-# direct all nodes output to validation node
-workflow.add_edge("rag_agent","validator")
-workflow.add_edge("general_llm_agent","validator")
-workflow.add_edge("web_search_agent","validator")
+    # set the inital entry point of the graph
+    workflow.add_edge(START,"supervisor")
 
-# setting up the validation router
-workflow.add_conditional_edges(
-    "validator",
-    route_after_validation,
-    {
-        "route_to_finalize": "finalize",
-        "route_to_supervisor": "supervisor"
-    }
-)
+    # setting up the supervisor router
+    workflow.add_conditional_edges(
+        "supervisor",
+        RouterAgent,
+        {
+            "rag_agent": "rag_agent",
+            "general_llm_agent": "general_llm_agent",
+            "web_search_agent": "web_search_agent",
+            "end_node": "finalize"
+        }
+    )
+
+    # direct all nodes output to validation node
+    workflow.add_edge("rag_agent","validator")
+    workflow.add_edge("general_llm_agent","validator")
+    workflow.add_edge("web_search_agent","validator")
+
+    # setting up the validation router
+    workflow.add_conditional_edges(
+        "validator",
+        route_after_validation,
+        {
+            "route_to_finalize": "finalize",
+            "route_to_supervisor": "supervisor"
+        }
+    )
 
 
-workflow.add_edge("finalize",END)
+    workflow.add_edge("finalize",END)
 
-# compliling the application
-app = workflow.compile()
+    # compliling the application
+    app = workflow.compile(checkpointer=checkpointer)
 
-logger.info("AI Researcher Assistacne workflow compilied successfully and ready for execution")
+    logger.info("AI Researcher Assistacne workflow compilied successfully and ready for execution")
+    return app

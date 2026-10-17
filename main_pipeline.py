@@ -15,10 +15,24 @@ RAW_PDF_DIR = "data/raw_pdfs"
 
 logger = setup_logger()
 
+
+class IngestionLimitError(RuntimeError):
+    """An upload exceeds the ingestion budget (file size, chunk count or embedding requests)."""
+
+
+class IngestionCompatibilityError(RuntimeError):
+    """The target collection cannot safely receive Mesh embeddings."""
+
 class MultiPDFPipeline:
 
-    def __init__(self):
+    def __init__(self, settings=None, budget=None):
+        from config.settings import get_settings
+        from budget import new_ingestion_budget
+
         self.all_text_pages = []
+        self.settings = settings or get_settings()
+        # Ingestion budget is separate from research-run budgets
+        self.budget = budget or new_ingestion_budget(self.settings)
 
     # =========================================================
     # STEP 1 — PROCESS ALL PDFs
@@ -39,6 +53,13 @@ class MultiPDFPipeline:
             return
 
         print(f"\nTargeting {len(pdf_files)} PDF file(s) for parsing operations.")
+
+        max_bytes = int(self.settings.max_upload_mb * 1024 * 1024)
+        for pdf_path in pdf_files:
+            if Path(pdf_path).stat().st_size > max_bytes:
+                raise IngestionLimitError(
+                    f"{Path(pdf_path).name} exceeds the {self.settings.max_upload_mb:g} MB upload limit"
+                )
 
         for pdf_path in pdf_files:
             print("\n" + "=" * 60)
@@ -109,6 +130,20 @@ class MultiPDFPipeline:
         chunks = chunker.split_documents(documents)
         logger.info(f"MultiPDFPipeline | Total chunks created: {len(chunks)}")
 
+        # Enforce the ingestion budget before any embedding request is sent
+        max_chunks = self.settings.max_ingest_chunks
+        if len(chunks) > max_chunks:
+            raise IngestionLimitError(
+                f"Upload produced {len(chunks)} chunks; the limit is {max_chunks} "
+                f"({self.settings.max_ingest_embedding_calls} embedding requests x "
+                f"{self.settings.embedding_batch_size} chunks). Nothing was indexed."
+            )
+        if self.settings.milvus_embedding_compat == "incompatible":
+            raise IngestionCompatibilityError(
+                "Mesh embeddings are marked incompatible with the existing collection; "
+                "refusing to mix vectors. Nothing was indexed."
+            )
+
         # -------------------------------------------------
         # PREPARE CHUNK DATA
         # -------------------------------------------------
@@ -130,11 +165,15 @@ class MultiPDFPipeline:
         # GENERATE EMBEDDINGS
         # -------------------------------------------------
         logger.info(f"MultiPDFPipeline | Generating embeddings...")
-        embedding_generator = EmbeddingGenerator()
+        embedding_generator = EmbeddingGenerator(budget=self.budget, settings=self.settings)
         embeddings = embedding_generator.generate_embeddings(
             chunk_texts
         )
-        logger.info(f"MultiPDFPipeline | Embeddings generated: {len(embeddings)}")
+        usage = self.budget.snapshot()
+        logger.info(
+            f"MultiPDFPipeline | Embeddings generated: {len(embeddings)} | "
+            f"Mesh embedding requests: {usage.mesh_embedding_calls}/{self.settings.max_ingest_embedding_calls}"
+        )
 
         # -------------------------------------------------
         # CONNECT TO MILVUS CLOUD
@@ -143,15 +182,25 @@ class MultiPDFPipeline:
         milvus = MilvusDB()
 
 
-        collection = milvus.create_collection(collection_name="ai_research_assistant")
+        # Attaches to the existing collection if present (never drops it)
+        collection = milvus.create_collection(collection_name=self.settings.milvus_collection)
+
+        existing_dim = next(
+            (f.params.get("dim") for f in collection.schema.fields if f.name == "embedding"), None
+        )
+        if existing_dim is not None and int(existing_dim) != self.settings.embedding_dim:
+            raise IngestionCompatibilityError(
+                f"Collection embedding dimension {existing_dim} != Mesh embedding dimension "
+                f"{self.settings.embedding_dim}. Nothing was indexed."
+            )
 
         # -------------------------------------------------
-        # CREATE INDEX
+        # CREATE INDEX (only if none exists; existing indexes are preserved)
         # -------------------------------------------------
         
-        IndexManager.create_hnsw_index(collection)
+        created = IndexManager.ensure_hnsw_index(collection)
 
-        logger.info(f"MultiPDFPipeline | HNSW index created successfully")
+        logger.info(f"MultiPDFPipeline | HNSW index {'created' if created else 'already present, preserved'}")
 
         # -------------------------------------------------
         # INSERT DATA INTO MILVUS

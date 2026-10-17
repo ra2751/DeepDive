@@ -1,0 +1,16 @@
+id: insurance
+version: 1
+name: Insurance research and intelligence
+description: Insurance products, coverage, claims, underwriting, pricing, finance and regulation.
+scope_guidance: >
+  Accept research questions about insurance markets, products, coverage terms, claims, underwriting,
+  insurer finance and regulation. Reject requests to decide an individual's specific claim.
+out_of_scope_examples: [decide whether my personal claim will be paid]
+preferred_sources: [documents, web]
+claim_types: [coverage, claims, pricing, regulatory_compliance, financial, fact]
+high_risk_claim_types: [coverage, claims, regulatory_compliance, pricing]
+min_independent_sources: 1
+min_independent_sources_high_risk: 2
+human_review_high_risk: true
+planning_guidance: Prefer policy wordings, regulator publications and insurer filings.
+report_disclaimer: Not a coverage determination; confirm against the policy wording.

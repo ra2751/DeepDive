@@ -1,0 +1,134 @@
+{
+  "source": "evals/results/20261017_B4_ui_pilot_results.json (B4 Q2, recorded) + passage text read once from Milvus by chunk id (read-only)",
+  "claims": {
+    "C1": "The base model of the Transformer architecture uses 8 attention heads.",
+    "C7": "Multi-head attention has no mechanism to guarantee unique behaviors across different attention heads, which may lead to redundancy.",
+    "C8": "In vanilla Transformer models, different attention heads do not explicitly interact with each other."
+  },
+  "judgments": {
+    "C1": [
+      {
+        "claim_id": "C1",
+        "evidence_id": "Ed3796c8c",
+        "stance": "supports",
+        "reason": "quote_not_about_claim(overlap=0.29)",
+        "quote": "In this work we employ h = 8 parallel attention layers, or heads.",
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 5,
+        "url": null
+      }
+    ],
+    "C7": [
+      {
+        "claim_id": "C7",
+        "evidence_id": "E0e6a7036",
+        "stance": "supports",
+        "reason": "negation_mismatch",
+        "quote": "However, there is no mechanism to guarantee that different attention heads indeed capture distinct features.",
+        "source": "Trasformer_Survey.pdf",
+        "page": 18,
+        "url": null
+      }
+    ],
+    "C8": [
+      {
+        "claim_id": "C8",
+        "evidence_id": "E43a997c6",
+        "stance": "supports",
+        "reason": "negation_mismatch",
+        "quote": "However, in vanilla Transformer there is no explicit mechanism to guarantee different behavior across attention heads, nor is there any mechanism for heads to interact with each other.",
+        "source": "Trasformer_Survey.pdf",
+        "page": 18,
+        "url": null
+      }
+    ]
+  },
+  "accepted": {
+    "C7": {
+      "E43a997c6": "However, in vanilla Transformer there is no explicit mechanism to guarantee different behavior across attention heads"
+    }
+  },
+  "evidence": {
+    "Ed3796c8c": {
+      "source": "AttentionAllYouNeed.pdf",
+      "page": 5,
+      "chunk_id": "466305611391922653",
+      "origin": "new",
+      "quality": "unverified",
+      "retrieved_via": "How many attention heads are typically used in the base model of the Transformer architecture?",
+      "text": "i )\nWhere the projections are parameter matrices W Q\ni\n∈Rdmodel×dk, W K\ni\n∈Rdmodel×dk, W V\ni\n∈Rdmodel×dv\nand W O ∈Rhdv×dmodel.\nIn this work we employ h = 8 parallel attention layers, or heads. For each of these we use\ndk = dv = dmodel/h = 64. Due to the reduced dimension of each head, the total computational cost\nis similar to that of single-head attention with full dimensionality.\n3.2.3\nApplications of Attention in our Model\nThe Transformer uses multi-head attention in three different ways:"
+    },
+    "E0e6a7036": {
+      "source": "Trasformer_Survey.pdf",
+      "page": 18,
+      "chunk_id": "465810100797922297",
+      "origin": "reused",
+      "quality": "unverified",
+      "retrieved_via": "How does multi-head attention improve the model's ability to focus on different parts of the input sequence?",
+      "text": "18\nLin et al.\n4.6\nImproved Multi-Head Mechanism\nMulti-head attention is appealing for the ability to jointly attend to information from different\nrepresentation subspaces at different positions. However, there is no mechanism to guarantee that\ndifferent attention heads indeed capture distinct features.\n4.6.1\nHead Behavior Modeling. A basic motivation for using multi-head attention is to allow\nthe model to jointly attend to information from different representation subspaces at different"
+    },
+    "E43a997c6": {
+      "source": "Trasformer_Survey.pdf",
+      "page": 18,
+      "chunk_id": "465810100797922298",
+      "origin": "reused",
+      "quality": "unverified",
+      "retrieved_via": "What is the basic structure of the multi-head attention mechanism in the Transformer model?",
+      "text": "the model to jointly attend to information from different representation subspaces at different\npositions [137]. However, in vanilla Transformer there is no explicit mechanism to guarantee\ndifferent behavior across attention heads, nor is there any mechanism for heads to interact with each\nother. A line of work is dedicated to improving multi-head mechanism by introducing incorporating\nmore sophisticated mechanisms that guide the behavior of different attention heads or allow"
+    }
+  },
+  "removed_sentences": [
+    {
+      "text": "The base model of the Transformer architecture employs a multi-head attention mechanism, where each attention head allows the model to jointly attend to information from different representation subspaces, as stated in claim IDs C2, C3, and C6.",
+      "claim_ids": [
+        "C2",
+        "C3",
+        "C6"
+      ],
+      "reason": "sentence_numbers_not_in_cited_claims:2,3,6"
+    },
+    {
+      "text": "In multi-head attention, this allows the model to attend to different positions in the input sequence simultaneously with multiple sets of learned projections, supported by claim IDs C3 and C2.",
+      "claim_ids": [
+        "C3",
+        "C2"
+      ],
+      "reason": "sentence_numbers_not_in_cited_claims:2,3"
+    },
+    {
+      "text": "Each attention head in the multi-head mechanism outputs a vector that is concatenated and projected back into the model dimension, as illustrated in claim IDs C5 and C2.",
+      "claim_ids": [
+        "C5",
+        "C2"
+      ],
+      "reason": "sentence_numbers_not_in_cited_claims:2,5"
+    },
+    {
+      "text": "Using multiple attention heads can also lead to redundancy, as there is no mechanism to ensure unique behaviors across different heads, which is noted in claim ID C7.",
+      "claim_ids": [
+        "C7"
+      ],
+      "reason": "sentence_numbers_not_in_cited_claims:7"
+    }
+  ],
+  "statuses": {
+    "C1": "unresolved",
+    "C2": "supported",
+    "C3": "supported",
+    "C4": "unresolved",
+    "C5": "supported",
+    "C6": "supported",
+    "C7": "supported",
+    "C8": "unresolved"
+  },
+  "all_claims": {
+    "C1": "The base model of the Transformer architecture uses 8 attention heads.",
+    "C2": "In the multi-head attention mechanism, each attention head allows the model to jointly attend to information from different representation subspaces.",
+    "C3": "Multi-head attention allows the model to attend to different positions in the input sequence simultaneously with multiple sets of learned projections.",
+    "C4": "The projections used in multi-head attention are parameter matrices of size W Q i ∈R^dmodel×dk, W K i ∈R^dmodel×dk, W V i ∈R^dmodel×dv for each head.",
+    "C5": "Each head in the multi-head attention mechanism outputs a vector which is concatenated and projected back into the model dimension.",
+    "C6": "Using multiple attention heads reduces the dimensionality of each head's output, maintaining a total computational cost similar to single-head attention.",
+    "C7": "Multi-head attention has no mechanism to guarantee unique behaviors across different attention heads, which may lead to redundancy.",
+    "C8": "In vanilla Transformer models, different attention heads do not explicitly interact with each other."
+  }
+}

@@ -2,14 +2,35 @@
 from langchain_core.prompts import PromptTemplate
 from langchain_core.messages import AIMessage
 from langchain_core.prompts import PromptTemplate
-from config.config import Config
+from langchain_core.runnables import RunnableConfig
 from agents.state_node import AgentRagState, topic_selection_parser
+from budget import BudgetExceeded, budget_from_config
+from gateway import MeshError, chat_model
 from monitoring.logger import setup_logger
 
 
 logger = setup_logger()
 
-def SupervisorAgent(state:AgentRagState):
+OUT_OF_SCOPE_MESSAGE = "This Research Intelligence Platform is specialized for AI, Generative AI, and Agentic AI research use cases."
+
+
+def _out_of_scope(current_loops):
+    return {
+        "messages": [AIMessage(content=OUT_OF_SCOPE_MESSAGE)],
+        "next_step": "end_node",
+        "loop_count": current_loops,
+        "out_of_scope": True,
+        "draft_answer": OUT_OF_SCOPE_MESSAGE,
+        "final_response": "This research assistance can only be for AI related topics"
+    }
+
+
+def _terminate(current_loops, reason):
+    logger.warning(f"SupervisorAgent | Stopping run: {reason}")
+    return {"next_step": "end_node", "loop_count": current_loops, "termination_reason": reason}
+
+
+def SupervisorAgent(state:AgentRagState, config: RunnableConfig):
     """
     The SupervisorAgent oversees the routing workflow. It analyzes the query and the 
     validation history to decide the content topic category and explicitly commands 
@@ -17,7 +38,8 @@ def SupervisorAgent(state:AgentRagState):
     """
 
     question = state['query']
-    logger.info(f"SupervisorAgent received query: {question}")
+    budget = budget_from_config(config)
+    logger.info("SupervisorAgent received query")
 
     # Track and increment the sequence pass immediately upon entry
     current_loops = state.get('loop_count', 0) + 1
@@ -29,21 +51,15 @@ def SupervisorAgent(state:AgentRagState):
     is_retry = is_valid_signal == "no"
     failure_reason = validation_metadata.get('reasoning',"")
 
-    # --- cost and loop protection carrier breaker ---
-    if current_loops > 2:
-        logger.warning(f"SupervisorAgent | Hard loop cap reached ({current_loops}). Activating fallback strategy.")
-        fallback_route = "web_search_agent"
-        logger.info(f"SupervisorAgent | Circuit breaker forcing fallback route directly to {fallback_route}.")
-        
-        return {      
-        "next_step": fallback_route,
-        "loop_count": current_loops,
-        # We explicitly flip this to 'yes' here so downstream nodes don't get trapped by old validation errors
-        "validation_metadata": {
-            "is_valid": "yes", 
-            "reasoning": "CIRCUIT_BREAKER_BYPASS: Force system execution termination without downstream re-evaluation."
-            }
-        }
+    # --- retry and cost protection ---
+    # Retry rounds are bounded by the BudgetManager (MAX_RETRY_ROUNDS). The router only
+    # sends us back here while rounds remain; a failed validation is never flipped to "yes".
+    if is_retry:
+        try:
+            round_no = budget.next_retry_round()
+            logger.info(f"SupervisorAgent | Retry round {round_no}/{budget.limits.max_retry_rounds}")
+        except BudgetExceeded as e:
+            return _terminate(current_loops, e.reason)
     
 
     # --- DOMAIN GUARDRAIL PRE-CHECK ---
@@ -51,12 +67,7 @@ def SupervisorAgent(state:AgentRagState):
     non_ai_triggers = ["weather", "politics", "election", "sports", "football", "cricket", "entertainment","finance","relationships"]
     if any(word in question.lower() for word in non_ai_triggers):
         logger.info("SupervisorAgent | Out-of-scope topic caught by keyword pre-check.")
-        return {
-            "messages": [AIMessage(content="This Research Intelligence Platform is specialized for AI, Generative AI, and Agentic AI research use cases.")],
-            "next_step": "end_node",
-            "loop_count": current_loops,
-            "final_response": "This research assistance can only be for AI related topics"
-        }
+        return _out_of_scope(current_loops)
     
     # ROUTING STRATEGY PROMPT
     #strategy_guidance_old = """
@@ -147,9 +158,8 @@ def SupervisorAgent(state:AgentRagState):
         partial_variables={"format_instructions": topic_selection_parser.get_format_instructions()} 
         )
     
-    # Get the open ai language model from config
-    config = Config()
-    model = config.get_llm()
+    # Model via the Mesh API gateway (all inference goes through Mesh)
+    model = chat_model("supervisor", budget)
 
     # Combine the prompt, model, and parser into a single chain
     chain = prompt | model | topic_selection_parser
@@ -164,22 +174,27 @@ def SupervisorAgent(state:AgentRagState):
         chosen_route = response.next_route
         reasoning = response.reasoning
 
+    except BudgetExceeded as e:
+        return _terminate(current_loops, e.reason)
+    except MeshError as e:
+        logger.error(f"SupervisorAgent | Mesh call failed: {type(e).__name__}")
+        return _terminate(current_loops, "mesh_error")
     except Exception as e:
-        logger.info(f"SupervisorAgent failed to parse structured output: {str({e})}")
+        logger.info(f"SupervisorAgent failed to parse structured output: {type(e).__name__}")
         selected_topic = "AI_Technical_Fallback"
         chosen_route = "general_llm_agent"
         reasoning = "Fallback triggered due to structural parsing error."
+
+    # Guard against routes the graph does not define (e.g. 'finalize'), which would crash
+    if chosen_route not in ("rag_agent", "web_search_agent", "general_llm_agent", "end_node"):
+        logger.warning(f"SupervisorAgent | Unknown route {chosen_route!r}; using general_llm_agent")
+        chosen_route = "general_llm_agent"
 
     # Intercept out-of-scope LLM classifications to deliver the required block response
     if chosen_route == "end_node" or selected_topic == "Others":
         logger.info("SupervisorAgent | Out-of-scope routing confirmed by LLM classification.")
         
-        return {
-            "messages": [AIMessage(content="This Research Intelligence Platform is specialized for AI, Generative AI, and Agentic AI research use cases.")],
-            "next_step": "end_node",
-            "loop_count": current_loops,
-            "final_response": "This research assistance can only be for AI related topics"
-        }
+        return _out_of_scope(current_loops)
 
     logger.info(
             f"SupervisorAgent | Topic:{selected_topic} | Reason: {reasoning}| Route Selected: {chosen_route} | Retry: {is_retry}"

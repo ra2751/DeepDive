@@ -1,0 +1,52 @@
+# Source Quality Evaluator rules (deterministic, provisional).
+#
+# Scores are PROVISIONAL RANKING SIGNALS, not probabilities and not evidence of support.
+# They only order evidence for the verifier and for presentation. They never change a claim's
+# status, never bypass quote integrity, independent-source requirements or contradiction rules.
+#
+# Rules are evaluated in order; the first match wins. Anything unmatched is "unverified".
+# Missing publisher/provenance metadata is never invented.
+version: 1
+tiers:
+  primary:           {score: 1.00, label: "Primary"}
+  strong_secondary:  {score: 0.85, label: "Strong secondary"}
+  general_secondary: {score: 0.65, label: "General secondary"}
+  unverified:        {score: 0.35, label: "Unverified"}
+
+# Web sources: matched on the registrable host (www. removed). Specific, curated domains only;
+# there is no rule that trusts "all websites" or "all PDFs".
+web_rules:
+  - tier: primary
+    reason: official regulator, standards body or government domain
+    hosts: [fda.gov, ema.europa.eu, who.int, sec.gov, clinicaltrials.gov, europa.eu, eiopa.europa.eu,
+            naic.org, iso.org, nist.gov, cdc.gov, nih.gov]
+    host_suffixes: [.gov, .gov.uk, .gc.ca, .gov.au, .gov.in, .nic.in]
+  - tier: strong_secondary
+    reason: peer-reviewed journal, scholarly publisher or scholarly index
+    hosts: [nature.com, science.org, thelancet.com, nejm.org, bmj.com, jamanetwork.com, cell.com,
+            sciencedirect.com, link.springer.com, onlinelibrary.wiley.com, dl.acm.org, ieeexplore.ieee.org,
+            aclanthology.org, proceedings.neurips.cc, pubmed.ncbi.nlm.nih.gov, pmc.ncbi.nlm.nih.gov]
+  - tier: general_secondary
+    reason: established news agency, reference work, preprint server or official project documentation
+    hosts: [reuters.com, apnews.com, bloomberg.com, ft.com, wsj.com, economist.com, bbc.co.uk, bbc.com,
+            arxiv.org, wikipedia.org, en.wikipedia.org, pytorch.org, docs.python.org, tensorflow.org]
+
+# Documents (e.g. uploaded PDFs in Milvus) carry only a file name and page, so by default they are
+# "unverified" (publisher unknown). A curated registry can record real metadata per file name.
+document_category_tiers:
+  regulatory_filing: primary
+  official_standard: primary
+  contract: primary            # the organisation's own executed agreement
+  peer_reviewed: strong_secondary
+  audit_report: strong_secondary
+  industry_report: general_secondary
+  preprint: general_secondary
+  news: general_secondary
+  marketing: unverified
+
+document_registry: {}
+# Example (fill in only with metadata you have actually confirmed):
+#   contract.pdf:
+#     category: contract
+#     publisher: Northwind Foods legal department
+#     provenance: signed master agreement, internal contract repository

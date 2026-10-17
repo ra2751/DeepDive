@@ -49,7 +49,7 @@ class MilvusDB:
             FieldSchema(name="source", dtype=DataType.VARCHAR, max_length=500),
             FieldSchema(name="page", dtype=DataType.INT64)
         ]
-        schema = CollectionSchema(fields, description="RAG Collection for AI research assistant")
+        schema = CollectionSchema(fields, description="DeepDive AI document chunks")
 
         # Create the collection
         self.collection = Collection(name=collection_name, schema=schema)

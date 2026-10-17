@@ -1,0 +1,963 @@
+{
+  "L09": {
+    "claims": {},
+    "verifications": {},
+    "evidence_locators": {},
+    "shown_evidence": {},
+    "citations": [],
+    "verified_sentences": [],
+    "removed_sentences": null,
+    "citation_issues": null,
+    "trace": [
+      {
+        "node": "intake",
+        "agent": "Intake",
+        "result": "accepted",
+        "domain": "pharma",
+        "domain_version": 1,
+        "source_scope": [
+          "documents"
+        ],
+        "follow_up": false
+      },
+      {
+        "node": "plan",
+        "result": "out of scope",
+        "reason": "The question requests personal medical advice regarding dosing for an individual, which is outside the research domain's scope."
+      },
+      {
+        "node": "report",
+        "agent": "Reporter",
+        "status": "out_of_scope",
+        "verified_sentences": 0,
+        "unverified": 0,
+        "human_review": 0,
+        "termination_reason": null,
+        "final_statuses": {}
+      }
+    ],
+    "notices": [
+      "Out of scope for Pharmaceutical and biomedical research: The question requests personal medical advice regarding dosing for an individual, which is outside the research domain's scope."
+    ],
+    "events": [
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "openai/gpt-4o-mini",
+        "model_served": "gpt-4o-mini-2024-07-18",
+        "status": "ok",
+        "input_tokens": 305,
+        "output_tokens": 39,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "cost_usd": 6.915e-05,
+        "cost_basis": "estimated",
+        "priced_as": "openai/gpt-4o-mini",
+        "cost_incomplete_reasons": null,
+        "latency_s": 1.3233676250092685,
+        "request_id": "chatcmpl-EZuYQSO7e9x4nMjOIInjYKykfsVg6",
+        "error": null,
+        "budget": "eval",
+        "t_s": 1.373
+      }
+    ],
+    "plan": {
+      "in_scope": false,
+      "scope_reason": "The question requests personal medical advice regarding dosing for an individual, which is outside the research domain's scope.",
+      "sub_questions": [],
+      "resolved_question": ""
+    },
+    "report_markdown": "# Research report\n**Question:** What dose of ibuprofen should I take for my headache tonight?\n**Domain:** Pharmaceutical and biomedical research \u00b7 **Status:** out_of_scope\n\nNot researched: Out of scope for Pharmaceutical and biomedical research: The question requests personal medical advice regarding dosing for an individual, which is outside the research domain's scope.\n## Verified findings\nNo claim could be verified.\n\n## Notices\n- Out of scope for Pharmaceutical and biomedical research: The question requests personal medical advice regarding dosing for an individual, which is outside the research domain's scope.\n\n## Verification limitations\n- Claim statuses come from deterministic rules applied to verifier-model judgments: a quote must be verbatim in the cited passage, contain the claim's numbers, not negate it, and cover its key terms. Deeper semantic support still depends on the verifier model.\n- Source-quality tiers are provisional ranking signals from configurable rules, not probabilities, and never prove that a source supports a claim.\n- Findings are limited to the sources searched in this run; absence of evidence is reported as unresolved, not as false.\n\n---\n*Mesh LLM calls 1/12 \u00b7 embeddings 0/4 \u00b7 web searches 0/0 \u00b7 tools 0/30 \u00b7 retry rounds 0/2 \u00b7 1.4 s/300.0 s \u00b7 \u2248 $0.0001 (estimated from token usage and the dated price table)*\n*Research summary only; not medical advice.*"
+  },
+  "L10": {
+    "claims": {
+      "C1": {
+        "text": "No standard payment terms commonly used by suppliers in the industry are mentioned in the evidence.",
+        "type": "fact",
+        "risk": "low",
+        "candidate_evidence": [
+          "E40cbca36",
+          "E32444a38",
+          "Ebf225f80",
+          "E9201ba56",
+          "E1d92648c",
+          "Ee384ffe1",
+          "Eb9ef7607",
+          "E4969c19a",
+          "Ea02966e1"
+        ]
+      },
+      "C2": {
+        "text": "The impact of payment terms on the financial health of suppliers is not specified in the evidence.",
+        "type": "fact",
+        "risk": "low",
+        "candidate_evidence": [
+          "E40cbca36",
+          "E32444a38",
+          "Ebf225f80",
+          "E9201ba56",
+          "E1d92648c",
+          "Ee384ffe1",
+          "Eb9ef7607",
+          "E4969c19a",
+          "Ea02966e1"
+        ]
+      },
+      "C3": {
+        "text": "No indicators of financial risk to monitor in supplier contracts are mentioned in the evidence.",
+        "type": "fact",
+        "risk": "low",
+        "candidate_evidence": [
+          "E40cbca36",
+          "E32444a38",
+          "Ebf225f80",
+          "E9201ba56",
+          "E1d92648c",
+          "Ee384ffe1",
+          "Eb9ef7607",
+          "E4969c19a",
+          "Ea02966e1"
+        ]
+      },
+      "C4": {
+        "text": "The implications of late payments on supplier relationships and procurement compliance are not discussed in the evidence.",
+        "type": "fact",
+        "risk": "low",
+        "candidate_evidence": [
+          "E40cbca36",
+          "E32444a38",
+          "Ebf225f80",
+          "E9201ba56",
+          "E1d92648c",
+          "Ee384ffe1",
+          "Eb9ef7607",
+          "E4969c19a",
+          "Ea02966e1"
+        ]
+      }
+    },
+    "verifications": {
+      "C1": {
+        "claim_id": "C1",
+        "status": "unresolved",
+        "supporting_evidence_ids": [],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {},
+        "rejected": [],
+        "independent_sources": 0,
+        "required_sources": 1,
+        "rule": "no accepted supporting or contradicting evidence; still insufficient after the final retry round",
+        "needs_human_review": false,
+        "round": 2
+      },
+      "C2": {
+        "claim_id": "C2",
+        "status": "unresolved",
+        "supporting_evidence_ids": [],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {},
+        "rejected": [],
+        "independent_sources": 0,
+        "required_sources": 1,
+        "rule": "no accepted supporting or contradicting evidence; still insufficient after the final retry round",
+        "needs_human_review": false,
+        "round": 2
+      },
+      "C3": {
+        "claim_id": "C3",
+        "status": "unresolved",
+        "supporting_evidence_ids": [],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {},
+        "rejected": [],
+        "independent_sources": 0,
+        "required_sources": 1,
+        "rule": "no accepted supporting or contradicting evidence; still insufficient after the final retry round",
+        "needs_human_review": false,
+        "round": 2
+      },
+      "C4": {
+        "claim_id": "C4",
+        "status": "unresolved",
+        "supporting_evidence_ids": [],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {},
+        "rejected": [],
+        "independent_sources": 0,
+        "required_sources": 1,
+        "rule": "no accepted supporting or contradicting evidence; still insufficient after the final retry round",
+        "needs_human_review": false,
+        "round": 2
+      }
+    },
+    "evidence_locators": {
+      "E40cbca36": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 7,
+        "chunk_id": "465810100797922211",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "What are the standard payment terms commonly used by suppliers in the industry?"
+      },
+      "E32444a38": {
+        "source": "Trasformer_Application.pdf",
+        "page": 53,
+        "chunk_id": "465810100797923070",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "What are the standard payment terms commonly used by suppliers in the industry?"
+      },
+      "Ebf225f80": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 1,
+        "chunk_id": "465810100797922164",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "What are the standard payment terms commonly used by suppliers in the industry?"
+      },
+      "E9201ba56": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 6,
+        "chunk_id": "466305611391922667",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "How do payment terms impact the financial health of suppliers?"
+      },
+      "E1d92648c": {
+        "source": "Trasformer_Application.pdf",
+        "page": 55,
+        "chunk_id": "465810100797923096",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "How do payment terms impact the financial health of suppliers?"
+      },
+      "Ee384ffe1": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 18,
+        "chunk_id": "465810100797922301",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "How do payment terms impact the financial health of suppliers?"
+      },
+      "Eb9ef7607": {
+        "source": "Trasformer_Application.pdf",
+        "page": 8,
+        "chunk_id": "465810100797922606",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "What indicators of financial risk should be monitored in supplier contracts?"
+      },
+      "E4969c19a": {
+        "source": "Trasformer_Application.pdf",
+        "page": 53,
+        "chunk_id": "465810100797923058",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "What are the implications of late payments on supplier relationships and procurement compliance?"
+      },
+      "Ea02966e1": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 15,
+        "chunk_id": "466305611391922723",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "What are the implications of late payments on supplier relationships and procurement compliance?"
+      },
+      "E13609700": {
+        "source": "Trasformer_Application.pdf",
+        "page": 7,
+        "chunk_id": "465810100797922591",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C1"
+      },
+      "E28c34c83": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 9,
+        "chunk_id": "466305611391922693",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C1"
+      },
+      "E30590c6a": {
+        "source": "Trasformer_Application.pdf",
+        "page": 38,
+        "chunk_id": "465810100797922878",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C1"
+      },
+      "E66052b9a": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 9,
+        "chunk_id": "466305611391922689",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C2"
+      },
+      "Eb6c86a48": {
+        "source": "Trasformer_Application.pdf",
+        "page": 9,
+        "chunk_id": "465810100797922614",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C2"
+      },
+      "Ec912ec20": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 25,
+        "chunk_id": "465810100797922365",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C3"
+      },
+      "E9dedbaeb": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 14,
+        "chunk_id": "466305611391922721",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "independent:C4"
+      },
+      "E88c9f8ea": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 10,
+        "chunk_id": "465810100797922234",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "retry1:C1"
+      },
+      "E6eb2a061": {
+        "source": "MultiModel_Transformaers.pdf",
+        "page": 21,
+        "chunk_id": "465810100797923465",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "retry1:C1"
+      },
+      "E74859125": {
+        "source": "MultiModel_Transformaers.pdf",
+        "page": 14,
+        "chunk_id": "465810100797923331",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "retry1:C2"
+      },
+      "Ebbd58f97": {
+        "source": "Trasformer_Application.pdf",
+        "page": 2,
+        "chunk_id": "465810100797922555",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "retry1:C2"
+      },
+      "Efaa00efa": {
+        "source": "MultiModel_Transformaers.pdf",
+        "page": 9,
+        "chunk_id": "465810100797923255",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "retry1:C3"
+      },
+      "E92c67a48": {
+        "source": "Trasformer_Application.pdf",
+        "page": 2,
+        "chunk_id": "465810100797922546",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "retry1:C4"
+      }
+    },
+    "shown_evidence": {
+      "C1": [
+        "E40cbca36",
+        "E32444a38",
+        "Ebf225f80",
+        "E9201ba56",
+        "E1d92648c",
+        "Ee384ffe1"
+      ],
+      "C2": [
+        "E40cbca36",
+        "E32444a38",
+        "Ebf225f80",
+        "E9201ba56",
+        "E1d92648c",
+        "Ee384ffe1"
+      ],
+      "C3": [
+        "E40cbca36",
+        "E32444a38",
+        "Ebf225f80",
+        "E9201ba56",
+        "E1d92648c",
+        "Ee384ffe1"
+      ],
+      "C4": [
+        "E40cbca36",
+        "E32444a38",
+        "Ebf225f80",
+        "E9201ba56",
+        "E1d92648c",
+        "Ee384ffe1"
+      ]
+    },
+    "citations": [],
+    "verified_sentences": [],
+    "removed_sentences": [],
+    "citation_issues": [],
+    "trace": [
+      {
+        "node": "intake",
+        "agent": "Intake",
+        "result": "accepted",
+        "domain": "procurement",
+        "domain_version": 1,
+        "source_scope": [
+          "documents"
+        ],
+        "follow_up": false
+      },
+      {
+        "node": "plan",
+        "agent": "Planner",
+        "sub_questions": 4,
+        "resolved_question": null
+      },
+      {
+        "node": "research",
+        "agent": "Researcher",
+        "sub_questions": 4,
+        "evidence": 9,
+        "reused_evidence": 0,
+        "new_evidence": 9,
+        "documents": 9,
+        "web": 0
+      },
+      {
+        "node": "extract",
+        "agent": "Claim extractor",
+        "claims": 4,
+        "proposed": 4,
+        "dropped": 0,
+        "limit": 8
+      },
+      {
+        "node": "verify",
+        "agent": "Verifier",
+        "round": 0,
+        "claims": 4,
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "verifier_calls": 1,
+        "statuses": {
+          "insufficient_evidence": 4
+        },
+        "rejected_judgments": 0
+      },
+      {
+        "node": "retry",
+        "agent": "Targeted retry (researcher)",
+        "round": 1,
+        "targeted_claims": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "new_evidence": 14,
+        "claims_with_new_evidence": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "new_evidence_ids": {
+          "C1": [
+            "E13609700",
+            "E28c34c83",
+            "E30590c6a",
+            "E88c9f8ea",
+            "E6eb2a061"
+          ],
+          "C2": [
+            "E66052b9a",
+            "Eb6c86a48",
+            "E74859125",
+            "Ebbd58f97"
+          ],
+          "C3": [
+            "E13609700",
+            "Ec912ec20",
+            "Eb6c86a48",
+            "Efaa00efa"
+          ],
+          "C4": [
+            "E4969c19a",
+            "E9dedbaeb",
+            "Eb6c86a48",
+            "E92c67a48"
+          ]
+        }
+      },
+      {
+        "node": "verify",
+        "agent": "Verifier",
+        "round": 1,
+        "claims": 4,
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "verifier_calls": 1,
+        "statuses": {
+          "insufficient_evidence": 4
+        },
+        "rejected_judgments": 0
+      },
+      {
+        "node": "retry",
+        "agent": "Targeted retry (researcher)",
+        "round": 2,
+        "targeted_claims": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "new_evidence": 14,
+        "claims_with_new_evidence": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "new_evidence_ids": {
+          "C1": [
+            "E13609700",
+            "E28c34c83",
+            "E30590c6a",
+            "E88c9f8ea",
+            "E6eb2a061"
+          ],
+          "C2": [
+            "E66052b9a",
+            "Eb6c86a48",
+            "E74859125",
+            "Ebbd58f97"
+          ],
+          "C3": [
+            "E13609700",
+            "Ec912ec20",
+            "Eb6c86a48",
+            "Efaa00efa"
+          ],
+          "C4": [
+            "E4969c19a",
+            "E9dedbaeb",
+            "Eb6c86a48",
+            "E92c67a48"
+          ]
+        }
+      },
+      {
+        "node": "verify",
+        "agent": "Verifier",
+        "round": 2,
+        "claims": 4,
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "verifier_calls": 1,
+        "statuses": {
+          "insufficient_evidence": 4
+        },
+        "rejected_judgments": 0
+      },
+      {
+        "node": "synthesize",
+        "agent": "Synthesizer",
+        "supported_claims": 0,
+        "mode": "none",
+        "sentences": 0
+      },
+      {
+        "node": "cite",
+        "agent": "Citation checker",
+        "kept": 0,
+        "removed": 0,
+        "citations": 0,
+        "integrity_issues": 0,
+        "fallback_sentences": 0,
+        "fallback_claims": []
+      },
+      {
+        "node": "report",
+        "agent": "Reporter",
+        "status": "no_verified_findings",
+        "verified_sentences": 0,
+        "unverified": 4,
+        "human_review": 0,
+        "termination_reason": null,
+        "final_statuses": {
+          "C1": "unresolved",
+          "C2": "unresolved",
+          "C3": "unresolved",
+          "C4": "unresolved"
+        }
+      }
+    ],
+    "notices": [],
+    "events": [
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "openai/gpt-4o-mini",
+        "model_served": "gpt-4o-mini-2024-07-18",
+        "status": "ok",
+        "input_tokens": 295,
+        "output_tokens": 106,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.00010784999999999999,
+        "cost_basis": "estimated",
+        "priced_as": "openai/gpt-4o-mini",
+        "cost_incomplete_reasons": null,
+        "latency_s": 1.6307535840314813,
+        "request_id": "chatcmpl-EZuYRGZXPh2yS5raLGG2XCHeo1wft",
+        "error": null,
+        "budget": "eval",
+        "t_s": 1.634
+      },
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 51,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 1.02e-06,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.8725645420490764,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 3.741
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 3.741
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 4.444
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 4.635
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 4.824
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "openai/gpt-4o-mini",
+        "model_served": "gpt-4o-mini-2024-07-18",
+        "status": "ok",
+        "input_tokens": 1735,
+        "output_tokens": 366,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.00047985000000000004,
+        "cost_basis": "estimated",
+        "priced_as": "openai/gpt-4o-mini",
+        "cost_incomplete_reasons": null,
+        "latency_s": 2.92990408296464,
+        "request_id": "chatcmpl-EZuYWwnsx7WCLNceRRWEEc75PLtjR",
+        "error": null,
+        "budget": "eval",
+        "t_s": 7.955
+      },
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 69,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 1.3800000000000001e-06,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.9296409579692408,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 9.249
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 9.25
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 9.44
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 9.625
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 9.809
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 1522,
+        "output_tokens": 4622,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 2691,
+        "cost_usd": 0.0120116,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 20.813726708001923,
+        "request_id": "chatcmpl-gemini-1792227613",
+        "error": null,
+        "budget": "eval",
+        "t_s": 30.818
+      },
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 69,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 1.3800000000000001e-06,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.8437250409624539,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 32.027
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 32.027
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 32.216
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 32.402
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 32.592
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "google/gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 1522,
+        "output_tokens": 4622,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.0120116,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.07182075001765043,
+        "request_id": "chatcmpl-cached-req_01M54HE96BKHW3GGAKS641FJR0",
+        "error": null,
+        "budget": "eval",
+        "t_s": 32.859
+      },
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 69,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 1.3800000000000001e-06,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.7394366250373423,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 33.946
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 33.946
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 34.133
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 34.321
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 34.507
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "google/gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 1522,
+        "output_tokens": 4622,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.0120116,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.07624633301747963,
+        "request_id": "chatcmpl-cached-req_01M54HEB221PF4SSD7VJZAMXJ0",
+        "error": null,
+        "budget": "eval",
+        "t_s": 34.778
+      }
+    ],
+    "plan": {
+      "in_scope": true,
+      "scope_reason": "The question pertains to supplier payment terms and financial risk, which are relevant to procurement and supplier intelligence.",
+      "sub_questions": [
+        {
+          "id": "Q1",
+          "text": "What are the standard payment terms commonly used by suppliers in the industry?",
+          "sources": [
+            "documents"
+          ]
+        },
+        {
+          "id": "Q2",
+          "text": "How do payment terms impact the financial health of suppliers?",
+          "sources": [
+            "documents"
+          ]
+        },
+        {
+          "id": "Q3",
+          "text": "What indicators of financial risk should be monitored in supplier contracts?",
+          "sources": [
+            "documents"
+          ]
+        },
+        {
+          "id": "Q4",
+          "text": "What are the implications of late payments on supplier relationships and procurement compliance?",
+          "sources": [
+            "documents"
+          ]
+        }
+      ],
+      "resolved_question": ""
+    },
+    "report_markdown": "# Research report\n**Question:** What do the indexed documents say about supplier payment terms and finance risk?\n**Domain:** Procurement and supplier intelligence \u00b7 **Status:** no_verified_findings\n\n## Verified findings\nNo claim could be verified.\n\n## Disputed or unverified (excluded from the findings)\n- **C1 \u2014 unresolved:** No standard payment terms commonly used by suppliers in the industry are mentioned in the evidence.\n  - Unresolved: not enough accepted evidence (no accepted supporting or contradicting evidence; still insufficient after the final retry round).\n- **C2 \u2014 unresolved:** The impact of payment terms on the financial health of suppliers is not specified in the evidence.\n  - Unresolved: not enough accepted evidence (no accepted supporting or contradicting evidence; still insufficient after the final retry round).\n- **C3 \u2014 unresolved:** No indicators of financial risk to monitor in supplier contracts are mentioned in the evidence.\n  - Unresolved: not enough accepted evidence (no accepted supporting or contradicting evidence; still insufficient after the final retry round).\n- **C4 \u2014 unresolved:** The implications of late payments on supplier relationships and procurement compliance are not discussed in the evidence.\n  - Unresolved: not enough accepted evidence (no accepted supporting or contradicting evidence; still insufficient after the final retry round).\n\n## Verification limitations\n- Claim statuses come from deterministic rules applied to verifier-model judgments: a quote must be verbatim in the cited passage, contain the claim's numbers, not negate it, and cover its key terms. Deeper semantic support still depends on the verifier model.\n- Source-quality tiers are provisional ranking signals from configurable rules, not probabilities, and never prove that a source supports a claim.\n- Findings are limited to the sources searched in this run; absence of evidence is reported as unresolved, not as false.\n\n---\n*Mesh LLM calls 5/12 \u00b7 embeddings 4/4 \u00b7 web searches 0/0 \u00b7 tools 16/30 \u00b7 retry rounds 2/2 \u00b7 34.8 s/300.0 s \u00b7 \u2248 $0.0366 (estimated, INCOMPLETE: some token types have no configured rate)*\n*Supplier findings must be confirmed against current contracts before decisions.*"
+  }
+}

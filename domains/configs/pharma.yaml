@@ -1,0 +1,17 @@
+id: pharma
+version: 1
+name: Pharmaceutical and biomedical research
+description: Drug development, clinical evidence, safety, regulatory status and biomedical science.
+scope_guidance: >
+  Accept research questions about drugs, clinical trials, safety, regulatory status and biomedical
+  science. Reject requests for personal medical advice or dosing for an individual.
+out_of_scope_examples: [what dose should I take, personal diagnosis]
+preferred_sources: [documents, web]
+web_allowed_domains: []
+claim_types: [efficacy, safety, dosage, regulatory_status, mechanism, fact]
+high_risk_claim_types: [efficacy, safety, dosage, regulatory_status]
+min_independent_sources: 1
+min_independent_sources_high_risk: 2
+human_review_high_risk: true
+planning_guidance: Prefer peer-reviewed studies, regulatory filings and product labels over news.
+report_disclaimer: Research summary only; not medical advice.

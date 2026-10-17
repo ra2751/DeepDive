@@ -1,5 +1,5 @@
 from pydantic import BaseModel , Field
-from typing import List, TypedDict, Annotated, Sequence
+from typing import List, Optional, TypedDict, Annotated, Sequence
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.messages import BaseMessage
 import operator
@@ -44,7 +44,27 @@ class AgentRagState(TypedDict):
     query: str
 
     # Metadata related to the validation process (e.g., validation results, reasoning, etc.)
-    validation_metadata: List[dict]
+    # "performed" is True only when the validator actually evaluated the current draft
+    validation_metadata: dict
+
+    # The answer produced by the last executed agent (rag / web / general llm)
+    draft_answer: Optional[str]
+
+    # Set when the supervisor rejects a query as out of scope
+    out_of_scope: bool
+
+    # Why the run stopped early (e.g. "max_llm_calls", "max_run_seconds"), if it did
+    termination_reason: Optional[str]
+
+    # Honest final label: answer_check_passed | ungrounded | not_validated |
+    # incomplete_budget | out_of_scope (set by the finalize node, never upgraded)
+    answer_status: str
+
+    # Budget usage snapshot at the end of the run
+    usage: dict
+
+    # User-visible notices (errors, degraded features) accumulated during the run
+    notices: Annotated[List[str], operator.add]
 
     # tracking final generated answer
     final_response: str 

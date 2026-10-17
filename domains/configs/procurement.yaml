@@ -1,0 +1,16 @@
+id: procurement
+version: 1
+name: Procurement and supplier intelligence
+description: Supplier performance, pricing, contracts, sourcing risk and compliance.
+scope_guidance: >
+  Accept questions about suppliers, sourcing, pricing, spend, contracts, supplier risk, financial
+  health of suppliers and procurement compliance.
+out_of_scope_examples: [personal investment advice]
+preferred_sources: [documents, web]
+claim_types: [supplier_performance, price, contract_term, financial, compliance, sanctions, fact]
+high_risk_claim_types: [compliance, sanctions]
+min_independent_sources: 1
+min_independent_sources_high_risk: 1
+human_review_high_risk: true
+planning_guidance: Prefer contracts, audit reports and supplier filings over marketing material.
+report_disclaimer: Supplier findings must be confirmed against current contracts before decisions.
