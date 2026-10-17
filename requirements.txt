@@ -1,36 +1,36 @@
-pydantic
-python-dotenv
-langchain
-langchain-openai
-langchain-groq
-langchain-core
-langchain-community
-pypdf
-bs4
-faiss-cpu
-langchain_huggingface
-wikipedia
-langgraph
-langchain-anthropic
-chromadb
-beautifulsoup4
-requests
-tavily-python
-rich
-streamlit
-pymupdf
-unstructured
-camelot-py
-pymilvus
-pillow
-pandas
-sentence-transformers
-tqdm
-pandas
-numpy
-matplotlib
-plotly
-rank-bm25
-networkx
-pyvis
-scikit-learn
+# DeepDive AI — pinned direct dependencies (tested on Python 3.12; CI-compatible with 3.11)
+# All AI inference (chat, structured output, embeddings, vision) goes through Mesh API
+# via gateway/ — no other inference provider SDKs are listed here.
+
+# Orchestration and model abstractions
+langchain==1.4.6
+langchain-core==1.6.11
+langchain-openai==1.7.2          # used only inside gateway/ as the OpenAI-compatible Mesh client
+langchain-community==0.4.2       # BM25 retriever
+langchain-text-splitters==1.1.3
+langgraph==1.2.15
+pydantic==2.14.1
+python-dotenv==1.2.4
+pyyaml==6.0.3
+
+# Documents and retrieval
+pymupdf==1.28.2
+camelot-py==1.0.9
+pandas==2.3.3
+numpy==2.4.6
+pillow==12.3.0
+rank-bm25==0.2.2
+pymilvus==2.6.17
+
+# Web search (non-model provider)
+tavily-python==0.8.5
+requests==2.34.2               # imported directly by retriever/web_search.py
+
+# UI and API
+streamlit==1.66.0
+fastapi==0.143.2
+uvicorn[standard]==0.54.0
+httpx==0.28.1
+
+# Tests
+pytest==9.1.1

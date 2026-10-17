@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20261017T090136Z_9a16a91",
+  "kind": "live",
+  "created_at": "2026-10-17T09:01:36.000794+00:00",
+  "git_commit": "9a16a91",
+  "git_dirty": true,
+  "code_sha256": "9a2799a77020217f22d56373102e4031288e959eae6a7182f0e25c13c0609a34",
+  "dataset": "evals/datasets/live_eval_v1_reruns.jsonl",
+  "dataset_sha256": "6c72906c567c9d46551ea52dd732c770b0875995301c187f46f12a6d31e277ba",
+  "models": {
+    "supervisor": "openai/gpt-4o-mini",
+    "generator": "openai/gpt-4o-mini",
+    "verifier": "google/gemini-2.5-flash",
+    "embeddings": "openai/text-embedding-3-small"
+  },
+  "models_served": [
+    "gemini-2.5-flash",
+    "gpt-4o-mini-2024-07-18",
+    "openai/gpt-4o-mini",
+    "text-embedding-3-small"
+  ],
+  "limits": {
+    "max_mesh_requests": 16,
+    "max_web_searches": 0
+  },
+  "cases": [
+    {
+      "case_id": "L08-r1",
+      "mode": "research",
+      "domain": "general",
+      "expected": {
+        "report_status": [
+          "completed"
+        ],
+        "min_supported_claims": 1,
+        "citations_include": "AttentionAllYouNeed.pdf"
+      },
+      "observed": {
+        "report_status": "completed",
+        "supported_claims": 7,
+        "citation_sources": [
+          "AttentionAllYouNeed.pdf",
+          "MultiModel_Transformaers.pdf",
+          "Trasformer_Application.pdf",
+          "Trasformer_Survey.pdf"
+        ]
+      },
+      "passed": true,
+      "report_status": "completed",
+      "verified_sentences": 7,
+      "unsupported_claim_leakage": 0,
+      "citation_integrity_issues": 0,
+      "termination_reason": null,
+      "usage": {
+        "mesh_llm_calls": 6,
+        "mesh_embedding_calls": 4,
+        "web_searches": 0,
+        "input_tokens": 7952,
+        "output_tokens": 11179,
+        "cost_usd": 0.02849739,
+        "cost_basis": "estimated",
+        "cost_incomplete": true,
+        "elapsed_s": 56.918
+      },
+      "error": null
+    }
+  ],
+  "metrics": {
+    "case_pass": {
+      "numerator": 1,
+      "denominator": 1,
+      "rate": 1.0
+    },
+    "claim_status_agreement": {
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null
+    },
+    "unsupported_claim_leakage": {
+      "numerator": 0,
+      "denominator": 7,
+      "rate": 0.0
+    },
+    "citation_integrity_issues": {
+      "numerator": 0,
+      "denominator": 1,
+      "rate": 0.0
+    }
+  },
+  "totals": {
+    "mesh_llm_calls": 6,
+    "mesh_embedding_calls": 4,
+    "web_searches": 0,
+    "input_tokens": 7952,
+    "output_tokens": 11179,
+    "cost_usd": 0.028497,
+    "cost_basis": "estimated",
+    "cost_incomplete": true,
+    "elapsed_s": 56.92
+  },
+  "notes": []
+}

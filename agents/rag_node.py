@@ -3,8 +3,10 @@ from agents.state_node import AgentRagState
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_core.messages import AIMessage
-from config.config import Config
-from agents.state_node import AgentRagState
+from langchain_core.runnables import RunnableConfig
+from budget import BudgetExceeded, budget_from_config
+from config.settings import get_settings
+from gateway import MeshError, chat_model
 from monitoring.logger import setup_logger
 
 logger = setup_logger()
@@ -12,7 +14,7 @@ logger = setup_logger()
 def format_docs(docs):
     return "\n\n".join(doc['text'] for doc in docs)
 
-def RagAgent(state:AgentRagState):
+def RagAgent(state:AgentRagState, config: RunnableConfig):
 
     """
     The RagAgent's role is to take the routed query and perform retrieval-augmented generation.
@@ -22,13 +24,29 @@ def RagAgent(state:AgentRagState):
 
     # Extract the query and retrieved documents from the state
     question = state['query']
+    budget = budget_from_config(config)
+    settings = get_settings()
+    notices = []
 
-    logger.info(f"RagAgent received query: {question}")
+    logger.info("RagAgent received query")
 
-    retriever = RetrieverPipeline("ai_research_assistant")
-    docs = retriever.search(question)
+    try:
+        retriever = RetrieverPipeline(settings.milvus_collection, budget=budget, settings=settings)
+        docs = retriever.search(question)
+    except BudgetExceeded as e:
+        return {"termination_reason": e.reason, "retrieved_docs": [], "draft_answer": None}
+    except Exception as e:  # Milvus unavailable, incompatible embeddings, Mesh failure, ...
+        logger.error(f"RagAgent | Document retrieval failed: {type(e).__name__}")
+        docs = []
+        notices.append(f"Document search unavailable: {type(e).__name__}: {e}")
 
-    logger.info(f"RagAgent received retrieved documents: {docs}")
+    if settings.milvus_embedding_compat == "unverified" and docs:
+        notices.append(
+            "Document search used Mesh query embeddings against an index whose embedding "
+            "compatibility has not yet been verified (pending the G2 compatibility check)."
+        )
+
+    logger.info(f"RagAgent retrieved {len(docs)} document chunks")
 
     # Format the retrieved documents into a string for the prompt
     formatted_docs = format_docs(docs)
@@ -49,18 +67,22 @@ def RagAgent(state:AgentRagState):
 
     prompt = PromptTemplate.from_template(template)
 
-    # Get the language model from config
-    config = Config()
-    model = config.get_llm()
+    # Language model via the Mesh API gateway
+    model = chat_model("generator", budget)
 
     # Combine the prompt and model into a single chain
     chain = prompt | model | StrOutputParser()  # Use a simple string output parser for the final response
 
-    response = chain.invoke({"question": question, "formatted_docs": formatted_docs})
+    retrieved_docs = [{"content": doc['text'], "source": doc['source'], "page": doc.get('page')} for doc in docs]
 
-    logger.info(f"RagAgent generated response successfully")
-
-    retrieved_docs = [{"content": doc['text'], "source": doc['source']} for doc in docs]
+    try:
+        response = chain.invoke({"question": question, "formatted_docs": formatted_docs})
+    except BudgetExceeded as e:
+        return {"termination_reason": e.reason, "retrieved_docs": retrieved_docs, "draft_answer": None, "notices": notices}
+    except MeshError as e:
+        logger.error(f"RagAgent | Mesh call failed: {type(e).__name__}")
+        return {"termination_reason": "mesh_error", "retrieved_docs": retrieved_docs, "draft_answer": None,
+                "notices": notices + [f"Answer generation failed: {e}"]}
 
     logger.info(
             f"RagAgent | Retrieved Docs Count: {len(retrieved_docs)} | Response Length: {len(response)}"
@@ -68,6 +90,7 @@ def RagAgent(state:AgentRagState):
     
     return {
         "retrieved_docs": retrieved_docs,
-        "messages": [AIMessage(content=response)]
-        
+        "messages": [AIMessage(content=response)],
+        "draft_answer": response,
+        "notices": notices,
     }

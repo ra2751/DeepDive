@@ -1,0 +1,45 @@
+{
+  "mesh": 7,
+  "web": 8,
+  "questions": {
+    "GR1-India": {
+      "usage": {
+        "mesh_chat_calls": 7,
+        "mesh_vision_calls": 0,
+        "mesh_embedding_calls": 0,
+        "mesh_failed_attempts": 0,
+        "mesh_input_tokens": 18144,
+        "mesh_output_tokens": 11870,
+        "web_searches": 8,
+        "web_search_failures": 0,
+        "tool_calls": 8,
+        "retry_rounds": 2,
+        "elapsed_s": 83.411,
+        "mesh_cached_responses": 0,
+        "mesh_cached_input_tokens": 0,
+        "mesh_reasoning_tokens": 6856,
+        "mesh_cost_usd": 0.0326302,
+        "mesh_reported_cost_usd": 0.0,
+        "mesh_estimated_cost_usd": 0.0326302,
+        "cost_basis": "estimated",
+        "cost_estimate_incomplete": true,
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "cost_cap_enforced": true,
+        "web_search_credits_estimated": 8.0
+      },
+      "limits": {
+        "max_llm_calls": 9,
+        "max_embedding_calls": 0,
+        "max_web_searches": 8,
+        "max_tool_calls": 30,
+        "max_retry_rounds": 2,
+        "max_run_seconds": 300.0,
+        "max_mesh_cost_usd": 0.5,
+        "cost_safety_factor": 1.25
+      },
+      "exception": []
+    }
+  }
+}

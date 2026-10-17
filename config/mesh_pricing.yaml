@@ -1,0 +1,40 @@
+# Mesh API price table used ONLY to *estimate* cost from reported token usage.
+# Estimates are always labelled "estimated"; they are not Mesh-reported charges.
+#
+# Unit: USD per 1,000,000 tokens. Established from the Mesh /v1/models catalogue
+# schema (fields `prompt_usd_per_1m`, `completion_usd_per_1m`; G1 probe,
+# 2026-10-16). Rates below were supplied by the project owner from the Mesh
+# portal on 2026-10-16. Reasoning-output and cached-input rates were not
+# supplied; estimates involving those token types must be treated as incomplete.
+#
+#   estimated_cost_usd = (input_tokens * input_per_1m_usd
+#                         + output_tokens * output_per_1m_usd) / 1_000_000
+models:
+  openai/gpt-4o-mini:
+    input_per_1m_usd: 0.15
+    output_per_1m_usd: 0.60
+    source: "Mesh portal (user-supplied)"
+    retrieved: "2026-10-16"
+  openai/gpt-4.1-mini:
+    input_per_1m_usd: 0.40
+    output_per_1m_usd: 1.60
+    source: "Mesh portal (user-supplied)"
+    retrieved: "2026-10-16"
+  google/gemini-2.5-flash:
+    input_per_1m_usd: 0.30
+    output_per_1m_usd: 2.50
+    source: "Mesh portal (user-supplied)"
+    retrieved: "2026-10-16"
+  anthropic/claude-haiku-4.5:
+    input_per_1m_usd: 0.90
+    output_per_1m_usd: 4.50
+    source: "Mesh portal (user-supplied)"
+    retrieved: "2026-10-16"
+
+  # Activated 2026-10-16: the gateway now reads embedding token usage from the
+  # Mesh response. If a response carries no usage, embedding cost stays "unknown".
+  openai/text-embedding-3-small:
+    input_per_1m_usd: 0.02
+    output_per_1m_usd: 0.0
+    source: "Mesh portal (user-supplied)"
+    retrieved: "2026-10-16"

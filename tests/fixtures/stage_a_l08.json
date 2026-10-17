@@ -1,0 +1,168 @@
+{
+  "source": "evals/results/20261017T073355Z_9a16a91_details.json (Stage A live run, case L08; copied unchanged)",
+  "claims": {
+    "C1": "The Transformer architecture comprises stacked self-attention and point-wise, fully connected layers for both the encoder and decoder.",
+    "C2": "Each layer of the encoder in the Transformer includes a multi-head self-attention mechanism and a simple position-wise feed-forward network.",
+    "C3": "The encoder of the Transformer is composed of 6 identical layers.",
+    "C4": "The attention mechanism in Transformer models is crucial for concentrating on important pieces of information.",
+    "C5": "The Transformer uses multi-head attention in three different ways, including encoder-decoder attention layers where queries come from the previous decoder layer.",
+    "C6": "Positional encodings in the Transformer are typically represented using absolute sinusoidal position encodings.",
+    "C7": "The attention mechanism allows every position in the decoder to attend over all positions in the input sequence.",
+    "C8": "Additional positional information is required in Transformers since the model does not inherently account for order due to the absence of recurrence or convolution.",
+    "C9": "The decoder in the Transformer includes additional layers such as Masked Multi-Head Attention compared to the encoder, which lacks these layers.",
+    "C10": "The outputs of the encoder are utilized as a representation for input sequences in tasks like classification or sequence labeling, which is known as the encoder-only model.",
+    "C11": "The decoder-only model is primarily used for sequence generation tasks like language modeling.",
+    "C12": "The layer normalization operation is applied in every encoder block in the Transformer architecture.",
+    "C13": "The Decoder outputs are also caught by Linear and SoftMax layers to compute the final output of the Transformer architecture.",
+    "C14": "Each encoder layer in the Transformer has a residual connection applied to its outputs to help with gradient computation.",
+    "C15": "The encoder utilizes the outputs for various tasks, including sequence labeling and classification."
+  },
+  "statuses": {
+    "C1": "supported",
+    "C2": "supported",
+    "C3": "supported",
+    "C4": "supported",
+    "C5": "supported",
+    "C6": "supported",
+    "C7": "supported",
+    "C8": "supported",
+    "C9": "unresolved",
+    "C10": "supported",
+    "C11": "supported",
+    "C12": "supported",
+    "C13": "supported",
+    "C14": "supported",
+    "C15": "supported"
+  },
+  "removed_sentences": [
+    {
+      "text": "The Transformer architecture comprises stacked self-attention and point-wise, fully connected layers for both the encoder and decoder (C1).",
+      "claim_ids": [
+        "C1"
+      ],
+      "reason": "sentence_numbers_not_in_cited_claims:1"
+    },
+    {
+      "text": "Each layer of the encoder in the Transformer includes a multi-head self-attention mechanism and a simple position-wise feed-forward network (C2).",
+      "claim_ids": [
+        "C2"
+      ],
+      "reason": "sentence_numbers_not_in_cited_claims:2"
+    },
+    {
+      "text": "The encoder of the Transformer is composed of 6 identical layers (C3).",
+      "claim_ids": [
+        "C3"
+      ],
+      "reason": "sentence_numbers_not_in_cited_claims:3"
+    },
+    {
+      "text": "The attention mechanism in Transformer models is crucial for concentrating on important pieces of information (C4).",
+      "claim_ids": [
+        "C4"
+      ],
+      "reason": "sentence_numbers_not_in_cited_claims:4"
+    },
+    {
+      "text": "The Transformer uses multi-head attention in three different ways, including encoder-decoder attention layers where queries come from the previous decoder layer (C5).",
+      "claim_ids": [
+        "C5"
+      ],
+      "reason": "sentence_numbers_not_in_cited_claims:5"
+    },
+    {
+      "text": "Positional encodings in the Transformer are typically represented using absolute sinusoidal position encodings (C6).",
+      "claim_ids": [
+        "C6"
+      ],
+      "reason": "sentence_numbers_not_in_cited_claims:6"
+    },
+    {
+      "text": "The attention mechanism allows every position in the decoder to attend over all positions in the input sequence (C7).",
+      "claim_ids": [
+        "C7"
+      ],
+      "reason": "sentence_numbers_not_in_cited_claims:7"
+    },
+    {
+      "text": "Additional positional information is required in Transformers since the model does not inherently account for order due to the absence of recurrence or convolution (C8).",
+      "claim_ids": [
+        "C8"
+      ],
+      "reason": "sentence_numbers_not_in_cited_claims:8"
+    },
+    {
+      "text": "The outputs of the encoder are utilized as a representation for input sequences in tasks like classification or sequence labeling (C10).",
+      "claim_ids": [
+        "C10"
+      ],
+      "reason": "sentence_numbers_not_in_cited_claims:10"
+    },
+    {
+      "text": "The decoder outputs are also caught by Linear and SoftMax layers to compute the final output of the Transformer architecture (C13).",
+      "claim_ids": [
+        "C13"
+      ],
+      "reason": "sentence_numbers_not_in_cited_claims:13"
+    },
+    {
+      "text": "Each encoder layer in the Transformer has a residual connection applied to its outputs to help with gradient computation (C14).",
+      "claim_ids": [
+        "C14"
+      ],
+      "reason": "sentence_numbers_not_in_cited_claims:14"
+    }
+  ],
+  "rejected": {
+    "C8": [
+      {
+        "claim_id": "C8",
+        "evidence_id": "E61dd7c5e",
+        "stance": "supports",
+        "reason": "negation_mismatch"
+      },
+      {
+        "claim_id": "C8",
+        "evidence_id": "E82737535",
+        "stance": "supports",
+        "reason": "negation_mismatch"
+      }
+    ],
+    "C9": [
+      {
+        "claim_id": "C9",
+        "evidence_id": "Ed0e59586",
+        "stance": "supports",
+        "reason": "negation_mismatch"
+      },
+      {
+        "claim_id": "C9",
+        "evidence_id": "Ea08bb613",
+        "stance": "supports",
+        "reason": "negation_mismatch"
+      }
+    ],
+    "C12": [
+      {
+        "claim_id": "C12",
+        "evidence_id": "Ee0d98838",
+        "stance": "supports",
+        "reason": "quote_not_about_claim(overlap=0.33)"
+      },
+      {
+        "claim_id": "C12",
+        "evidence_id": "Eb37a2065",
+        "stance": "supports",
+        "reason": "quote_not_about_claim(overlap=0.11)"
+      }
+    ],
+    "C15": [
+      {
+        "claim_id": "C15",
+        "evidence_id": "Ee6c3353c",
+        "stance": "supports",
+        "reason": "quote_not_about_claim(overlap=0.11)"
+      }
+    ]
+  }
+}

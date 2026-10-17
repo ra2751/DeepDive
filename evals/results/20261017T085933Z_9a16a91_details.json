@@ -1,0 +1,1268 @@
+{
+  "L03": {
+    "claims": {
+      "C1": {
+        "text": "The base Transformer model uses 8 parallel attention heads.",
+        "type": "fact",
+        "risk": "low",
+        "candidate_evidence": []
+      }
+    },
+    "verifications": {
+      "C1": {
+        "claim_id": "C1",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "Ed3796c8c"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "Ed3796c8c": "In this work we employ h = 8 parallel attention layers, or heads."
+        },
+        "rejected": [],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      }
+    },
+    "evidence_locators": {
+      "Ed3796c8c": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 5,
+        "chunk_id": "466305611391922653",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The base Transformer model uses 8 parallel attention heads."
+      },
+      "E4e2e5a80": {
+        "source": "Trasformer_Application.pdf",
+        "page": 12,
+        "chunk_id": "465810100797922640",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The base Transformer model uses 8 parallel attention heads."
+      },
+      "Ed7d32295": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 5,
+        "chunk_id": "466305611391922654",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The base Transformer model uses 8 parallel attention heads."
+      }
+    },
+    "shown_evidence": {
+      "C1": [
+        "Ed3796c8c",
+        "E4e2e5a80",
+        "Ed7d32295"
+      ]
+    },
+    "citations": [
+      {
+        "marker": "C1",
+        "claim_id": "C1",
+        "evidence_id": "Ed3796c8c",
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 5,
+        "url": null,
+        "quote": "In this work we employ h = 8 parallel attention layers, or heads."
+      }
+    ],
+    "verified_sentences": [
+      {
+        "text": "The base Transformer model uses 8 parallel attention heads.",
+        "claim_ids": [
+          "C1"
+        ],
+        "origin": "template"
+      }
+    ],
+    "removed_sentences": [],
+    "citation_issues": [],
+    "trace": [
+      {
+        "node": "intake",
+        "agent": "Intake",
+        "result": "accepted",
+        "domain": "general",
+        "domain_version": 1,
+        "source_scope": [
+          "documents"
+        ],
+        "follow_up": false
+      },
+      {
+        "node": "plan",
+        "agent": "Planner",
+        "mode": "fact-check",
+        "sub_questions": 1,
+        "mesh_calls": 0
+      },
+      {
+        "node": "research",
+        "agent": "Researcher",
+        "sub_questions": 1,
+        "evidence": 3,
+        "reused_evidence": 0,
+        "new_evidence": 3,
+        "documents": 3,
+        "web": 0
+      },
+      {
+        "node": "extract",
+        "agent": "Claim extractor",
+        "mode": "fact-check",
+        "claims": 1,
+        "not_checked": 0,
+        "mesh_calls": 0
+      },
+      {
+        "node": "verify",
+        "agent": "Verifier",
+        "round": 0,
+        "claims": 1,
+        "claim_ids": [
+          "C1"
+        ],
+        "verifier_calls": 1,
+        "statuses": {
+          "supported": 1
+        },
+        "rejected_judgments": 0
+      },
+      {
+        "node": "synthesize",
+        "agent": "Synthesizer",
+        "supported_claims": 1,
+        "mode": "template (fact-check)",
+        "sentences": 1
+      },
+      {
+        "node": "cite",
+        "agent": "Citation checker",
+        "kept": 1,
+        "removed": 0,
+        "citations": 1,
+        "integrity_issues": 0,
+        "fallback_sentences": 0,
+        "fallback_claims": []
+      },
+      {
+        "node": "report",
+        "agent": "Reporter",
+        "status": "completed",
+        "verified_sentences": 1,
+        "unverified": 0,
+        "human_review": 0,
+        "termination_reason": null,
+        "final_statuses": {
+          "C1": "supported"
+        }
+      }
+    ],
+    "notices": [],
+    "events": [
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 11,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 2.2e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.9849834589986131,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 2.523
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 2.524
+      },
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 11,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 2.2e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.5946991249802522,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 4.15
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 4.15
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 701,
+        "output_tokens": 703,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 390,
+        "cost_usd": 0.0019678,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 3.7301312089548446,
+        "request_id": "chatcmpl-gemini-1792227527",
+        "error": null,
+        "budget": "eval",
+        "t_s": 8.277
+      }
+    ],
+    "plan": {
+      "in_scope": true,
+      "scope_reason": "fact-check mode: user-supplied claims",
+      "sub_questions": [
+        {
+          "id": "Q1",
+          "text": "The base Transformer model uses 8 parallel attention heads.",
+          "sources": [
+            "documents"
+          ]
+        }
+      ],
+      "resolved_question": ""
+    },
+    "report_markdown": "# Research report\n**Question:** The base Transformer model uses 8 parallel attention heads.\n**Domain:** General enterprise research \u00b7 **Status:** completed\n\n## Verified findings\n- The base Transformer model uses 8 parallel attention heads. [C1] _(verified claim text)_\n\n## Evidence\n| Claim | Status | Source | Source quality | Origin | Quote |\n|---|---|---|---|---|---|\n| C1 | supported | AttentionAllYouNeed.pdf, p. 5 | Unverified (0.35) | new | \"In this work we employ h = 8 parallel attention layers, or heads.\" |\n\n## Verification limitations\n- Claim statuses come from deterministic rules applied to verifier-model judgments: a quote must be verbatim in the cited passage, contain the claim's numbers, not negate it, and cover its key terms. Deeper semantic support still depends on the verifier model.\n- Source-quality tiers are provisional ranking signals from configurable rules, not probabilities, and never prove that a source supports a claim.\n- Findings are limited to the sources searched in this run; absence of evidence is reported as unresolved, not as false.\n\n---\n*Mesh LLM calls 1/3 \u00b7 embeddings 2/4 \u00b7 web searches 0/0 \u00b7 tools 2/30 \u00b7 retry rounds 0/2 \u00b7 8.3 s/300.0 s \u00b7 \u2248 $0.0020 (estimated, INCOMPLETE: some token types have no configured rate)*\n*Findings are limited to the retrieved sources.*"
+  },
+  "L04": {
+    "claims": {
+      "C1": {
+        "text": "The Transformer achieved 28.4 BLEU on the WMT 2014 English-to-German translation task.",
+        "type": "fact",
+        "risk": "low",
+        "candidate_evidence": []
+      }
+    },
+    "verifications": {
+      "C1": {
+        "claim_id": "C1",
+        "status": "supported",
+        "supporting_evidence_ids": [
+          "E0745e560"
+        ],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {
+          "E0745e560": "On the WMT 2014 English-to-German translation task, the big transformer model (Transformer (big) in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0 BLEU, establishing a new state-of-the-art BLEU score of 28.4."
+        },
+        "rejected": [],
+        "independent_sources": 1,
+        "required_sources": 1,
+        "rule": "1 independent supporting source(s) >= 1 required",
+        "needs_human_review": false,
+        "round": 0
+      }
+    },
+    "evidence_locators": {
+      "E0745e560": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 8,
+        "chunk_id": "466305611391922681",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The Transformer achieved 28.4 BLEU on the WMT 2014 English-to-German translation task."
+      },
+      "Ea3477f57": {
+        "source": "Trasformer_Application.pdf",
+        "page": 15,
+        "chunk_id": "465810100797922656",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The Transformer achieved 28.4 BLEU on the WMT 2014 English-to-German translation task."
+      },
+      "Eac4f4265": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 8,
+        "chunk_id": "466305611391922678",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The Transformer achieved 28.4 BLEU on the WMT 2014 English-to-German translation task."
+      }
+    },
+    "shown_evidence": {
+      "C1": [
+        "E0745e560",
+        "Ea3477f57",
+        "Eac4f4265"
+      ]
+    },
+    "citations": [
+      {
+        "marker": "C1",
+        "claim_id": "C1",
+        "evidence_id": "E0745e560",
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 8,
+        "url": null,
+        "quote": "On the WMT 2014 English-to-German translation task, the big transformer model (Transformer (big) in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0 BLEU, establishing a new state-of-the-art BLEU score of 28.4."
+      }
+    ],
+    "verified_sentences": [
+      {
+        "text": "The Transformer achieved 28.4 BLEU on the WMT 2014 English-to-German translation task.",
+        "claim_ids": [
+          "C1"
+        ],
+        "origin": "template"
+      }
+    ],
+    "removed_sentences": [],
+    "citation_issues": [],
+    "trace": [
+      {
+        "node": "intake",
+        "agent": "Intake",
+        "result": "accepted",
+        "domain": "general",
+        "domain_version": 1,
+        "source_scope": [
+          "documents"
+        ],
+        "follow_up": false
+      },
+      {
+        "node": "plan",
+        "agent": "Planner",
+        "mode": "fact-check",
+        "sub_questions": 1,
+        "mesh_calls": 0
+      },
+      {
+        "node": "research",
+        "agent": "Researcher",
+        "sub_questions": 1,
+        "evidence": 3,
+        "reused_evidence": 0,
+        "new_evidence": 3,
+        "documents": 3,
+        "web": 0
+      },
+      {
+        "node": "extract",
+        "agent": "Claim extractor",
+        "mode": "fact-check",
+        "claims": 1,
+        "not_checked": 0,
+        "mesh_calls": 0
+      },
+      {
+        "node": "verify",
+        "agent": "Verifier",
+        "round": 0,
+        "claims": 1,
+        "claim_ids": [
+          "C1"
+        ],
+        "verifier_calls": 1,
+        "statuses": {
+          "supported": 1
+        },
+        "rejected_judgments": 0
+      },
+      {
+        "node": "synthesize",
+        "agent": "Synthesizer",
+        "supported_claims": 1,
+        "mode": "template (fact-check)",
+        "sentences": 1
+      },
+      {
+        "node": "cite",
+        "agent": "Citation checker",
+        "kept": 1,
+        "removed": 0,
+        "citations": 1,
+        "integrity_issues": 0,
+        "fallback_sentences": 0,
+        "fallback_claims": []
+      },
+      {
+        "node": "report",
+        "agent": "Reporter",
+        "status": "completed",
+        "verified_sentences": 1,
+        "unverified": 0,
+        "human_review": 0,
+        "termination_reason": null,
+        "final_statuses": {
+          "C1": "supported"
+        }
+      }
+    ],
+    "notices": [],
+    "events": [
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 23,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 4.6000000000000004e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.6640482500079088,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 1.021
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 1.021
+      },
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 23,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 4.6000000000000004e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.38849924999522045,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 1.929
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 1.929
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 848,
+        "output_tokens": 886,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 410,
+        "cost_usd": 0.0024694,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 6.009468292002566,
+        "request_id": "chatcmpl-gemini-1792227535",
+        "error": null,
+        "budget": "eval",
+        "t_s": 8.136
+      }
+    ],
+    "plan": {
+      "in_scope": true,
+      "scope_reason": "fact-check mode: user-supplied claims",
+      "sub_questions": [
+        {
+          "id": "Q1",
+          "text": "The Transformer achieved 28.4 BLEU on the WMT 2014 English-to-German translation task.",
+          "sources": [
+            "documents"
+          ]
+        }
+      ],
+      "resolved_question": ""
+    },
+    "report_markdown": "# Research report\n**Question:** The Transformer achieved 28.4 BLEU on the WMT 2014 English-to-German translation task.\n**Domain:** General enterprise research \u00b7 **Status:** completed\n\n## Verified findings\n- The Transformer achieved 28.4 BLEU on the WMT 2014 English-to-German translation task. [C1] _(verified claim text)_\n\n## Evidence\n| Claim | Status | Source | Source quality | Origin | Quote |\n|---|---|---|---|---|---|\n| C1 | supported | AttentionAllYouNeed.pdf, p. 8 | Unverified (0.35) | new | \"On the WMT 2014 English-to-German translation task, the big transformer model (Transformer (big) in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0 BLEU, establishing a new state-of-the-art BLEU score of 28.4.\" |\n\n## Verification limitations\n- Claim statuses come from deterministic rules applied to verifier-model judgments: a quote must be verbatim in the cited passage, contain the claim's numbers, not negate it, and cover its key terms. Deeper semantic support still depends on the verifier model.\n- Source-quality tiers are provisional ranking signals from configurable rules, not probabilities, and never prove that a source supports a claim.\n- Findings are limited to the sources searched in this run; absence of evidence is reported as unresolved, not as false.\n\n---\n*Mesh LLM calls 1/3 \u00b7 embeddings 2/4 \u00b7 web searches 0/0 \u00b7 tools 2/30 \u00b7 retry rounds 0/2 \u00b7 8.1 s/300.0 s \u00b7 \u2248 $0.0025 (estimated, INCOMPLETE: some token types have no configured rate)*\n*Findings are limited to the retrieved sources.*"
+  },
+  "L05": {
+    "claims": {
+      "C1": {
+        "text": "The base Transformer was trained on 64 TPU chips.",
+        "type": "fact",
+        "risk": "low",
+        "candidate_evidence": []
+      }
+    },
+    "verifications": {
+      "C1": {
+        "claim_id": "C1",
+        "status": "unresolved",
+        "supporting_evidence_ids": [],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {},
+        "rejected": [],
+        "independent_sources": 0,
+        "required_sources": 1,
+        "rule": "no accepted supporting or contradicting evidence; still insufficient after the final retry round",
+        "needs_human_review": false,
+        "round": 0
+      }
+    },
+    "evidence_locators": {
+      "Ee100bd4a": {
+        "source": "AttentionAllYouNeed.pdf",
+        "page": 8,
+        "chunk_id": "466305611391922685",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The base Transformer was trained on 64 TPU chips."
+      },
+      "E43235336": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 7,
+        "chunk_id": "465810100797922214",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The base Transformer was trained on 64 TPU chips."
+      },
+      "E3be0864b": {
+        "source": "MultiModel_Transformaers.pdf",
+        "page": 13,
+        "chunk_id": "465810100797923307",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The base Transformer was trained on 64 TPU chips."
+      }
+    },
+    "shown_evidence": {
+      "C1": [
+        "Ee100bd4a",
+        "E43235336",
+        "E3be0864b"
+      ]
+    },
+    "citations": [],
+    "verified_sentences": [],
+    "removed_sentences": [],
+    "citation_issues": [],
+    "trace": [
+      {
+        "node": "intake",
+        "agent": "Intake",
+        "result": "accepted",
+        "domain": "general",
+        "domain_version": 1,
+        "source_scope": [
+          "documents"
+        ],
+        "follow_up": false
+      },
+      {
+        "node": "plan",
+        "agent": "Planner",
+        "mode": "fact-check",
+        "sub_questions": 1,
+        "mesh_calls": 0
+      },
+      {
+        "node": "research",
+        "agent": "Researcher",
+        "sub_questions": 1,
+        "evidence": 3,
+        "reused_evidence": 0,
+        "new_evidence": 3,
+        "documents": 3,
+        "web": 0
+      },
+      {
+        "node": "extract",
+        "agent": "Claim extractor",
+        "mode": "fact-check",
+        "claims": 1,
+        "not_checked": 0,
+        "mesh_calls": 0
+      },
+      {
+        "node": "verify",
+        "agent": "Verifier",
+        "round": 0,
+        "claims": 1,
+        "claim_ids": [
+          "C1"
+        ],
+        "verifier_calls": 1,
+        "statuses": {
+          "insufficient_evidence": 1
+        },
+        "rejected_judgments": 0
+      },
+      {
+        "node": "synthesize",
+        "agent": "Synthesizer",
+        "supported_claims": 0,
+        "mode": "none",
+        "sentences": 0
+      },
+      {
+        "node": "cite",
+        "agent": "Citation checker",
+        "kept": 0,
+        "removed": 0,
+        "citations": 0,
+        "integrity_issues": 0,
+        "fallback_sentences": 0,
+        "fallback_claims": []
+      },
+      {
+        "node": "report",
+        "agent": "Reporter",
+        "status": "no_verified_findings",
+        "verified_sentences": 0,
+        "unverified": 1,
+        "human_review": 0,
+        "termination_reason": null,
+        "final_statuses": {
+          "C1": "unresolved"
+        }
+      }
+    ],
+    "notices": [],
+    "events": [
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 12,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 2.4e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.5428562919842079,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 0.889
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 0.89
+      },
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 12,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 2.4e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.4244985830155201,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 1.838
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 1.838
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 839,
+        "output_tokens": 914,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 597,
+        "cost_usd": 0.0025367,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 3.971268583962228,
+        "request_id": "chatcmpl-gemini-1792227542",
+        "error": null,
+        "budget": "eval",
+        "t_s": 6.0
+      }
+    ],
+    "plan": {
+      "in_scope": true,
+      "scope_reason": "fact-check mode: user-supplied claims",
+      "sub_questions": [
+        {
+          "id": "Q1",
+          "text": "The base Transformer was trained on 64 TPU chips.",
+          "sources": [
+            "documents"
+          ]
+        }
+      ],
+      "resolved_question": ""
+    },
+    "report_markdown": "# Research report\n**Question:** The base Transformer was trained on 64 TPU chips.\n**Domain:** General enterprise research \u00b7 **Status:** no_verified_findings\n\n## Verified findings\nNo claim could be verified.\n\n## Disputed or unverified (excluded from the findings)\n- **C1 \u2014 unresolved:** The base Transformer was trained on 64 TPU chips.\n  - Unresolved: not enough accepted evidence (no accepted supporting or contradicting evidence; still insufficient after the final retry round).\n\n## Verification limitations\n- Claim statuses come from deterministic rules applied to verifier-model judgments: a quote must be verbatim in the cited passage, contain the claim's numbers, not negate it, and cover its key terms. Deeper semantic support still depends on the verifier model.\n- Source-quality tiers are provisional ranking signals from configurable rules, not probabilities, and never prove that a source supports a claim.\n- Findings are limited to the sources searched in this run; absence of evidence is reported as unresolved, not as false.\n\n---\n*Mesh LLM calls 1/3 \u00b7 embeddings 2/4 \u00b7 web searches 0/0 \u00b7 tools 2/30 \u00b7 retry rounds 0/2 \u00b7 6.0 s/300.0 s \u00b7 \u2248 $0.0025 (estimated, INCOMPLETE: some token types have no configured rate)*\n*Findings are limited to the retrieved sources.*"
+  },
+  "L06": {
+    "claims": {
+      "C1": {
+        "text": "The survey categorizes X-formers from three perspectives: architectural modification, pre-training, and applications.",
+        "type": "fact",
+        "risk": "low",
+        "candidate_evidence": []
+      }
+    },
+    "verifications": {
+      "C1": {
+        "claim_id": "C1",
+        "status": "unresolved",
+        "supporting_evidence_ids": [],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {},
+        "rejected": [
+          {
+            "claim_id": "C1",
+            "evidence_id": "E4904453d",
+            "stance": "supports",
+            "reason": "quote_not_about_claim(overlap=0.33)",
+            "quote": "we mainly focus on the general architecture variants and just briefly discuss the specific variants on pre-training and applications.",
+            "source": "Trasformer_Survey.pdf",
+            "page": 2,
+            "url": null
+          }
+        ],
+        "independent_sources": 0,
+        "required_sources": 1,
+        "rule": "no accepted supporting or contradicting evidence; still insufficient after the final retry round",
+        "needs_human_review": false,
+        "round": 0
+      }
+    },
+    "evidence_locators": {
+      "E1d9ae28a": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 32,
+        "chunk_id": "465810100797922430",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The survey categorizes X-formers from three perspectives: architectural modification, pre-training, and applications."
+      },
+      "E5eddd10a": {
+        "source": "Trasformer_Application.pdf",
+        "page": 8,
+        "chunk_id": "465810100797922605",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The survey categorizes X-formers from three perspectives: architectural modification, pre-training, and applications."
+      },
+      "E4904453d": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 2,
+        "chunk_id": "465810100797922174",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The survey categorizes X-formers from three perspectives: architectural modification, pre-training, and applications."
+      }
+    },
+    "shown_evidence": {
+      "C1": [
+        "E1d9ae28a",
+        "E5eddd10a",
+        "E4904453d"
+      ]
+    },
+    "citations": [],
+    "verified_sentences": [],
+    "removed_sentences": [],
+    "citation_issues": [],
+    "trace": [
+      {
+        "node": "intake",
+        "agent": "Intake",
+        "result": "accepted",
+        "domain": "general",
+        "domain_version": 1,
+        "source_scope": [
+          "documents"
+        ],
+        "follow_up": false
+      },
+      {
+        "node": "plan",
+        "agent": "Planner",
+        "mode": "fact-check",
+        "sub_questions": 1,
+        "mesh_calls": 0
+      },
+      {
+        "node": "research",
+        "agent": "Researcher",
+        "sub_questions": 1,
+        "evidence": 3,
+        "reused_evidence": 0,
+        "new_evidence": 3,
+        "documents": 3,
+        "web": 0
+      },
+      {
+        "node": "extract",
+        "agent": "Claim extractor",
+        "mode": "fact-check",
+        "claims": 1,
+        "not_checked": 0,
+        "mesh_calls": 0
+      },
+      {
+        "node": "verify",
+        "agent": "Verifier",
+        "round": 0,
+        "claims": 1,
+        "claim_ids": [
+          "C1"
+        ],
+        "verifier_calls": 1,
+        "statuses": {
+          "insufficient_evidence": 1
+        },
+        "rejected_judgments": 1
+      },
+      {
+        "node": "synthesize",
+        "agent": "Synthesizer",
+        "supported_claims": 0,
+        "mode": "none",
+        "sentences": 0
+      },
+      {
+        "node": "cite",
+        "agent": "Citation checker",
+        "kept": 0,
+        "removed": 0,
+        "citations": 0,
+        "integrity_issues": 0,
+        "fallback_sentences": 0,
+        "fallback_claims": []
+      },
+      {
+        "node": "report",
+        "agent": "Reporter",
+        "status": "no_verified_findings",
+        "verified_sentences": 0,
+        "unverified": 1,
+        "human_review": 0,
+        "termination_reason": null,
+        "final_statuses": {
+          "C1": "unresolved"
+        }
+      }
+    ],
+    "notices": [],
+    "events": [
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 20,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 4.0000000000000003e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.5634192499564961,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 0.92
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 0.92
+      },
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 20,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 4.0000000000000003e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.6567984590074047,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 2.119
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 2.119
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 666,
+        "output_tokens": 3003,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 2543,
+        "cost_usd": 0.0077073,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 12.5270811249502,
+        "request_id": "chatcmpl-gemini-1792227556",
+        "error": null,
+        "budget": "eval",
+        "t_s": 14.844
+      }
+    ],
+    "plan": {
+      "in_scope": true,
+      "scope_reason": "fact-check mode: user-supplied claims",
+      "sub_questions": [
+        {
+          "id": "Q1",
+          "text": "The survey categorizes X-formers from three perspectives: architectural modification, pre-training, and applications.",
+          "sources": [
+            "documents"
+          ]
+        }
+      ],
+      "resolved_question": ""
+    },
+    "report_markdown": "# Research report\n**Question:** The survey categorizes X-formers from three perspectives: architectural modification, pre-training, and applications.\n**Domain:** General enterprise research \u00b7 **Status:** no_verified_findings\n\n## Verified findings\nNo claim could be verified.\n\n## Disputed or unverified (excluded from the findings)\n- **C1 \u2014 unresolved:** The survey categorizes X-formers from three perspectives: architectural modification, pre-training, and applications.\n  - Unresolved: not enough accepted evidence (no accepted supporting or contradicting evidence; still insufficient after the final retry round).\n  - rejected supports quote from Trasformer_Survey.pdf, p. 2: \"we mainly focus on the general architecture variants and just briefly discuss the specific variants on pre-training and applications.\" \u2014 quote_not_about_claim(overlap=0.33)\n\n## Verification limitations\n- Claim statuses come from deterministic rules applied to verifier-model judgments: a quote must be verbatim in the cited passage, contain the claim's numbers, not negate it, and cover its key terms. Deeper semantic support still depends on the verifier model.\n- Source-quality tiers are provisional ranking signals from configurable rules, not probabilities, and never prove that a source supports a claim.\n- Findings are limited to the sources searched in this run; absence of evidence is reported as unresolved, not as false.\n\n---\n*Mesh LLM calls 1/3 \u00b7 embeddings 2/4 \u00b7 web searches 0/0 \u00b7 tools 2/30 \u00b7 retry rounds 0/2 \u00b7 14.9 s/300.0 s \u00b7 \u2248 $0.0077 (estimated, INCOMPLETE: some token types have no configured rate)*\n*Findings are limited to the retrieved sources.*"
+  },
+  "L07": {
+    "claims": {
+      "C1": {
+        "text": "The Transformer survey was published in 2010.",
+        "type": "fact",
+        "risk": "low",
+        "candidate_evidence": []
+      }
+    },
+    "verifications": {
+      "C1": {
+        "claim_id": "C1",
+        "status": "unresolved",
+        "supporting_evidence_ids": [],
+        "contradicting_evidence_ids": [],
+        "accepted_quotes": {},
+        "rejected": [
+          {
+            "claim_id": "C1",
+            "evidence_id": "Eea0ce061",
+            "stance": "contradicts",
+            "reason": "quote_not_about_claim(overlap=0.33)",
+            "quote": "formers: A survey,\u201d arXiv, 2020.",
+            "source": "MultiModel_Transformaers.pdf",
+            "page": 16,
+            "url": null
+          }
+        ],
+        "independent_sources": 0,
+        "required_sources": 1,
+        "rule": "no accepted supporting or contradicting evidence; still insufficient after the final retry round",
+        "needs_human_review": false,
+        "round": 0
+      }
+    },
+    "evidence_locators": {
+      "Ef1872c14": {
+        "source": "Trasformer_Application.pdf",
+        "page": 48,
+        "chunk_id": "465810100797922995",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The Transformer survey was published in 2010."
+      },
+      "Eea0ce061": {
+        "source": "MultiModel_Transformaers.pdf",
+        "page": 16,
+        "chunk_id": "465810100797923359",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The Transformer survey was published in 2010."
+      },
+      "E6232ffeb": {
+        "source": "Trasformer_Survey.pdf",
+        "page": 31,
+        "chunk_id": "465810100797922412",
+        "origin": "new",
+        "quality": "unverified",
+        "retrieved_via": "The Transformer survey was published in 2010."
+      }
+    },
+    "shown_evidence": {
+      "C1": [
+        "Ef1872c14",
+        "Eea0ce061",
+        "E6232ffeb"
+      ]
+    },
+    "citations": [],
+    "verified_sentences": [],
+    "removed_sentences": [],
+    "citation_issues": [],
+    "trace": [
+      {
+        "node": "intake",
+        "agent": "Intake",
+        "result": "accepted",
+        "domain": "general",
+        "domain_version": 1,
+        "source_scope": [
+          "documents"
+        ],
+        "follow_up": false
+      },
+      {
+        "node": "plan",
+        "agent": "Planner",
+        "mode": "fact-check",
+        "sub_questions": 1,
+        "mesh_calls": 0
+      },
+      {
+        "node": "research",
+        "agent": "Researcher",
+        "sub_questions": 1,
+        "evidence": 3,
+        "reused_evidence": 0,
+        "new_evidence": 3,
+        "documents": 3,
+        "web": 0
+      },
+      {
+        "node": "extract",
+        "agent": "Claim extractor",
+        "mode": "fact-check",
+        "claims": 1,
+        "not_checked": 0,
+        "mesh_calls": 0
+      },
+      {
+        "node": "verify",
+        "agent": "Verifier",
+        "round": 0,
+        "claims": 1,
+        "claim_ids": [
+          "C1"
+        ],
+        "verifier_calls": 1,
+        "statuses": {
+          "insufficient_evidence": 1
+        },
+        "rejected_judgments": 1
+      },
+      {
+        "node": "synthesize",
+        "agent": "Synthesizer",
+        "supported_claims": 0,
+        "mode": "none",
+        "sentences": 0
+      },
+      {
+        "node": "cite",
+        "agent": "Citation checker",
+        "kept": 0,
+        "removed": 0,
+        "citations": 0,
+        "integrity_issues": 0,
+        "fallback_sentences": 0,
+        "fallback_claims": []
+      },
+      {
+        "node": "report",
+        "agent": "Reporter",
+        "status": "no_verified_findings",
+        "verified_sentences": 0,
+        "unverified": 1,
+        "human_review": 0,
+        "termination_reason": null,
+        "final_statuses": {
+          "C1": "unresolved"
+        }
+      }
+    ],
+    "notices": [],
+    "events": [
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 10,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 2.0000000000000002e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.5509350420325063,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 0.897
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 0.897
+      },
+      {
+        "provider": "mesh",
+        "operation": "embedding",
+        "model_requested": "openai/text-embedding-3-small",
+        "model_served": "text-embedding-3-small",
+        "status": "ok",
+        "input_tokens": 10,
+        "output_tokens": 0,
+        "tokens_estimated": false,
+        "cached_input_tokens": null,
+        "reasoning_tokens": null,
+        "cost_usd": 2.0000000000000002e-07,
+        "cost_basis": "estimated",
+        "priced_as": "openai/text-embedding-3-small",
+        "cost_incomplete_reasons": null,
+        "latency_s": 0.5531803750200197,
+        "request_id": null,
+        "error": null,
+        "budget": "eval",
+        "t_s": 1.978
+      },
+      {
+        "provider": "local",
+        "operation": "milvus_search",
+        "status": "ok",
+        "budget": "eval",
+        "t_s": 1.978
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 718,
+        "output_tokens": 604,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 239,
+        "cost_usd": 0.0017254000000000002,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 3.0349490829976276,
+        "request_id": "chatcmpl-gemini-1792227562",
+        "error": null,
+        "budget": "eval",
+        "t_s": 5.203
+      }
+    ],
+    "plan": {
+      "in_scope": true,
+      "scope_reason": "fact-check mode: user-supplied claims",
+      "sub_questions": [
+        {
+          "id": "Q1",
+          "text": "The Transformer survey was published in 2010.",
+          "sources": [
+            "documents"
+          ]
+        }
+      ],
+      "resolved_question": ""
+    },
+    "report_markdown": "# Research report\n**Question:** The Transformer survey was published in 2010.\n**Domain:** General enterprise research \u00b7 **Status:** no_verified_findings\n\n## Verified findings\nNo claim could be verified.\n\n## Disputed or unverified (excluded from the findings)\n- **C1 \u2014 unresolved:** The Transformer survey was published in 2010.\n  - Unresolved: not enough accepted evidence (no accepted supporting or contradicting evidence; still insufficient after the final retry round).\n  - rejected contradicts quote from MultiModel_Transformaers.pdf, p. 16: \"formers: A survey,\u201d arXiv, 2020.\" \u2014 quote_not_about_claim(overlap=0.33)\n\n## Verification limitations\n- Claim statuses come from deterministic rules applied to verifier-model judgments: a quote must be verbatim in the cited passage, contain the claim's numbers, not negate it, and cover its key terms. Deeper semantic support still depends on the verifier model.\n- Source-quality tiers are provisional ranking signals from configurable rules, not probabilities, and never prove that a source supports a claim.\n- Findings are limited to the sources searched in this run; absence of evidence is reported as unresolved, not as false.\n\n---\n*Mesh LLM calls 1/3 \u00b7 embeddings 2/4 \u00b7 web searches 0/0 \u00b7 tools 2/30 \u00b7 retry rounds 0/2 \u00b7 5.2 s/300.0 s \u00b7 \u2248 $0.0017 (estimated, INCOMPLETE: some token types have no configured rate)*\n*Findings are limited to the retrieved sources.*"
+  }
+}

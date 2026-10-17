@@ -1,45 +1,52 @@
 from monitoring.logger import setup_logger
 from agents.state_node import AgentRagState
-from config.config import Config
-from langchain_community.tools import TavilySearchResults
+from budget import BudgetExceeded, budget_from_config
+from gateway import MeshError, chat_model
+from retriever.web_search import get_web_search_provider
 from langchain_core.messages import AIMessage
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
+from langchain_core.runnables import RunnableConfig
 
 logger = setup_logger()
 
-def WebSearchAgent(state:AgentRagState):
+def WebSearchAgent(state:AgentRagState, config: RunnableConfig):
     """
     Role: Active web search researcher. Executes a web query when local docs
-    are missing information on non AI related topics
-    
+    are missing information on non AI related topics.
+
+    Search goes through the governed WebSearchProvider (Tavily, a non-model
+    provider) with per-run quotas, timeouts and bounded retries.
     """
 
     question = state['query']
-    logger.info(f"WebSearchAgent|Query:{question}")
-
-
-    TAVILY_API_KEY = os.getenv('TAVILY_API_KEY')
-    
-
-    if not TAVILY_API_KEY:
-        logger.error(f"WebSearchAgent | TAVILY_API_KEY environment variable is missing!")
-        # Optional: Fail gracefully or throw an explicit instruction error
+    budget = budget_from_config(config)
+    notices = []
+    logger.info("WebSearchAgent| Query received")
 
     # execute live web search
-    search_tool = TavilySearchResults(max=3,TAVILY_API_KEY=TAVILY_API_KEY)
-    search_results = search_tool.invoke({"query":question})
-    logger.info(f"WebSearchAgent|Search Results:{search_results}")
+    try:
+        provider = get_web_search_provider(budget)
+        search_results = provider.search(question)
+    except BudgetExceeded as e:
+        return {"termination_reason": e.reason, "retrieved_docs": [], "draft_answer": None}
+    except Exception as e:  # quota, timeout, missing key, provider error
+        logger.error(f"WebSearchAgent | Web search failed: {type(e).__name__}")
+        search_results = []
+        notices.append(f"Web search unavailable: {e}")
 
-    # Tavily returns a list of dicts with 'url' and 'content'
+    logger.info(f"WebSearchAgent| {len(search_results)} search results")
+
     retrieved_docs = [
-        {"content": result["content"], "source": result.get("url","Web Search")}
+        {"content": result.content, "source": result.url, "retrieved_at": result.retrieved_at}
         for result in search_results
     ]
+
+    if not retrieved_docs:
+        # Do not spend a model call writing an answer without any web context
+        answer = "Web search returned no usable results, so no web-grounded answer could be produced."
+        return {"retrieved_docs": [], "messages": [AIMessage(content=answer)],
+                "draft_answer": answer, "notices": notices}
 
     # convert to string context for the prompt
     formatted_docs = "\n\n".join(
@@ -64,17 +71,25 @@ def WebSearchAgent(state:AgentRagState):
 
     prompt = PromptTemplate.from_template(template)
 
-    config = Config()
-    model = config.get_llm()
+    model = chat_model("generator", budget)
     chain = prompt | model | StrOutputParser()
 
-    response = chain.invoke({
-        "question":question,"formatted_docs":formatted_docs
-    })
+    try:
+        response = chain.invoke({
+            "question":question,"formatted_docs":formatted_docs
+        })
+    except BudgetExceeded as e:
+        return {"termination_reason": e.reason, "retrieved_docs": retrieved_docs, "draft_answer": None, "notices": notices}
+    except MeshError as e:
+        logger.error(f"WebSearchAgent | Mesh call failed: {type(e).__name__}")
+        return {"termination_reason": "mesh_error", "retrieved_docs": retrieved_docs, "draft_answer": None,
+                "notices": notices + [f"Answer generation failed: {e}"]}
 
     logger.info(f"WebSearchAgent| Response Generated Successfully")
 
     return {
         "retrieved_docs": retrieved_docs,
-        "messages":[AIMessage(content=response)]
+        "messages":[AIMessage(content=response)],
+        "draft_answer": response,
+        "notices": notices,
     }

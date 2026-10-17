@@ -1,0 +1,1532 @@
+[
+  {
+    "id": "GR1-India",
+    "question": "What are the three biggest growth opportunities and three biggest commercialization risks for India's defence-tech startups through 2030, based on developments and policies available as of October 2026?",
+    "sources": [
+      "web"
+    ],
+    "follow_up": false,
+    "exception": [],
+    "limits": {
+      "max_llm_calls": 9,
+      "max_embedding_calls": 0,
+      "max_web_searches": 8,
+      "max_tool_calls": 30,
+      "max_retry_rounds": 2,
+      "max_run_seconds": 300.0,
+      "max_mesh_cost_usd": 0.5,
+      "cost_safety_factor": 1.25
+    },
+    "usage": {
+      "mesh_chat_calls": 7,
+      "mesh_vision_calls": 0,
+      "mesh_embedding_calls": 0,
+      "mesh_failed_attempts": 0,
+      "mesh_input_tokens": 18144,
+      "mesh_output_tokens": 11870,
+      "web_searches": 8,
+      "web_search_failures": 0,
+      "tool_calls": 8,
+      "retry_rounds": 2,
+      "elapsed_s": 83.411,
+      "mesh_cached_responses": 0,
+      "mesh_cached_input_tokens": 0,
+      "mesh_reasoning_tokens": 6856,
+      "mesh_cost_usd": 0.0326302,
+      "mesh_reported_cost_usd": 0.0,
+      "mesh_estimated_cost_usd": 0.0326302,
+      "cost_basis": "estimated",
+      "cost_estimate_incomplete": true,
+      "cost_incomplete_reasons": [
+        "reasoning tokens priced at the output rate (no reasoning rate configured)"
+      ],
+      "cost_cap_enforced": true,
+      "web_search_credits_estimated": 8.0
+    },
+    "events": [
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "openai/gpt-4o-mini",
+        "model_served": "gpt-4o-mini-2024-07-18",
+        "status": "ok",
+        "input_tokens": 333,
+        "output_tokens": 161,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.00014654999999999998,
+        "cost_basis": "estimated",
+        "priced_as": "openai/gpt-4o-mini",
+        "cached": false,
+        "cache_marker": null,
+        "cost_incomplete_reasons": null,
+        "latency_s": 2.8337029999820516,
+        "request_id": "chatcmpl-EZwJ3vOLILB6cUKlRPgOJn4XKiQKu",
+        "error": null,
+        "budget": "ui-pilot",
+        "t_s": 2.893
+      },
+      {
+        "provider": "tavily",
+        "operation": "search",
+        "status": "ok",
+        "result_count": 3,
+        "latency_s": 4.86349312501261,
+        "credits_estimated": 1.0,
+        "query_hash": "5cb2902a24ad",
+        "error": null,
+        "budget": "ui-pilot",
+        "t_s": 7.765
+      },
+      {
+        "provider": "tavily",
+        "operation": "search",
+        "status": "ok",
+        "result_count": 3,
+        "latency_s": 2.612840874993708,
+        "credits_estimated": 1.0,
+        "query_hash": "5d220b74e923",
+        "error": null,
+        "budget": "ui-pilot",
+        "t_s": 10.385
+      },
+      {
+        "provider": "tavily",
+        "operation": "search",
+        "status": "ok",
+        "result_count": 3,
+        "latency_s": 4.028666833997704,
+        "credits_estimated": 1.0,
+        "query_hash": "71c3b868db30",
+        "error": null,
+        "budget": "ui-pilot",
+        "t_s": 14.416
+      },
+      {
+        "provider": "tavily",
+        "operation": "search",
+        "status": "ok",
+        "result_count": 3,
+        "latency_s": 2.943981958029326,
+        "credits_estimated": 1.0,
+        "query_hash": "0ff816d5ea8c",
+        "error": null,
+        "budget": "ui-pilot",
+        "t_s": 17.361
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "openai/gpt-4o-mini",
+        "model_served": "gpt-4o-mini-2024-07-18",
+        "status": "ok",
+        "input_tokens": 5386,
+        "output_tokens": 477,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.0010941,
+        "cost_basis": "estimated",
+        "priced_as": "openai/gpt-4o-mini",
+        "cached": false,
+        "cache_marker": null,
+        "cost_incomplete_reasons": null,
+        "latency_s": 5.13043837499572,
+        "request_id": "chatcmpl-EZwJLYXfrtIKM3givxPLGhamRey7T",
+        "error": null,
+        "budget": "ui-pilot",
+        "t_s": 22.505
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 2321,
+        "output_tokens": 4700,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 3851,
+        "cost_usd": 0.012446299999999999,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cached": false,
+        "cache_marker": null,
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 18.163063291984145,
+        "request_id": "chatcmpl-gemini-1792234357",
+        "error": null,
+        "budget": "ui-pilot",
+        "t_s": 40.675
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 1556,
+        "output_tokens": 817,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 327,
+        "cost_usd": 0.0025093000000000003,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cached": false,
+        "cache_marker": null,
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 4.796329999982845,
+        "request_id": "chatcmpl-gemini-1792234361",
+        "error": null,
+        "budget": "ui-pilot",
+        "t_s": 45.483
+      },
+      {
+        "provider": "tavily",
+        "operation": "search",
+        "status": "ok",
+        "result_count": 3,
+        "latency_s": 3.340336124994792,
+        "credits_estimated": 1.0,
+        "query_hash": "35d5e38b70ab",
+        "error": null,
+        "budget": "ui-pilot",
+        "t_s": 48.832
+      },
+      {
+        "provider": "tavily",
+        "operation": "search",
+        "status": "ok",
+        "result_count": 3,
+        "latency_s": 2.2311132500180975,
+        "credits_estimated": 1.0,
+        "query_hash": "6e07e68db792",
+        "error": null,
+        "budget": "ui-pilot",
+        "t_s": 51.066
+      },
+      {
+        "provider": "tavily",
+        "operation": "search",
+        "status": "ok",
+        "result_count": 3,
+        "latency_s": 2.963075249979738,
+        "credits_estimated": 1.0,
+        "query_hash": "e2a3a689484a",
+        "error": null,
+        "budget": "ui-pilot",
+        "t_s": 54.03
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 4967,
+        "output_tokens": 3491,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 1404,
+        "cost_usd": 0.0102176,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cached": false,
+        "cache_marker": null,
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 14.741588666976895,
+        "request_id": "chatcmpl-gemini-1792234385",
+        "error": null,
+        "budget": "ui-pilot",
+        "t_s": 68.79
+      },
+      {
+        "provider": "tavily",
+        "operation": "search",
+        "status": "ok",
+        "result_count": 3,
+        "latency_s": 2.6741199999814853,
+        "credits_estimated": 1.0,
+        "query_hash": "35d5e38b70ab",
+        "error": null,
+        "budget": "ui-pilot",
+        "t_s": 71.475
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "google/gemini-2.5-flash",
+        "model_served": "gemini-2.5-flash",
+        "status": "ok",
+        "input_tokens": 3024,
+        "output_tokens": 2048,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 1274,
+        "cost_usd": 0.0060272,
+        "cost_basis": "estimated",
+        "priced_as": "google/gemini-2.5-flash",
+        "cached": false,
+        "cache_marker": null,
+        "cost_incomplete_reasons": [
+          "reasoning tokens priced at the output rate (no reasoning rate configured)"
+        ],
+        "latency_s": 9.194208208005875,
+        "request_id": "chatcmpl-gemini-1792234397",
+        "error": null,
+        "budget": "ui-pilot",
+        "t_s": 80.676
+      },
+      {
+        "provider": "mesh",
+        "operation": "structured",
+        "model_requested": "openai/gpt-4o-mini",
+        "model_served": "gpt-4o-mini-2024-07-18",
+        "status": "ok",
+        "input_tokens": 557,
+        "output_tokens": 176,
+        "tokens_estimated": false,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.00018915,
+        "cost_basis": "estimated",
+        "priced_as": "openai/gpt-4o-mini",
+        "cached": false,
+        "cache_marker": null,
+        "cost_incomplete_reasons": null,
+        "latency_s": 2.644675332994666,
+        "request_id": "chatcmpl-EZwKMGI64Qn1WwSZhaVOw2bq5tpQj",
+        "error": null,
+        "budget": "ui-pilot",
+        "t_s": 83.333
+      }
+    ],
+    "tabs": {
+      "\ud83d\udcc4 Report": {
+        "success": [
+          "Verified findings: every finding below passed claim-level verification and the citation-integrity check."
+        ],
+        "warning": [],
+        "info": [],
+        "error": [],
+        "markdown": [
+          "#### Verified findings",
+          "- The three biggest growth opportunities for India's defence-tech startups include a projected growth in the defence market driven by technologies like AI and autonomous systems (C1), government investment in satellite communications (C3), and support for the AI ecosystem through the India AI Mission (C6). `[C1]` `[C3]` `[C6]` _(forecast: a projection reported by the cited source, not an observed outcome)_",
+          "- The three biggest commercialization risks for these startups involve reliance on imports, as India imports significant quantities of lithium and silicon from China, which could lead to production delays (C7). `[C7]`",
+          "- Additionally, the defence sector's focus on critical minerals, highlighted by investments for securing mines, may present risks if domestic supply chains are not adequately developed (C4). `[C4]`",
+          "#### Excluded from the findings (2)",
+          "- **C5** \u26a0\ufe0f Unresolved: At least 71% of the funding raised by defence-tech startups in India in the first half of 2025 was driven by drone and anti-drone technologies.",
+          "- **C8** \u26a0\ufe0f Unresolved: Geopolitical tensions in 2026 will challenge corporate strategy, driven by regional instability and technological overheating according to analysis by Angel Saz-Carranza."
+        ],
+        "caption": [
+          "\u26a0\ufe0f Retry web search stopped (max_web_searches)"
+        ]
+      },
+      "\ud83e\uddfe Claims": {
+        "success": [],
+        "warning": [],
+        "info": [],
+        "error": [],
+        "markdown": [
+          "#### \u2705 Supported (6)",
+          "**C1** \u2014 India\u2019s defence market is projected to grow 48% from $27 billion in 2025 to $40 billion by 2030, with $19 billion of that growth driven by technologies like AI, autonomous systems, and quantum computing.",
+          "**C2** \u2014 India's defence budget crossed USD 86.1 billion annually, making it the fifth largest military spender in the world.",
+          "**C3** \u2014 The Indian government allocated INR 25,000 crore (USD 2.92 billion) through 2030 to expand its satellite communications and secure data links in the defense market.",
+          "**C4** \u2014 The National Critical Mineral Mission has earmarked INR 16,000 crore (USD 1.87 billion) to secure 50 overseas mines for critical minerals in the defense sector.",
+          "**C6** \u2014 The Indian government introduced the \u20b910,372 crore India AI Mission in March 2024 to enhance the country\u2019s AI ecosystem, focused on supporting startups and fostering innovation.",
+          "**C7** \u2014 India imports 82% of lithium and 76% of silicon from China, which risks production delays for precision weapons and avionics in the defense sector.",
+          "#### \u26a0\ufe0f Unresolved (2)",
+          "**C5** \u2014 At least 71% of the funding raised by defence-tech startups in India in the first half of 2025 was driven by drone and anti-drone technologies.",
+          "**C8** \u2014 Geopolitical tensions in 2026 will challenge corporate strategy, driven by regional instability and technological overheating according to analysis by Angel Saz-Carranza."
+        ],
+        "caption": [
+          "Supported: 1 independent source(s) with an accepted supporting quote (\u2265 1 required) and no accepted contradiction.",
+          "\u2705 Supported \u00b7 rule: 1 independent supporting source(s) >= 1 required \u00b7 independent sources 1/1 required",
+          "Supported: 1 independent source(s) with an accepted supporting quote (\u2265 1 required) and no accepted contradiction.",
+          "\u2705 Supported \u00b7 rule: 1 independent supporting source(s) >= 1 required \u00b7 independent sources 1/1 required",
+          "Supported: 1 independent source(s) with an accepted supporting quote (\u2265 1 required) and no accepted contradiction.",
+          "\u2705 Supported \u00b7 rule: 1 independent supporting source(s) >= 1 required \u00b7 independent sources 1/1 required",
+          "Supported: 1 independent source(s) with an accepted supporting quote (\u2265 1 required) and no accepted contradiction.",
+          "\u2705 Supported \u00b7 rule: 1 independent supporting source(s) >= 1 required \u00b7 independent sources 1/1 required",
+          "Supported: 2 independent source(s) with an accepted supporting quote (\u2265 1 required) and no accepted contradiction.",
+          "\u2705 Supported \u00b7 rule: 2 independent supporting source(s) >= 1 required \u00b7 independent sources 2/1 required",
+          "\u21b3 rejected evidence Eff8ea176 (supports): claim_numbers_missing_from_quote:10372",
+          "\u21b3 rejected evidence Ece8f625b (supports): claim_numbers_missing_from_quote:2024",
+          "Supported: 1 independent source(s) with an accepted supporting quote (\u2265 1 required) and no accepted contradiction.",
+          "\u2705 Supported \u00b7 rule: 1 independent supporting source(s) >= 1 required \u00b7 independent sources 1/1 required",
+          "Unresolved: not enough accepted evidence (no accepted supporting or contradicting evidence; still insufficient after the final retry round).",
+          "\u26a0\ufe0f Unresolved \u00b7 rule: no accepted supporting or contradicting evidence; still insufficient after the final retry round \u00b7 independent sources 0/1 required",
+          "\u21b3 rejected evidence E0d392c52 (supports): claim_numbers_missing_from_quote:2025",
+          "\u21b3 rejected evidence E0d392c52 (supports): quote_not_in_evidence",
+          "Unresolved: not enough accepted evidence (no accepted supporting or contradicting evidence; still insufficient after the final retry round).",
+          "\u26a0\ufe0f Unresolved \u00b7 rule: no accepted supporting or contradicting evidence; still insufficient after the final retry round \u00b7 independent sources 0/1 required",
+          "\u21b3 rejected evidence E8531eaeb (supports): negation_mismatch",
+          "\u21b3 rejected evidence E16aa655e (supports): quote_not_in_evidence"
+        ]
+      },
+      "\ud83d\udcda Evidence": {
+        "success": [],
+        "warning": [],
+        "info": [],
+        "error": [],
+        "markdown": [
+          "#### Supporting evidence for verified findings",
+          "**[C1] https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd**",
+          "> \u201cIndia\u2019s defence market is projected to grow 48% \u2014 from $27 Bn in 2025 to $40 Bn by 2030, with $19 Bn of that growth driven by technologies like AI, autonomous systems, and quantum computing.\u201d",
+          "**[C2] https://ipocentral.in/top-defence-tech-startups-in-india**",
+          "> \u201cIndia is the fifth largest military spender in the world with defence budgets crossing USD 86.1 billion annually.\u201d",
+          "**[C3] https://www.mordorintelligence.com/industry-reports/india-defense-market**",
+          "> \u201cAn INR 25,000 crore (USD 2.92 billion) allocation through 2030 underwrites satellite communications, early-warning payloads, and secure data links.\u201d",
+          "**[C4] https://www.mordorintelligence.com/industry-reports/india-defense-market**",
+          "> \u201cThe National Critical Mineral Mission earmarks INR 16,000 crore (USD 1.87 billion) to secure 50 overseas mines, yet geopolitical frictions could restrict access.\u201d",
+          "**[C6] https://synclifecode.com/what-is-indiaai-mission**",
+          "> \u201cThe IndiaAI Mission\u2014approved by the Cabinet of India on March 7, 2024\u2014is a nationwide initiative designed to strengthen India\u2019s artificial intelligence capabilities. With a massive budget allocation of \u20b910,372 crore, the mission aims to create a complete AI ecosystem that promotes innovation, builds compute infrastructure, supports startups, and encourages responsible use of AI technologies.\u201d",
+          "**[C6] https://www.pib.gov.in/PressReleasePage.aspx?PRID=2227612&reg=48&lang=2**",
+          "> \u201cIn March 2024, Government of India launched IndiaAI mission with outlay of Rs 10,372 Cr for development of the overall AI ecosystem in the country.\u201d",
+          "**[C7] https://www.mordorintelligence.com/industry-reports/india-defense-market**",
+          "> \u201cIndia imports 82% of lithium and 76% of silicon from China, risking production delays for precision weapons and avionics.\u201d"
+        ],
+        "caption": [
+          "Source-quality tiers are provisional ranking signals from config/source_quality.yaml: Primary (1.00) official regulator, standards body or government domain \u00b7 Strong secondary (0.85) peer-reviewed journal or scholarly publisher \u00b7 General secondary (0.65) established news agency, reference work, preprint server or official project documentation \u00b7 Unverified (0.35) anything not in the curated lists, including documents without registered metadata. They order evidence but never decide whether a claim is supported.",
+          "source quality: Unverified (0.35) \u2014 web source linkedin.com is not in a curated quality list \u00b7 \ud83c\udd95 newly retrieved \u00b7 evidence E0d392c52 \u00b7 publication date not reported \u00b7 retrieved 2026-10-17T10:52:19.068014+00:00",
+          "source quality: Unverified (0.35) \u2014 web source ipocentral.in is not in a curated quality list \u00b7 \ud83c\udd95 newly retrieved \u00b7 evidence E31b513ff \u00b7 publication date not reported \u00b7 retrieved 2026-10-17T10:52:16.447151+00:00",
+          "source quality: Unverified (0.35) \u2014 web source mordorintelligence.com is not in a curated quality list \u00b7 \ud83c\udd95 newly retrieved \u00b7 evidence E09216246 \u00b7 publication date not reported \u00b7 retrieved 2026-10-17T10:52:19.068131+00:00",
+          "source quality: Unverified (0.35) \u2014 web source mordorintelligence.com is not in a curated quality list \u00b7 \ud83c\udd95 newly retrieved \u00b7 evidence Eb124ff71 \u00b7 publication date not reported \u00b7 retrieved 2026-10-17T10:52:26.043600+00:00",
+          "source quality: Unverified (0.35) \u2014 web source synclifecode.com is not in a curated quality list \u00b7 \ud83c\udd95 newly retrieved \u00b7 evidence E8937b448 \u00b7 publication date not reported \u00b7 retrieved 2026-10-17T10:52:59.748319+00:00",
+          "source quality: Unverified (0.35) \u2014 web source pib.gov.in is not in a curated quality list \u00b7 \ud83c\udd95 newly retrieved \u00b7 evidence E38c90b59 \u00b7 publication date not reported \u00b7 retrieved 2026-10-17T10:52:59.748473+00:00",
+          "source quality: Unverified (0.35) \u2014 web source mordorintelligence.com is not in a curated quality list \u00b7 \ud83c\udd95 newly retrieved \u00b7 evidence Eb124ff71 \u00b7 publication date not reported \u00b7 retrieved 2026-10-17T10:52:26.043600+00:00"
+        ]
+      },
+      "\ud83d\udd0d Audit": {
+        "success": [],
+        "warning": [],
+        "info": [],
+        "error": [],
+        "markdown": [
+          "#### Workflow trace (agent hand-offs)",
+          "- **Researcher \u2192 Claim extractor:** 12 evidence passages (12 new, 0 reused)",
+          "- **Claim extractor \u2192 Verifier:** claims C1, C2, C3, C4, C5, C6, C7, C8",
+          "#### Targeted retries",
+          "- Round 1: retried C5, C6, C8 \u00b7 new evidence: C5: E9afc5772, E154a45cf, E3630dfce; C6: E8937b448, Eff8ea176, E38c90b59; C8: E8531eaeb, Ef6a85a3e, Eb704463b",
+          "- Round 2: retried C5, C8 \u00b7 new evidence: C5: E150c62b9, Ead2d0f40",
+          "#### Final claim statuses",
+          "C1: \u2705 Supported \u00b7 C2: \u2705 Supported \u00b7 C3: \u2705 Supported \u00b7 C4: \u2705 Supported \u00b7 C5: \u26a0\ufe0f Unresolved \u00b7 C6: \u2705 Supported \u00b7 C7: \u2705 Supported \u00b7 C8: \u26a0\ufe0f Unresolved",
+          "#### Retries, usage and cost",
+          "- Retry rounds used: **2/2**",
+          "- Mesh LLM calls 7/9 \u00b7 embeddings 0/0 \u00b7 web searches 8/8 \u00b7 tools 8/30 \u00b7 retry rounds 2/2 \u00b7 83.3 s/300.0 s \u00b7 \u2248 $0.0326 (estimated, INCOMPLETE: some token types have no configured rate)",
+          "- Cost: \u2248 $0.0326 (estimated, INCOMPLETE: some token types have no configured rate) \u2014 reasoning tokens priced at the output rate (no reasoning rate configured)",
+          "- Wall time: 83.33 s \u00b7 termination: none",
+          "#### Rejected evidence judgments",
+          "#### Citation check",
+          "- Integrity issues: **0**",
+          "- Sentences removed: **0**"
+        ],
+        "caption": [
+          "\u26a0\ufe0f Retry web search stopped (max_web_searches)"
+        ]
+      }
+    },
+    "cache_mode": "no-store",
+    "download_buttons": 1,
+    "export_markdown": "# Research report\n**Question:** What are the three biggest growth opportunities and three biggest commercialization risks for India's defence-tech startups through 2030, based on developments and policies available as of October 2026?\n**Domain:** General enterprise research \u00b7 **Status:** completed\n\n## Verified findings\n- The three biggest growth opportunities for India's defence-tech startups include a projected growth in the defence market driven by technologies like AI and autonomous systems (C1), government investment in satellite communications (C3), and support for the AI ecosystem through the India AI Mission (C6). [C1][C3][C6] _(forecast: a projection reported by the cited source, not an observed outcome)_\n- The three biggest commercialization risks for these startups involve reliance on imports, as India imports significant quantities of lithium and silicon from China, which could lead to production delays (C7). [C7]\n- Additionally, the defence sector's focus on critical minerals, highlighted by investments for securing mines, may present risks if domestic supply chains are not adequately developed (C4). [C4]\n\n## Evidence\n| Claim | Status | Source | Source quality | Origin | Quote | Dates |\n|---|---|---|---|---|---|---|\n| C1 | supported | https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd | Unverified (0.35) | new | \"India\u2019s defence market is projected to grow 48% \u2014 from $27 Bn in 2025 to $40 Bn by 2030, with $19 Bn of that growth driven by technologies like AI, autonomous systems, and quantum computing.\" | published not reported \u00b7 retrieved 2026-10-17 |\n| C2 | supported | https://ipocentral.in/top-defence-tech-startups-in-india | Unverified (0.35) | new | \"India is the fifth largest military spender in the world with defence budgets crossing USD 86.1 billion annually.\" | published not reported \u00b7 retrieved 2026-10-17 |\n| C3 | supported | https://www.mordorintelligence.com/industry-reports/india-defense-market | Unverified (0.35) | new | \"An INR 25,000 crore (USD 2.92 billion) allocation through 2030 underwrites satellite communications, early-warning payloads, and secure data links.\" | published not reported \u00b7 retrieved 2026-10-17 |\n| C4 | supported | https://www.mordorintelligence.com/industry-reports/india-defense-market | Unverified (0.35) | new | \"The National Critical Mineral Mission earmarks INR 16,000 crore (USD 1.87 billion) to secure 50 overseas mines, yet geopolitical frictions could restrict access.\" | published not reported \u00b7 retrieved 2026-10-17 |\n| C6 | supported | https://synclifecode.com/what-is-indiaai-mission | Unverified (0.35) | new | \"The IndiaAI Mission\u2014approved by the Cabinet of India on March 7, 2024\u2014is a nationwide initiative designed to strengthen India\u2019s artificial intelligence capabilities. With a massive budget allocation of \u20b910,372 crore, the mission aims to create a complete AI ecosystem that promotes innovation, builds compute infrastructure, supports startups, and encourages responsible use of AI technologies.\" | published not reported \u00b7 retrieved 2026-10-17 |\n| C6 | supported | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2227612&reg=48&lang=2 | Unverified (0.35) | new | \"In March 2024, Government of India launched IndiaAI mission with outlay of Rs 10,372 Cr for development of the overall AI ecosystem in the country.\" | published not reported \u00b7 retrieved 2026-10-17 |\n| C7 | supported | https://www.mordorintelligence.com/industry-reports/india-defense-market | Unverified (0.35) | new | \"India imports 82% of lithium and 76% of silicon from China, risking production delays for precision weapons and avionics.\" | published not reported \u00b7 retrieved 2026-10-17 |\n\n## Disputed or unverified (excluded from the findings)\n- **C5 \u2014 unresolved:** At least 71% of the funding raised by defence-tech startups in India in the first half of 2025 was driven by drone and anti-drone technologies.\n  - Unresolved: not enough accepted evidence (no accepted supporting or contradicting evidence; still insufficient after the final retry round).\n  - rejected supports quote from https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd: \"with drone and anti-drone tech accounting for 71% of that funding.\u2063\u2063\u2063\" \u2014 claim_numbers_missing_from_quote:2025\n  - rejected supports quote from https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd: \"Startups have already \ud835\udc2b\ud835\udc1a\ud835\udc22\ud835\udc2c\ud835\udc1e\ud835\udc1d $\ud835\udfd2\ud835\udfd1\ud835\udfd0 \ud835\udc0c\ud835\udc27 \ud835\udc22\ud835\udc27 \ud835\udc07\ud835\udfcf \ud835\udfd0\ud835\udfce\ud835\udfd0\ud835\udfd3, with drone and anti-drone tech accounting for 71% of that funding.\" \u2014 quote_not_in_evidence\n- **C8 \u2014 unresolved:** Geopolitical tensions in 2026 will challenge corporate strategy, driven by regional instability and technological overheating according to analysis by Angel Saz-Carranza.\n  - Unresolved: not enough accepted evidence (no accepted supporting or contradicting evidence; still insufficient after the final retry round).\n  - rejected supports quote from https://dobetter.esade.edu/en/geopolitical-risks-business-2026: \"Whether it\u2019s industrial rivalry with China, regulatory divergence with the US, electoral unpredictability, regional instability, or technological overheating, 2026 looks set to challenge corporate agility like never before. [...] In a recent analysis for Forbes, Angel Saz-Carranza, director of the Esade Center for Global Economy and Geopolitics (EsadeGeo), highlighted five geopolitical threats that will influence corporate strategy in the year ahead.\" \u2014 negation_mismatch\n  - rejected supports quote from https://dobetter.esade.edu/en/geopolitical-risks-business-2026: \"Whether it\u2019s industrial rivalry with China, regulatory divergence with the US, electoral unpredictability, regional instability, or technological overheating, 2026 looks set to challenge corporate agility like never before. [...] In a recent analysis for Forbes, Angel Saz-Carranza, director of the Esade Center for Global Economy and Geopolitics (EsadeGeo), highlighted five geopolitical threats that will influence corporate strategy in the year ahead.\" \u2014 quote_not_in_evidence\n\n## Notices\n- Retry web search stopped (max_web_searches)\n\n## Verification limitations\n- Claim statuses come from deterministic rules applied to verifier-model judgments: a quote must be verbatim in the cited passage, contain the claim's numbers, not negate it, and cover its key terms. Deeper semantic support still depends on the verifier model.\n- Source-quality tiers are provisional ranking signals from configurable rules, not probabilities, and never prove that a source supports a claim.\n- Findings are limited to the sources searched in this run; absence of evidence is reported as unresolved, not as false.\n- Figures come only from the cited sources, as they stood when retrieved; nothing is updated to today. Findings marked forecast are projections reported by a source, not observed outcomes. Web publication dates are shown only when the search provider reports them.\n\n---\n*Mesh LLM calls 7/9 \u00b7 embeddings 0/0 \u00b7 web searches 8/8 \u00b7 tools 8/30 \u00b7 retry rounds 2/2 \u00b7 83.3 s/300.0 s \u00b7 \u2248 $0.0326 (estimated, INCOMPLETE: some token types have no configured rate)*\n*Findings are limited to the retrieved sources.*\n\n## Audit summary\n- Generated: 2026-10-17 10:53 UTC \u00b7 wall time 83.33 s\n- Retry rounds: 2/2\n- Usage: Mesh LLM calls 7/9 \u00b7 embeddings 0/0 \u00b7 web searches 8/8 \u00b7 tools 8/30 \u00b7 retry rounds 2/2 \u00b7 83.3 s/300.0 s \u00b7 \u2248 $0.0326 (estimated, INCOMPLETE: some token types have no configured rate)\n- Citation-integrity issues: 0\n- Workflow trace:\n  - intake: agent=Intake, result=accepted, domain=general, domain_version=1, source_scope=['web'], follow_up=False\n  - plan: agent=Planner, sub_questions=4, resolved_question=None\n  - research: agent=Researcher, sub_questions=4, evidence=12, reused_evidence=0, new_evidence=12, documents=0, web=12\n  - extract: agent=Claim extractor, claims=8, proposed=8, dropped=0, meta_claims_filtered=0, limit=8\n  - verify: agent=Verifier, round=0, claims=8, claim_ids=['C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8'], verifier_calls=2, statuses={'supported': 5, 'insufficient_evidence': 3}, fresh_shown={}, rejected_judgments=3\n  - retry: agent=Targeted retry (researcher), round=1, targeted_claims=['C5', 'C6', 'C8'], new_evidence=9, claims_with_new_evidence=['C5', 'C6', 'C8'], new_evidence_ids={'C5': ['E9afc5772', 'E154a45cf', 'E3630dfce'], 'C6': ['E8937b448', 'Eff8ea176', 'E38c90b59'], 'C8': ['E8531eaeb', 'Ef6a85a3e', 'Eb704463b']}\n  - verify: agent=Verifier, round=1, claims=3, claim_ids=['C5', 'C6', 'C8'], verifier_calls=1, statuses={'insufficient_evidence': 2, 'supported': 1}, fresh_shown={'C5': ['E9afc5772', 'E154a45cf', 'E3630dfce'], 'C6': ['E8937b448', 'Eff8ea176', 'E38c90b59'], 'C8': ['E8531eaeb', 'Ef6a85a3e', 'Eb704463b']}, rejected_judgments=6\n  - retry: agent=Targeted retry (researcher), round=2, targeted_claims=['C5', 'C8'], new_evidence=2, claims_with_new_evidence=['C5'], new_evidence_ids={'C5': ['E150c62b9', 'Ead2d0f40']}\n  - verify: agent=Verifier, round=2, claims=1, claim_ids=['C5'], verifier_calls=1, statuses={'insufficient_evidence': 1}, fresh_shown={'C5': ['E150c62b9', 'Ead2d0f40']}, rejected_judgments=2\n  - synthesize: agent=Synthesizer, supported_claims=6, mode=model, sentences=3\n  - cite: agent=Citation checker, kept=3, removed=0, citations=7, integrity_issues=0, fallback_sentences=0, fallback_claims=[]\n  - report: agent=Reporter, status=completed, verified_sentences=3, unverified=2, human_review=0, termination_reason=None, final_statuses={'C1': 'supported', 'C2': 'supported', 'C3': 'supported', 'C4': 'supported', 'C5': 'unresolved', 'C6': 'supported', 'C7': 'supported', 'C8': 'unresolved'}\n- Rejected evidence judgments:\n  - C5 / E0d392c52 (supports, https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd): claim_numbers_missing_from_quote:2025 \u2014 proposed quote \"with drone and anti-drone tech accounting for 71% of that funding.\u2063\u2063\u2063\"\n  - C5 / E0d392c52 (supports, https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd): quote_not_in_evidence \u2014 proposed quote \"Startups have already \ud835\udc2b\ud835\udc1a\ud835\udc22\ud835\udc2c\ud835\udc1e\ud835\udc1d $\ud835\udfd2\ud835\udfd1\ud835\udfd0 \ud835\udc0c\ud835\udc27 \ud835\udc22\ud835\udc27 \ud835\udc07\ud835\udfcf \ud835\udfd0\ud835\udfce\ud835\udfd0\ud835\udfd3, with drone and anti-drone tech accounting for 71% of that funding.\"\n  - C6 / Eff8ea176 (supports, https://oecd.ai/en/dashboards/policy-initiatives/india-ai-mission): claim_numbers_missing_from_quote:10372 \u2014 proposed quote \"The IndiaAI Mission, approved by the Indian Cabinet in March 2024 with a budget of Rs. 10,371.92 crore, aims to establish a comprehensive national AI ecosystem implemented by the IndiaAI Independent Business Division under the Digital India Corporation. It comprises seven pillars: AI compute infrastructure of 10,000 or more GPUs, an innovation centre for indigenous foundational models, a unified datasets platform, an AI application development initiative, a skills programme, startup financing,\"\n  - C6 / Ece8f625b (supports, https://www.techcircle.in/2024/12/23/rewind-2024-india-s-key-tech-policies-and-initiatives): claim_numbers_missing_from_quote:2024 \u2014 proposed quote \"In March, the Union Cabinet approved the \u20b910,372 crore India AI Mission to strengthen the country\u2019s artificial intelligence (AI) ecosystem. Implemented by the IndiaAI Division under Digital India Corporation, the mission aims to democratise computing access, enhance data quality, foster innovation, support startups, and promote ethical AI for inclusive growth.\"\n  - C8 / E8531eaeb (supports, https://dobetter.esade.edu/en/geopolitical-risks-business-2026): negation_mismatch \u2014 proposed quote \"Whether it\u2019s industrial rivalry with China, regulatory divergence with the US, electoral unpredictability, regional instability, or technological overheating, 2026 looks set to challenge corporate agility like never before. [...] In a recent analysis for Forbes, Angel Saz-Carranza, director of the Esade Center for Global Economy and Geopolitics (EsadeGeo), highlighted five geopolitical threats that will influence corporate strategy in the year ahead.\"\n  - C8 / E16aa655e (supports, https://dobetter.esade.edu/en/geopolitical-risks-business-2026): quote_not_in_evidence \u2014 proposed quote \"Whether it\u2019s industrial rivalry with China, regulatory divergence with the US, electoral unpredictability, regional instability, or technological overheating, 2026 looks set to challenge corporate agility like never before. [...] In a recent analysis for Forbes, Angel Saz-Carranza, director of the Esade Center for Global Economy and Geopolitics (EsadeGeo), highlighted five geopolitical threats that will influence corporate strategy in the year ahead.\"",
+    "details": {
+      "claims": {
+        "C1": {
+          "text": "India\u2019s defence market is projected to grow 48% from $27 billion in 2025 to $40 billion by 2030, with $19 billion of that growth driven by technologies like AI, autonomous systems, and quantum computing.",
+          "type": "forecast",
+          "risk": "low",
+          "candidate_evidence": [
+            "E0d392c52"
+          ]
+        },
+        "C2": {
+          "text": "India's defence budget crossed USD 86.1 billion annually, making it the fifth largest military spender in the world.",
+          "type": "quantity",
+          "risk": "low",
+          "candidate_evidence": [
+            "E31b513ff",
+            "E0d392c52"
+          ]
+        },
+        "C3": {
+          "text": "The Indian government allocated INR 25,000 crore (USD 2.92 billion) through 2030 to expand its satellite communications and secure data links in the defense market.",
+          "type": "quantity",
+          "risk": "low",
+          "candidate_evidence": [
+            "E09216246"
+          ]
+        },
+        "C4": {
+          "text": "The National Critical Mineral Mission has earmarked INR 16,000 crore (USD 1.87 billion) to secure 50 overseas mines for critical minerals in the defense sector.",
+          "type": "quantity",
+          "risk": "low",
+          "candidate_evidence": [
+            "Eb124ff71"
+          ]
+        },
+        "C5": {
+          "text": "At least 71% of the funding raised by defence-tech startups in India in the first half of 2025 was driven by drone and anti-drone technologies.",
+          "type": "quantity",
+          "risk": "low",
+          "candidate_evidence": [
+            "E0d392c52"
+          ]
+        },
+        "C6": {
+          "text": "The Indian government introduced the \u20b910,372 crore India AI Mission in March 2024 to enhance the country\u2019s AI ecosystem, focused on supporting startups and fostering innovation.",
+          "type": "quantity",
+          "risk": "low",
+          "candidate_evidence": [
+            "Ece8f625b"
+          ]
+        },
+        "C7": {
+          "text": "India imports 82% of lithium and 76% of silicon from China, which risks production delays for precision weapons and avionics in the defense sector.",
+          "type": "fact",
+          "risk": "low",
+          "candidate_evidence": [
+            "Eb124ff71"
+          ]
+        },
+        "C8": {
+          "text": "Geopolitical tensions in 2026 will challenge corporate strategy, driven by regional instability and technological overheating according to analysis by Angel Saz-Carranza.",
+          "type": "forecast",
+          "risk": "low",
+          "candidate_evidence": [
+            "E16aa655e"
+          ]
+        }
+      },
+      "verifications": {
+        "C1": {
+          "claim_id": "C1",
+          "status": "supported",
+          "supporting_evidence_ids": [
+            "E0d392c52"
+          ],
+          "contradicting_evidence_ids": [],
+          "accepted_quotes": {
+            "E0d392c52": "India\u2019s defence market is projected to grow 48% \u2014 from $27 Bn in 2025 to $40 Bn by 2030, with $19 Bn of that growth driven by technologies like AI, autonomous systems, and quantum computing."
+          },
+          "rejected": [],
+          "independent_sources": 1,
+          "required_sources": 1,
+          "rule": "1 independent supporting source(s) >= 1 required",
+          "needs_human_review": false,
+          "round": 0
+        },
+        "C2": {
+          "claim_id": "C2",
+          "status": "supported",
+          "supporting_evidence_ids": [
+            "E31b513ff"
+          ],
+          "contradicting_evidence_ids": [],
+          "accepted_quotes": {
+            "E31b513ff": "India is the fifth largest military spender in the world with defence budgets crossing USD 86.1 billion annually."
+          },
+          "rejected": [],
+          "independent_sources": 1,
+          "required_sources": 1,
+          "rule": "1 independent supporting source(s) >= 1 required",
+          "needs_human_review": false,
+          "round": 0
+        },
+        "C3": {
+          "claim_id": "C3",
+          "status": "supported",
+          "supporting_evidence_ids": [
+            "E09216246"
+          ],
+          "contradicting_evidence_ids": [],
+          "accepted_quotes": {
+            "E09216246": "An INR 25,000 crore (USD 2.92 billion) allocation through 2030 underwrites satellite communications, early-warning payloads, and secure data links."
+          },
+          "rejected": [],
+          "independent_sources": 1,
+          "required_sources": 1,
+          "rule": "1 independent supporting source(s) >= 1 required",
+          "needs_human_review": false,
+          "round": 0
+        },
+        "C4": {
+          "claim_id": "C4",
+          "status": "supported",
+          "supporting_evidence_ids": [
+            "Eb124ff71"
+          ],
+          "contradicting_evidence_ids": [],
+          "accepted_quotes": {
+            "Eb124ff71": "The National Critical Mineral Mission earmarks INR 16,000 crore (USD 1.87 billion) to secure 50 overseas mines, yet geopolitical frictions could restrict access."
+          },
+          "rejected": [],
+          "independent_sources": 1,
+          "required_sources": 1,
+          "rule": "1 independent supporting source(s) >= 1 required",
+          "needs_human_review": false,
+          "round": 0
+        },
+        "C5": {
+          "claim_id": "C5",
+          "status": "unresolved",
+          "supporting_evidence_ids": [],
+          "contradicting_evidence_ids": [],
+          "accepted_quotes": {},
+          "rejected": [
+            {
+              "claim_id": "C5",
+              "evidence_id": "E0d392c52",
+              "stance": "supports",
+              "reason": "claim_numbers_missing_from_quote:2025",
+              "quote": "with drone and anti-drone tech accounting for 71% of that funding.\u2063\u2063\u2063",
+              "source": "https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd",
+              "page": null,
+              "url": "https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd"
+            },
+            {
+              "claim_id": "C5",
+              "evidence_id": "E0d392c52",
+              "stance": "supports",
+              "reason": "quote_not_in_evidence",
+              "quote": "Startups have already \ud835\udc2b\ud835\udc1a\ud835\udc22\ud835\udc2c\ud835\udc1e\ud835\udc1d $\ud835\udfd2\ud835\udfd1\ud835\udfd0 \ud835\udc0c\ud835\udc27 \ud835\udc22\ud835\udc27 \ud835\udc07\ud835\udfcf \ud835\udfd0\ud835\udfce\ud835\udfd0\ud835\udfd3, with drone and anti-drone tech accounting for 71% of that funding.",
+              "source": "https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd",
+              "page": null,
+              "url": "https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd"
+            }
+          ],
+          "independent_sources": 0,
+          "required_sources": 1,
+          "rule": "no accepted supporting or contradicting evidence; still insufficient after the final retry round",
+          "needs_human_review": false,
+          "round": 2
+        },
+        "C6": {
+          "claim_id": "C6",
+          "status": "supported",
+          "supporting_evidence_ids": [
+            "E8937b448",
+            "E38c90b59"
+          ],
+          "contradicting_evidence_ids": [],
+          "accepted_quotes": {
+            "E8937b448": "The IndiaAI Mission\u2014approved by the Cabinet of India on March 7, 2024\u2014is a nationwide initiative designed to strengthen India\u2019s artificial intelligence capabilities. With a massive budget allocation of \u20b910,372 crore, the mission aims to create a complete AI ecosystem that promotes innovation, builds compute infrastructure, supports startups, and encourages responsible use of AI technologies.",
+            "E38c90b59": "In March 2024, Government of India launched IndiaAI mission with outlay of Rs 10,372 Cr for development of the overall AI ecosystem in the country."
+          },
+          "rejected": [
+            {
+              "claim_id": "C6",
+              "evidence_id": "Eff8ea176",
+              "stance": "supports",
+              "reason": "claim_numbers_missing_from_quote:10372",
+              "quote": "The IndiaAI Mission, approved by the Indian Cabinet in March 2024 with a budget of Rs. 10,371.92 crore, aims to establish a comprehensive national AI ecosystem implemented by the IndiaAI Independent Business Division under the Digital India Corporation. It comprises seven pillars: AI compute infrastructure of 10,000 or more GPUs, an innovation centre for indigenous foundational models, a unified datasets platform, an AI application development initiative, a skills programme, startup financing,",
+              "source": "https://oecd.ai/en/dashboards/policy-initiatives/india-ai-mission",
+              "page": null,
+              "url": "https://oecd.ai/en/dashboards/policy-initiatives/india-ai-mission"
+            },
+            {
+              "claim_id": "C6",
+              "evidence_id": "Ece8f625b",
+              "stance": "supports",
+              "reason": "claim_numbers_missing_from_quote:2024",
+              "quote": "In March, the Union Cabinet approved the \u20b910,372 crore India AI Mission to strengthen the country\u2019s artificial intelligence (AI) ecosystem. Implemented by the IndiaAI Division under Digital India Corporation, the mission aims to democratise computing access, enhance data quality, foster innovation, support startups, and promote ethical AI for inclusive growth.",
+              "source": "https://www.techcircle.in/2024/12/23/rewind-2024-india-s-key-tech-policies-and-initiatives",
+              "page": null,
+              "url": "https://www.techcircle.in/2024/12/23/rewind-2024-india-s-key-tech-policies-and-initiatives"
+            }
+          ],
+          "independent_sources": 2,
+          "required_sources": 1,
+          "rule": "2 independent supporting source(s) >= 1 required",
+          "needs_human_review": false,
+          "round": 1
+        },
+        "C7": {
+          "claim_id": "C7",
+          "status": "supported",
+          "supporting_evidence_ids": [
+            "Eb124ff71"
+          ],
+          "contradicting_evidence_ids": [],
+          "accepted_quotes": {
+            "Eb124ff71": "India imports 82% of lithium and 76% of silicon from China, risking production delays for precision weapons and avionics."
+          },
+          "rejected": [],
+          "independent_sources": 1,
+          "required_sources": 1,
+          "rule": "1 independent supporting source(s) >= 1 required",
+          "needs_human_review": false,
+          "round": 0
+        },
+        "C8": {
+          "claim_id": "C8",
+          "status": "unresolved",
+          "supporting_evidence_ids": [],
+          "contradicting_evidence_ids": [],
+          "accepted_quotes": {},
+          "rejected": [
+            {
+              "claim_id": "C8",
+              "evidence_id": "E8531eaeb",
+              "stance": "supports",
+              "reason": "negation_mismatch",
+              "quote": "Whether it\u2019s industrial rivalry with China, regulatory divergence with the US, electoral unpredictability, regional instability, or technological overheating, 2026 looks set to challenge corporate agility like never before. [...] In a recent analysis for Forbes, Angel Saz-Carranza, director of the Esade Center for Global Economy and Geopolitics (EsadeGeo), highlighted five geopolitical threats that will influence corporate strategy in the year ahead.",
+              "source": "https://dobetter.esade.edu/en/geopolitical-risks-business-2026",
+              "page": null,
+              "url": "https://dobetter.esade.edu/en/geopolitical-risks-business-2026"
+            },
+            {
+              "claim_id": "C8",
+              "evidence_id": "E16aa655e",
+              "stance": "supports",
+              "reason": "quote_not_in_evidence",
+              "quote": "Whether it\u2019s industrial rivalry with China, regulatory divergence with the US, electoral unpredictability, regional instability, or technological overheating, 2026 looks set to challenge corporate agility like never before. [...] In a recent analysis for Forbes, Angel Saz-Carranza, director of the Esade Center for Global Economy and Geopolitics (EsadeGeo), highlighted five geopolitical threats that will influence corporate strategy in the year ahead.",
+              "source": "https://dobetter.esade.edu/en/geopolitical-risks-business-2026",
+              "page": null,
+              "url": "https://dobetter.esade.edu/en/geopolitical-risks-business-2026"
+            }
+          ],
+          "independent_sources": 0,
+          "required_sources": 1,
+          "rule": "no accepted supporting or contradicting evidence; still insufficient after the final retry round",
+          "needs_human_review": false,
+          "round": 1
+        }
+      },
+      "evidence_locators": {
+        "E31b513ff": {
+          "source": "https://ipocentral.in/top-defence-tech-startups-in-india",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "What are the key government policies and initiatives supporting the growth of defence-tech startups in India as of October 2026?"
+        },
+        "Ece8f625b": {
+          "source": "https://www.techcircle.in/2024/12/23/rewind-2024-india-s-key-tech-policies-and-initiatives",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "What are the key government policies and initiatives supporting the growth of defence-tech startups in India as of October 2026?"
+        },
+        "E3a06371c": {
+          "source": "https://asiatechdaily.com/supporting-entrepreneurs-a-look-at-2024-government-policies-for-startups-in-asia",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "What are the key government policies and initiatives supporting the growth of defence-tech startups in India as of October 2026?"
+        },
+        "E0d392c52": {
+          "source": "https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "What emerging technologies in the defence sector are expected to drive growth for startups in India through 2030?"
+        },
+        "E9239e0d0": {
+          "source": "https://tracxn.com/d/explore/maritime-tech-startups-in-india/__SHOsIlRvZDZFduNIdhT5yG4XOxsDycktcDB39TC4Lgw",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "What emerging technologies in the defence sector are expected to drive growth for startups in India through 2030?"
+        },
+        "E09216246": {
+          "source": "https://www.mordorintelligence.com/industry-reports/india-defense-market",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "What emerging technologies in the defence sector are expected to drive growth for startups in India through 2030?"
+        },
+        "E276bfb69": {
+          "source": "https://newmarketpitch.com/blogs/news/defense-tech-top-startups-fundraising",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "What are the major challenges and risks faced by defence-tech startups in India regarding funding and investment?"
+        },
+        "E2b2de7c6": {
+          "source": "https://tracxn.com/d/explore/military-tech-startups-in-bengaluru-india/__pk5sh4Ow-9qA2wXnGE6gOveBunsJUte06FrZJsW7y7Q",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "What are the major challenges and risks faced by defence-tech startups in India regarding funding and investment?"
+        },
+        "E177291ea": {
+          "source": "https://www.linkedin.com/posts/jessicaelsey_a-record-number-of-military-startups-became-activity-7413909672195411968-c4dH",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "What are the major challenges and risks faced by defence-tech startups in India regarding funding and investment?"
+        },
+        "Ed59760ad": {
+          "source": "https://www.bvp.com/atlas/defense-tech-roadmap-five-frontiers-for-2026",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "How do geopolitical factors influence the commercialization landscape for India's defence-tech startups?"
+        },
+        "Eb124ff71": {
+          "source": "https://www.mordorintelligence.com/industry-reports/india-defense-market",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "How do geopolitical factors influence the commercialization landscape for India's defence-tech startups?"
+        },
+        "E16aa655e": {
+          "source": "https://dobetter.esade.edu/en/geopolitical-risks-business-2026",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "How do geopolitical factors influence the commercialization landscape for India's defence-tech startups?"
+        },
+        "E9afc5772": {
+          "source": "https://www.linkedin.com/posts/cnbc-tv18_defencetech-budget2026-makeinindia-activity-7422999046031806464-bpKo",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "retry1:C5"
+        },
+        "E154a45cf": {
+          "source": "https://startupfeed.in/top-defence-startups-in-india-2026",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "retry1:C5"
+        },
+        "E3630dfce": {
+          "source": "https://newmarketpitch.com/blogs/news/defense-tech-top-startups-fundraising",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "retry1:C5"
+        },
+        "E8937b448": {
+          "source": "https://synclifecode.com/what-is-indiaai-mission",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "retry1:C6"
+        },
+        "Eff8ea176": {
+          "source": "https://oecd.ai/en/dashboards/policy-initiatives/india-ai-mission",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "retry1:C6"
+        },
+        "E38c90b59": {
+          "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2227612&reg=48&lang=2",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "retry1:C6"
+        },
+        "E8531eaeb": {
+          "source": "https://dobetter.esade.edu/en/geopolitical-risks-business-2026",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "retry1:C8"
+        },
+        "Ef6a85a3e": {
+          "source": "https://www.insightforward.co.uk/top-10-geopolitical-risks-for-business-2026",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "retry1:C8"
+        },
+        "Eb704463b": {
+          "source": "https://www.bcg.com/publications/2025/geopolitical-forces-shaping-business-in-2026",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "retry1:C8"
+        },
+        "E150c62b9": {
+          "source": "https://startupfeed.in/top-defence-startups-in-india-2026",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "retry2:C5"
+        },
+        "Ead2d0f40": {
+          "source": "https://newmarketpitch.com/blogs/news/defense-tech-top-startups-fundraising",
+          "page": null,
+          "chunk_id": null,
+          "origin": "new",
+          "quality": "unverified",
+          "retrieved_via": "retry2:C5"
+        }
+      },
+      "shown_evidence": {
+        "C1": [
+          "E0d392c52"
+        ],
+        "C2": [
+          "E31b513ff",
+          "E0d392c52"
+        ],
+        "C3": [
+          "E09216246"
+        ],
+        "C4": [
+          "Eb124ff71"
+        ],
+        "C5": [
+          "E150c62b9",
+          "Ead2d0f40",
+          "E0d392c52",
+          "E9afc5772",
+          "E154a45cf",
+          "E3630dfce"
+        ],
+        "C6": [
+          "E8937b448",
+          "Eff8ea176",
+          "E38c90b59",
+          "Ece8f625b"
+        ],
+        "C7": [
+          "Eb124ff71"
+        ],
+        "C8": [
+          "E8531eaeb",
+          "Ef6a85a3e",
+          "Eb704463b",
+          "E16aa655e"
+        ]
+      },
+      "citations": [
+        {
+          "marker": "C1",
+          "claim_id": "C1",
+          "evidence_id": "E0d392c52",
+          "source": "https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd",
+          "page": null,
+          "url": "https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd",
+          "quote": "India\u2019s defence market is projected to grow 48% \u2014 from $27 Bn in 2025 to $40 Bn by 2030, with $19 Bn of that growth driven by technologies like AI, autonomous systems, and quantum computing."
+        },
+        {
+          "marker": "C2",
+          "claim_id": "C2",
+          "evidence_id": "E31b513ff",
+          "source": "https://ipocentral.in/top-defence-tech-startups-in-india",
+          "page": null,
+          "url": "https://ipocentral.in/top-defence-tech-startups-in-india",
+          "quote": "India is the fifth largest military spender in the world with defence budgets crossing USD 86.1 billion annually."
+        },
+        {
+          "marker": "C3",
+          "claim_id": "C3",
+          "evidence_id": "E09216246",
+          "source": "https://www.mordorintelligence.com/industry-reports/india-defense-market",
+          "page": null,
+          "url": "https://www.mordorintelligence.com/industry-reports/india-defense-market",
+          "quote": "An INR 25,000 crore (USD 2.92 billion) allocation through 2030 underwrites satellite communications, early-warning payloads, and secure data links."
+        },
+        {
+          "marker": "C4",
+          "claim_id": "C4",
+          "evidence_id": "Eb124ff71",
+          "source": "https://www.mordorintelligence.com/industry-reports/india-defense-market",
+          "page": null,
+          "url": "https://www.mordorintelligence.com/industry-reports/india-defense-market",
+          "quote": "The National Critical Mineral Mission earmarks INR 16,000 crore (USD 1.87 billion) to secure 50 overseas mines, yet geopolitical frictions could restrict access."
+        },
+        {
+          "marker": "C6",
+          "claim_id": "C6",
+          "evidence_id": "E8937b448",
+          "source": "https://synclifecode.com/what-is-indiaai-mission",
+          "page": null,
+          "url": "https://synclifecode.com/what-is-indiaai-mission",
+          "quote": "The IndiaAI Mission\u2014approved by the Cabinet of India on March 7, 2024\u2014is a nationwide initiative designed to strengthen India\u2019s artificial intelligence capabilities. With a massive budget allocation of \u20b910,372 crore, the mission aims to create a complete AI ecosystem that promotes innovation, builds compute infrastructure, supports startups, and encourages responsible use of AI technologies."
+        },
+        {
+          "marker": "C6",
+          "claim_id": "C6",
+          "evidence_id": "E38c90b59",
+          "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2227612&reg=48&lang=2",
+          "page": null,
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2227612&reg=48&lang=2",
+          "quote": "In March 2024, Government of India launched IndiaAI mission with outlay of Rs 10,372 Cr for development of the overall AI ecosystem in the country."
+        },
+        {
+          "marker": "C7",
+          "claim_id": "C7",
+          "evidence_id": "Eb124ff71",
+          "source": "https://www.mordorintelligence.com/industry-reports/india-defense-market",
+          "page": null,
+          "url": "https://www.mordorintelligence.com/industry-reports/india-defense-market",
+          "quote": "India imports 82% of lithium and 76% of silicon from China, risking production delays for precision weapons and avionics."
+        }
+      ],
+      "verified_sentences": [
+        {
+          "text": "The three biggest growth opportunities for India's defence-tech startups include a projected growth in the defence market driven by technologies like AI and autonomous systems (C1), government investment in satellite communications (C3), and support for the AI ecosystem through the India AI Mission (C6).",
+          "claim_ids": [
+            "C1",
+            "C3",
+            "C6"
+          ],
+          "origin": "model"
+        },
+        {
+          "text": "The three biggest commercialization risks for these startups involve reliance on imports, as India imports significant quantities of lithium and silicon from China, which could lead to production delays (C7).",
+          "claim_ids": [
+            "C7"
+          ],
+          "origin": "model"
+        },
+        {
+          "text": "Additionally, the defence sector's focus on critical minerals, highlighted by investments for securing mines, may present risks if domestic supply chains are not adequately developed (C4).",
+          "claim_ids": [
+            "C4"
+          ],
+          "origin": "model"
+        }
+      ],
+      "removed_sentences": [],
+      "citation_issues": [],
+      "trace": [
+        {
+          "node": "intake",
+          "agent": "Intake",
+          "result": "accepted",
+          "domain": "general",
+          "domain_version": 1,
+          "source_scope": [
+            "web"
+          ],
+          "follow_up": false
+        },
+        {
+          "node": "plan",
+          "agent": "Planner",
+          "sub_questions": 4,
+          "resolved_question": null
+        },
+        {
+          "node": "research",
+          "agent": "Researcher",
+          "sub_questions": 4,
+          "evidence": 12,
+          "reused_evidence": 0,
+          "new_evidence": 12,
+          "documents": 0,
+          "web": 12
+        },
+        {
+          "node": "extract",
+          "agent": "Claim extractor",
+          "claims": 8,
+          "proposed": 8,
+          "dropped": 0,
+          "meta_claims_filtered": 0,
+          "limit": 8
+        },
+        {
+          "node": "verify",
+          "agent": "Verifier",
+          "round": 0,
+          "claims": 8,
+          "claim_ids": [
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8"
+          ],
+          "verifier_calls": 2,
+          "statuses": {
+            "supported": 5,
+            "insufficient_evidence": 3
+          },
+          "fresh_shown": {},
+          "rejected_judgments": 3
+        },
+        {
+          "node": "retry",
+          "agent": "Targeted retry (researcher)",
+          "round": 1,
+          "targeted_claims": [
+            "C5",
+            "C6",
+            "C8"
+          ],
+          "new_evidence": 9,
+          "claims_with_new_evidence": [
+            "C5",
+            "C6",
+            "C8"
+          ],
+          "new_evidence_ids": {
+            "C5": [
+              "E9afc5772",
+              "E154a45cf",
+              "E3630dfce"
+            ],
+            "C6": [
+              "E8937b448",
+              "Eff8ea176",
+              "E38c90b59"
+            ],
+            "C8": [
+              "E8531eaeb",
+              "Ef6a85a3e",
+              "Eb704463b"
+            ]
+          }
+        },
+        {
+          "node": "verify",
+          "agent": "Verifier",
+          "round": 1,
+          "claims": 3,
+          "claim_ids": [
+            "C5",
+            "C6",
+            "C8"
+          ],
+          "verifier_calls": 1,
+          "statuses": {
+            "insufficient_evidence": 2,
+            "supported": 1
+          },
+          "fresh_shown": {
+            "C5": [
+              "E9afc5772",
+              "E154a45cf",
+              "E3630dfce"
+            ],
+            "C6": [
+              "E8937b448",
+              "Eff8ea176",
+              "E38c90b59"
+            ],
+            "C8": [
+              "E8531eaeb",
+              "Ef6a85a3e",
+              "Eb704463b"
+            ]
+          },
+          "rejected_judgments": 6
+        },
+        {
+          "node": "retry",
+          "agent": "Targeted retry (researcher)",
+          "round": 2,
+          "targeted_claims": [
+            "C5",
+            "C8"
+          ],
+          "new_evidence": 2,
+          "claims_with_new_evidence": [
+            "C5"
+          ],
+          "new_evidence_ids": {
+            "C5": [
+              "E150c62b9",
+              "Ead2d0f40"
+            ]
+          }
+        },
+        {
+          "node": "verify",
+          "agent": "Verifier",
+          "round": 2,
+          "claims": 1,
+          "claim_ids": [
+            "C5"
+          ],
+          "verifier_calls": 1,
+          "statuses": {
+            "insufficient_evidence": 1
+          },
+          "fresh_shown": {
+            "C5": [
+              "E150c62b9",
+              "Ead2d0f40"
+            ]
+          },
+          "rejected_judgments": 2
+        },
+        {
+          "node": "synthesize",
+          "agent": "Synthesizer",
+          "supported_claims": 6,
+          "mode": "model",
+          "sentences": 3
+        },
+        {
+          "node": "cite",
+          "agent": "Citation checker",
+          "kept": 3,
+          "removed": 0,
+          "citations": 7,
+          "integrity_issues": 0,
+          "fallback_sentences": 0,
+          "fallback_claims": []
+        },
+        {
+          "node": "report",
+          "agent": "Reporter",
+          "status": "completed",
+          "verified_sentences": 3,
+          "unverified": 2,
+          "human_review": 0,
+          "termination_reason": null,
+          "final_statuses": {
+            "C1": "supported",
+            "C2": "supported",
+            "C3": "supported",
+            "C4": "supported",
+            "C5": "unresolved",
+            "C6": "supported",
+            "C7": "supported",
+            "C8": "unresolved"
+          }
+        }
+      ],
+      "notices": [
+        "Retry web search stopped (max_web_searches)"
+      ],
+      "events": [
+        {
+          "provider": "mesh",
+          "operation": "structured",
+          "model_requested": "openai/gpt-4o-mini",
+          "model_served": "gpt-4o-mini-2024-07-18",
+          "status": "ok",
+          "input_tokens": 333,
+          "output_tokens": 161,
+          "tokens_estimated": false,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.00014654999999999998,
+          "cost_basis": "estimated",
+          "priced_as": "openai/gpt-4o-mini",
+          "cached": false,
+          "cache_marker": null,
+          "cost_incomplete_reasons": null,
+          "latency_s": 2.8337029999820516,
+          "request_id": "chatcmpl-EZwJ3vOLILB6cUKlRPgOJn4XKiQKu",
+          "error": null,
+          "budget": "ui-pilot",
+          "t_s": 2.893
+        },
+        {
+          "provider": "tavily",
+          "operation": "search",
+          "status": "ok",
+          "result_count": 3,
+          "latency_s": 4.86349312501261,
+          "credits_estimated": 1.0,
+          "query_hash": "5cb2902a24ad",
+          "error": null,
+          "budget": "ui-pilot",
+          "t_s": 7.765
+        },
+        {
+          "provider": "tavily",
+          "operation": "search",
+          "status": "ok",
+          "result_count": 3,
+          "latency_s": 2.612840874993708,
+          "credits_estimated": 1.0,
+          "query_hash": "5d220b74e923",
+          "error": null,
+          "budget": "ui-pilot",
+          "t_s": 10.385
+        },
+        {
+          "provider": "tavily",
+          "operation": "search",
+          "status": "ok",
+          "result_count": 3,
+          "latency_s": 4.028666833997704,
+          "credits_estimated": 1.0,
+          "query_hash": "71c3b868db30",
+          "error": null,
+          "budget": "ui-pilot",
+          "t_s": 14.416
+        },
+        {
+          "provider": "tavily",
+          "operation": "search",
+          "status": "ok",
+          "result_count": 3,
+          "latency_s": 2.943981958029326,
+          "credits_estimated": 1.0,
+          "query_hash": "0ff816d5ea8c",
+          "error": null,
+          "budget": "ui-pilot",
+          "t_s": 17.361
+        },
+        {
+          "provider": "mesh",
+          "operation": "structured",
+          "model_requested": "openai/gpt-4o-mini",
+          "model_served": "gpt-4o-mini-2024-07-18",
+          "status": "ok",
+          "input_tokens": 5386,
+          "output_tokens": 477,
+          "tokens_estimated": false,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.0010941,
+          "cost_basis": "estimated",
+          "priced_as": "openai/gpt-4o-mini",
+          "cached": false,
+          "cache_marker": null,
+          "cost_incomplete_reasons": null,
+          "latency_s": 5.13043837499572,
+          "request_id": "chatcmpl-EZwJLYXfrtIKM3givxPLGhamRey7T",
+          "error": null,
+          "budget": "ui-pilot",
+          "t_s": 22.505
+        },
+        {
+          "provider": "mesh",
+          "operation": "structured",
+          "model_requested": "google/gemini-2.5-flash",
+          "model_served": "gemini-2.5-flash",
+          "status": "ok",
+          "input_tokens": 2321,
+          "output_tokens": 4700,
+          "tokens_estimated": false,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 3851,
+          "cost_usd": 0.012446299999999999,
+          "cost_basis": "estimated",
+          "priced_as": "google/gemini-2.5-flash",
+          "cached": false,
+          "cache_marker": null,
+          "cost_incomplete_reasons": [
+            "reasoning tokens priced at the output rate (no reasoning rate configured)"
+          ],
+          "latency_s": 18.163063291984145,
+          "request_id": "chatcmpl-gemini-1792234357",
+          "error": null,
+          "budget": "ui-pilot",
+          "t_s": 40.675
+        },
+        {
+          "provider": "mesh",
+          "operation": "structured",
+          "model_requested": "google/gemini-2.5-flash",
+          "model_served": "gemini-2.5-flash",
+          "status": "ok",
+          "input_tokens": 1556,
+          "output_tokens": 817,
+          "tokens_estimated": false,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 327,
+          "cost_usd": 0.0025093000000000003,
+          "cost_basis": "estimated",
+          "priced_as": "google/gemini-2.5-flash",
+          "cached": false,
+          "cache_marker": null,
+          "cost_incomplete_reasons": [
+            "reasoning tokens priced at the output rate (no reasoning rate configured)"
+          ],
+          "latency_s": 4.796329999982845,
+          "request_id": "chatcmpl-gemini-1792234361",
+          "error": null,
+          "budget": "ui-pilot",
+          "t_s": 45.483
+        },
+        {
+          "provider": "tavily",
+          "operation": "search",
+          "status": "ok",
+          "result_count": 3,
+          "latency_s": 3.340336124994792,
+          "credits_estimated": 1.0,
+          "query_hash": "35d5e38b70ab",
+          "error": null,
+          "budget": "ui-pilot",
+          "t_s": 48.832
+        },
+        {
+          "provider": "tavily",
+          "operation": "search",
+          "status": "ok",
+          "result_count": 3,
+          "latency_s": 2.2311132500180975,
+          "credits_estimated": 1.0,
+          "query_hash": "6e07e68db792",
+          "error": null,
+          "budget": "ui-pilot",
+          "t_s": 51.066
+        },
+        {
+          "provider": "tavily",
+          "operation": "search",
+          "status": "ok",
+          "result_count": 3,
+          "latency_s": 2.963075249979738,
+          "credits_estimated": 1.0,
+          "query_hash": "e2a3a689484a",
+          "error": null,
+          "budget": "ui-pilot",
+          "t_s": 54.03
+        },
+        {
+          "provider": "mesh",
+          "operation": "structured",
+          "model_requested": "google/gemini-2.5-flash",
+          "model_served": "gemini-2.5-flash",
+          "status": "ok",
+          "input_tokens": 4967,
+          "output_tokens": 3491,
+          "tokens_estimated": false,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 1404,
+          "cost_usd": 0.0102176,
+          "cost_basis": "estimated",
+          "priced_as": "google/gemini-2.5-flash",
+          "cached": false,
+          "cache_marker": null,
+          "cost_incomplete_reasons": [
+            "reasoning tokens priced at the output rate (no reasoning rate configured)"
+          ],
+          "latency_s": 14.741588666976895,
+          "request_id": "chatcmpl-gemini-1792234385",
+          "error": null,
+          "budget": "ui-pilot",
+          "t_s": 68.79
+        },
+        {
+          "provider": "tavily",
+          "operation": "search",
+          "status": "ok",
+          "result_count": 3,
+          "latency_s": 2.6741199999814853,
+          "credits_estimated": 1.0,
+          "query_hash": "35d5e38b70ab",
+          "error": null,
+          "budget": "ui-pilot",
+          "t_s": 71.475
+        },
+        {
+          "provider": "mesh",
+          "operation": "structured",
+          "model_requested": "google/gemini-2.5-flash",
+          "model_served": "gemini-2.5-flash",
+          "status": "ok",
+          "input_tokens": 3024,
+          "output_tokens": 2048,
+          "tokens_estimated": false,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 1274,
+          "cost_usd": 0.0060272,
+          "cost_basis": "estimated",
+          "priced_as": "google/gemini-2.5-flash",
+          "cached": false,
+          "cache_marker": null,
+          "cost_incomplete_reasons": [
+            "reasoning tokens priced at the output rate (no reasoning rate configured)"
+          ],
+          "latency_s": 9.194208208005875,
+          "request_id": "chatcmpl-gemini-1792234397",
+          "error": null,
+          "budget": "ui-pilot",
+          "t_s": 80.676
+        },
+        {
+          "provider": "mesh",
+          "operation": "structured",
+          "model_requested": "openai/gpt-4o-mini",
+          "model_served": "gpt-4o-mini-2024-07-18",
+          "status": "ok",
+          "input_tokens": 557,
+          "output_tokens": 176,
+          "tokens_estimated": false,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.00018915,
+          "cost_basis": "estimated",
+          "priced_as": "openai/gpt-4o-mini",
+          "cached": false,
+          "cache_marker": null,
+          "cost_incomplete_reasons": null,
+          "latency_s": 2.644675332994666,
+          "request_id": "chatcmpl-EZwKMGI64Qn1WwSZhaVOw2bq5tpQj",
+          "error": null,
+          "budget": "ui-pilot",
+          "t_s": 83.333
+        }
+      ],
+      "plan": {
+        "in_scope": true,
+        "scope_reason": "The question seeks an analysis of growth opportunities and commercialization risks for India's defence-tech startups, which can be answered through research and public sources.",
+        "sub_questions": [
+          {
+            "id": "Q1",
+            "text": "What are the key government policies and initiatives supporting the growth of defence-tech startups in India as of October 2026?",
+            "sources": [
+              "web"
+            ]
+          },
+          {
+            "id": "Q2",
+            "text": "What emerging technologies in the defence sector are expected to drive growth for startups in India through 2030?",
+            "sources": [
+              "web"
+            ]
+          },
+          {
+            "id": "Q3",
+            "text": "What are the major challenges and risks faced by defence-tech startups in India regarding funding and investment?",
+            "sources": [
+              "web"
+            ]
+          },
+          {
+            "id": "Q4",
+            "text": "How do geopolitical factors influence the commercialization landscape for India's defence-tech startups?",
+            "sources": [
+              "web"
+            ]
+          }
+        ],
+        "resolved_question": ""
+      },
+      "report_markdown": "# Research report\n**Question:** What are the three biggest growth opportunities and three biggest commercialization risks for India's defence-tech startups through 2030, based on developments and policies available as of October 2026?\n**Domain:** General enterprise research \u00b7 **Status:** completed\n\n## Verified findings\n- The three biggest growth opportunities for India's defence-tech startups include a projected growth in the defence market driven by technologies like AI and autonomous systems (C1), government investment in satellite communications (C3), and support for the AI ecosystem through the India AI Mission (C6). [C1][C3][C6] _(forecast: a projection reported by the cited source, not an observed outcome)_\n- The three biggest commercialization risks for these startups involve reliance on imports, as India imports significant quantities of lithium and silicon from China, which could lead to production delays (C7). [C7]\n- Additionally, the defence sector's focus on critical minerals, highlighted by investments for securing mines, may present risks if domestic supply chains are not adequately developed (C4). [C4]\n\n## Evidence\n| Claim | Status | Source | Source quality | Origin | Quote | Dates |\n|---|---|---|---|---|---|---|\n| C1 | supported | https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd | Unverified (0.35) | new | \"India\u2019s defence market is projected to grow 48% \u2014 from $27 Bn in 2025 to $40 Bn by 2030, with $19 Bn of that growth driven by technologies like AI, autonomous systems, and quantum computing.\" | published not reported \u00b7 retrieved 2026-10-17 |\n| C2 | supported | https://ipocentral.in/top-defence-tech-startups-in-india | Unverified (0.35) | new | \"India is the fifth largest military spender in the world with defence budgets crossing USD 86.1 billion annually.\" | published not reported \u00b7 retrieved 2026-10-17 |\n| C3 | supported | https://www.mordorintelligence.com/industry-reports/india-defense-market | Unverified (0.35) | new | \"An INR 25,000 crore (USD 2.92 billion) allocation through 2030 underwrites satellite communications, early-warning payloads, and secure data links.\" | published not reported \u00b7 retrieved 2026-10-17 |\n| C4 | supported | https://www.mordorintelligence.com/industry-reports/india-defense-market | Unverified (0.35) | new | \"The National Critical Mineral Mission earmarks INR 16,000 crore (USD 1.87 billion) to secure 50 overseas mines, yet geopolitical frictions could restrict access.\" | published not reported \u00b7 retrieved 2026-10-17 |\n| C6 | supported | https://synclifecode.com/what-is-indiaai-mission | Unverified (0.35) | new | \"The IndiaAI Mission\u2014approved by the Cabinet of India on March 7, 2024\u2014is a nationwide initiative designed to strengthen India\u2019s artificial intelligence capabilities. With a massive budget allocation of \u20b910,372 crore, the mission aims to create a complete AI ecosystem that promotes innovation, builds compute infrastructure, supports startups, and encourages responsible use of AI technologies.\" | published not reported \u00b7 retrieved 2026-10-17 |\n| C6 | supported | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2227612&reg=48&lang=2 | Unverified (0.35) | new | \"In March 2024, Government of India launched IndiaAI mission with outlay of Rs 10,372 Cr for development of the overall AI ecosystem in the country.\" | published not reported \u00b7 retrieved 2026-10-17 |\n| C7 | supported | https://www.mordorintelligence.com/industry-reports/india-defense-market | Unverified (0.35) | new | \"India imports 82% of lithium and 76% of silicon from China, risking production delays for precision weapons and avionics.\" | published not reported \u00b7 retrieved 2026-10-17 |\n\n## Disputed or unverified (excluded from the findings)\n- **C5 \u2014 unresolved:** At least 71% of the funding raised by defence-tech startups in India in the first half of 2025 was driven by drone and anti-drone technologies.\n  - Unresolved: not enough accepted evidence (no accepted supporting or contradicting evidence; still insufficient after the final retry round).\n  - rejected supports quote from https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd: \"with drone and anti-drone tech accounting for 71% of that funding.\u2063\u2063\u2063\" \u2014 claim_numbers_missing_from_quote:2025\n  - rejected supports quote from https://www.linkedin.com/posts/inc42_inc42-defencetech-tech-activity-7361647240332939264-IUtd: \"Startups have already \ud835\udc2b\ud835\udc1a\ud835\udc22\ud835\udc2c\ud835\udc1e\ud835\udc1d $\ud835\udfd2\ud835\udfd1\ud835\udfd0 \ud835\udc0c\ud835\udc27 \ud835\udc22\ud835\udc27 \ud835\udc07\ud835\udfcf \ud835\udfd0\ud835\udfce\ud835\udfd0\ud835\udfd3, with drone and anti-drone tech accounting for 71% of that funding.\" \u2014 quote_not_in_evidence\n- **C8 \u2014 unresolved:** Geopolitical tensions in 2026 will challenge corporate strategy, driven by regional instability and technological overheating according to analysis by Angel Saz-Carranza.\n  - Unresolved: not enough accepted evidence (no accepted supporting or contradicting evidence; still insufficient after the final retry round).\n  - rejected supports quote from https://dobetter.esade.edu/en/geopolitical-risks-business-2026: \"Whether it\u2019s industrial rivalry with China, regulatory divergence with the US, electoral unpredictability, regional instability, or technological overheating, 2026 looks set to challenge corporate agility like never before. [...] In a recent analysis for Forbes, Angel Saz-Carranza, director of the Esade Center for Global Economy and Geopolitics (EsadeGeo), highlighted five geopolitical threats that will influence corporate strategy in the year ahead.\" \u2014 negation_mismatch\n  - rejected supports quote from https://dobetter.esade.edu/en/geopolitical-risks-business-2026: \"Whether it\u2019s industrial rivalry with China, regulatory divergence with the US, electoral unpredictability, regional instability, or technological overheating, 2026 looks set to challenge corporate agility like never before. [...] In a recent analysis for Forbes, Angel Saz-Carranza, director of the Esade Center for Global Economy and Geopolitics (EsadeGeo), highlighted five geopolitical threats that will influence corporate strategy in the year ahead.\" \u2014 quote_not_in_evidence\n\n## Notices\n- Retry web search stopped (max_web_searches)\n\n## Verification limitations\n- Claim statuses come from deterministic rules applied to verifier-model judgments: a quote must be verbatim in the cited passage, contain the claim's numbers, not negate it, and cover its key terms. Deeper semantic support still depends on the verifier model.\n- Source-quality tiers are provisional ranking signals from configurable rules, not probabilities, and never prove that a source supports a claim.\n- Findings are limited to the sources searched in this run; absence of evidence is reported as unresolved, not as false.\n- Figures come only from the cited sources, as they stood when retrieved; nothing is updated to today. Findings marked forecast are projections reported by a source, not observed outcomes. Web publication dates are shown only when the search provider reports them.\n\n---\n*Mesh LLM calls 7/9 \u00b7 embeddings 0/0 \u00b7 web searches 8/8 \u00b7 tools 8/30 \u00b7 retry rounds 2/2 \u00b7 83.3 s/300.0 s \u00b7 \u2248 $0.0326 (estimated, INCOMPLETE: some token types have no configured rate)*\n*Findings are limited to the retrieved sources.*"
+    },
+    "follow_up_to": null
+  }
+]
