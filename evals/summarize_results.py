@@ -90,9 +90,9 @@ def render(obs, s):
         c = o["case"]; u = c["usage"]
         exp = "; ".join(f"{k}: {'/'.join(v) if isinstance(v, list) else v}" for k, v in c["expected"].items())
         got = "; ".join(f"{k}: {v}" for k, v in c["observed"].items() if k != "citation_sources")
+        cost = "n/a" if u["cost_usd"] is None else f"{u['cost_usd']:.4f}"   # Python 3.11-compatible f-string
         L.append(f"| {o['stage']} | {c['case_id']} | {c['mode']} | {exp} | {got} | {'yes' if c['passed'] else '**no**'} | "
-                 f"{u['mesh_llm_calls'] + u['mesh_embedding_calls']} | {u['elapsed_s']:.1f} s | "
-                 f"{'n/a' if u['cost_usd'] is None else f'{u['cost_usd']:.4f}'} |")
+                 f"{u['mesh_llm_calls'] + u['mesh_embedding_calls']} | {u['elapsed_s']:.1f} s | {cost} |")
     L += ["", "## What failed and why", "",
           "- **L08 (Stage A)** — all 11 report sentences were removed by DeepDive's own citation check (claim "
           "markers such as \"(C3)\" read as numbers). Fixed in the Stage A remediation; **L08-r1** then passed "
